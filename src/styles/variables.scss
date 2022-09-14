@@ -1,0 +1,17 @@
+$primary: #4d1f34;
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 5%);
+$secondary: #3778ad;
+$secondary-light: lighten($secondary, 10%);
+$secondary-dark: darken($secondary, 5%);
+$accent: #f0c246;
+$accent-light: lighten($accent, 10%);
+$accent-dark: darken($accent, 5%);
+
+$text: #424242;
+$text-lightest: lighten($text, 50%);
+$text-lighter: lighten($text, 30%);
+$text-light: lighten($text, 10%);
+$text-dark: darken($text, 10%);
+$text-darker: darken($text, 30%);
+$text-darkest: darken($text, 50%);

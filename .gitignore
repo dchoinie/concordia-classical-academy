@@ -1,0 +1,10 @@
+node_modules/
+.cache/
+public
+src/gatsby-types.d.ts
+ccasanity/node_modules
+ccasanity/.eslintrc
+ccasanity/.npmignore
+.env
+.env.development
+.env.production

@@ -1,0 +1,67 @@
+@import '../styles/variables.scss';
+
+.btn {
+    align-items: center;
+    border: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    padding: 0.5rem 1.25rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);;
+}
+
+.btnMedium {
+    font-size: 1rem;
+}
+
+.btnLarge {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.btnLarger {
+    font-size: 2.5rem;
+}
+
+.btnSmall {
+    font-size: 0.8rem;
+}
+
+.btnSmaller {
+    font-size: 0.5rem
+}
+
+.btnPrimary {
+    color: #fff;
+    background-color: $primary;
+
+    &:hover {
+        background-color: $primary-dark;
+    }
+}
+
+.btnSecondary {
+    color: #fff;
+    background-color: $secondary;
+
+    &:hover {
+        background-color: $secondary-dark;
+    }
+}
+
+.btnAccent {
+    color: #fff;
+    background-color: $accent;
+
+    &:hover {
+        background-color: $accent-dark;
+    }
+}
+
+.btnWhite {
+    color: $text;
+    background-color: #fff;
+
+    &:hover {
+        background-color: #e6e6e6;
+    }
+}

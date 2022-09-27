@@ -33,6 +33,7 @@ const ButtonComponent = ({
   href,
   download,
   disableTargetBlank,
+  submissionInProgress,
 }: Button): JSX.Element => {
   const getLinkType = () => {
     if (href) {
@@ -83,7 +84,7 @@ const ButtonComponent = ({
             theme && themeMap[theme],
             classes
           )}
-          disabled={disabled}
+          disabled={disabled || submissionInProgress}
         >
           {startIcon && <FontAwesomeIcon icon={startIcon} className="mr-2" />}
           {label}

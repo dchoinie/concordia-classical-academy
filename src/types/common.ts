@@ -27,6 +27,7 @@ export interface Button {
   startIcon?: IconProp;
   theme?: string;
   disableTargetBlank?: boolean;
+  submissionInProgress?: boolean;
 }
 
 export type MetadataProps = {

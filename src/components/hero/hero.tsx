@@ -11,15 +11,18 @@ const hero = () => {
       <div className="flex h-full">
         <div className="flex w-1/2 mr-12 flex-col justify-center">
           <h1 className="text-primary mb-4 font-bold">
-            Concordia <span className="text-accent underline">Classical</span>
+            Concordia{" "}
+            <span className="text-accent underline tracking-wider">
+              Classical
+            </span>
             <br />
             Academy
           </h1>
-          <h6 className="mb-4 text-text">
+          <p className="mb-4 text-text">
             Concorida Classical Academy uses God's Word in a Christ-centered
             education to assist families in training students for Christian
             lives on earth and for eternity.
-          </h6>
+          </p>
           <div className="flex">
             <Button
               label="Apply Now"

@@ -1,5 +1,4 @@
 import {
-  faAngleRight,
   faEnvelope,
   faLocationDot,
   faPhone,
@@ -9,7 +8,7 @@ import { graphql, Script, useStaticQuery } from "gatsby";
 import React from "react";
 import ContactForm from "./contactForm";
 
-const RequestInformationComponent = () => {
+const ContactComponent = () => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -38,13 +37,10 @@ const RequestInformationComponent = () => {
     <div className="my-24">
       <div className="flex gap-12">
         <div className="flex flex-col w-1/2">
-          <h2 className="text-primary font-bold mb-6">
-            Want more information?
-          </h2>
+          <h2 className="text-primary font-bold mb-6">Contact Us</h2>
           <p className="mb-6">
-            If you have any additional questions about tuition, classes,
-            admissions, finanical assistance or anything else, please contact us
-            and we will be happy to help!
+            We would love to hear from you! Let us know if you have any
+            questions or if we can help in any way.
           </p>
           <div className="flex mb-6">
             <FontAwesomeIcon
@@ -76,4 +72,4 @@ const RequestInformationComponent = () => {
   );
 };
 
-export default RequestInformationComponent;
+export default ContactComponent;

@@ -5,6 +5,18 @@
     box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway";
+}
+
+div, p, ul, li, section {
+    font-family: "Cabin";
+}
+
+span {
+    font-family: inherit;
+}
+
 h1 {
     font-size: 3rem;
     line-height: 1;

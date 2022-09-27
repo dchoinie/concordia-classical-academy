@@ -16,7 +16,7 @@ const Apply = () => {
             height={90}
             className="mr-6 self-center"
           />
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl self-center">
+          <h2 className="text-3xl font-bold sm:text-4xl self-center">
             <span className="block text-gray-100">Ready To Apply?</span>
             <span className="block text-accent">
               Begin the application process today.

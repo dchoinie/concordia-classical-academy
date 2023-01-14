@@ -138,5 +138,45 @@ export default createSchema({
         },
       ],
     },
+  {
+      name: 'fees',
+      title: 'Fees',
+      type: 'document',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        },
+        {
+          name: 'fee',
+          title: 'Fee',
+          type: 'string',
+        },
+        {
+          name: 'order',
+          title: 'Order',
+          type: 'number',
+        },
+      ],
+    },
+    {
+      name: 'supplyList',
+      title: 'Supply List',
+      type: 'document',
+      fields: [
+        {
+          name: 'grade',
+          title: 'Grade',
+          type: 'string',
+        },
+        {
+          title: 'Content',
+          name: 'content',
+          type: 'array',
+          of: [{type: 'block'}]
+        }
+      ],
+    }
   ]),
 });

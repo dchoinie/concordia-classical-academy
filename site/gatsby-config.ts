@@ -22,6 +22,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-source-stripe`,
       options: {
         objects: ["Price", "Product"],
+        // failing here
         secretKey: process.env.STRIPE_SECRET_KEY,
         downloadFiles: false,
       },

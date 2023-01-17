@@ -46,12 +46,12 @@ const Events = () => {
             label="Events Calendar"
             size="small"
             theme="primary"
-            endIcon={faCalendarDays}
+            startIcon={faCalendarDays}
             link="/events"
           />
         </div>
 
-        <div className="w-full grid grid-cols-3 gap-8 mt-8">
+        <div className="w-full grid auto-cols-max gap-8 mt-8">
           {data.allSanityEvent.edges
             .filter(
               (event: any) => event.node.startDate > new Date().toISOString()
@@ -61,67 +61,27 @@ const Events = () => {
               const e: EventType = event.node;
               return (
                 <div className="relative group mt-8">
-                  <div className="overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
+                  <div className="flex overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
                     <img
-                      className="object-cover w-full h-56 shadow transition-all duration-300 transform group-hover:scale-125"
+                      className="object-cover h-56 shadow transition-all duration-300 transform group-hover:scale-125"
                       src={e.image.asset.url}
                       alt={e.slug.current}
                     />
                   </div>
-                  <p className="mt-6 text-sm font-normal text-gray-600">
+                  <p className="mt-6 text-center text-sm font-normal text-gray-600">
                     <span>
                       {moment(e.startDate).format("MMM. DD, YYYY | h:mma")}
                     </span>
                     <span> - {moment(e.endDate).format("h:mma")}</span>
                   </p>
-                  <p className="text-xl font-bold text-primary my-1">
+                  <p className="text-xl text-center font-bold text-primary my-1">
                     {e.name}
                   </p>
-                  <p>{e.summary}</p>
+                  <p className="text-center">{e.summary}</p>
                 </div>
               );
             })}
         </div>
-
-        {/* <div className="grid max-w-3xl grid-cols-1 mx-auto mt-8 text-center sm:mt-16 sm:text-left sm:grid-cols-2 gap-y-8 gap-x-8 lg:gap-x-20">
-          <div className="relative group">
-            <div className="overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
-              <img
-                className="object-cover w-full h-full transition-all duration-300 transform group-hover:scale-125"
-                src="https://cdn.rareblocks.xyz/collection/clarity/images/blog/1/blog-1.png"
-                alt=""
-              />
-            </div>
-            <p className="mt-6 text-sm font-normal text-gray-600 font-pj">
-              November 22, 2021
-            </p>
-            <p className="mt-4 text-xl font-bold text-gray-900 font-pj">
-              How To Optimize Progressive Web Apps: Going Beyond The Basics
-            </p>
-            <a href="#" title="">
-              <span className="absolute inset-0" aria-hidden="true"></span>
-            </a>
-          </div>
-
-          <div className="relative group">
-            <div className="overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
-              <img
-                className="object-cover w-full h-full transition-all duration-300 transform group-hover:scale-125"
-                src="https://cdn.rareblocks.xyz/collection/clarity/images/blog/1/blog-2.png"
-                alt=""
-              />
-            </div>
-            <p className="mt-6 text-sm font-normal text-gray-600 font-pj">
-              November 16, 2021
-            </p>
-            <p className="mt-4 text-xl font-bold text-gray-900 font-pj">
-              How To Optimize Progressive Web Apps: Going Beyond The Basics
-            </p>
-            <a href="#" title="">
-              <span className="absolute inset-0" aria-hidden="true"></span>
-            </a>
-          </div>
-        </div> */}
       </div>
     </section>
   );

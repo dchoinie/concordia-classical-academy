@@ -105,7 +105,7 @@ const AdmissionProcess = ({ data }: PageProps<MetadataProps>) => {
                       href={StudentApplicationForm}
                       theme="primary"
                       size="small"
-                      endIcon={faDownload}
+                      startIcon={faDownload}
                       download
                     />
                   </div>

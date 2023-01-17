@@ -8,8 +8,8 @@ import * as styles from "./hero.module.scss";
 const hero = () => {
   return (
     <div className={cx(styles.container)}>
-      <div className="flex h-full">
-        <div className="flex w-1/2 mr-12 flex-col justify-center">
+      <div className="flex gap-12 h-full">
+        <div className="flex w-1/2 flex-col justify-center">
           <h1 className="text-primary mb-4 font-bold">
             Concordia{" "}
             <span className="text-accent underline tracking-wider">
@@ -34,7 +34,7 @@ const hero = () => {
             <Button
               label="About CCA"
               theme="accent"
-              endIcon={faCircleInfo}
+              startIcon={faCircleInfo}
               link="/about/mission"
             />
           </div>

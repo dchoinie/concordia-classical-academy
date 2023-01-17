@@ -21,8 +21,7 @@ const SupplyList = ({ data }: any) => {
                 label="Download Supply List"
                 href={SupplyListPDF}
                 theme="primary"
-                size="large"
-                endIcon={faDownload}
+                startIcon={faDownload}
                 download
               />
             </div>

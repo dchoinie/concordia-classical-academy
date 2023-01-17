@@ -1,6 +1,8 @@
 import React from "react";
 import ShortPromo from "../assets/videos/promo_short.mp4";
 import Thumbnail from "../assets/images/promo_thumbnail2.png";
+import Button from "./button/button";
+import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const ClassicalEducation = () => {
   return (
@@ -37,21 +39,9 @@ const ClassicalEducation = () => {
             world.
           </p>
           <small className="italic text-gray-500 mb-12">
-            - Cheryl Swope, M.Ed
+            - Cheryl Swope, M.Ed - Author of Simply Classical: A Beautiful Education for Any Child
           </small>
-          <h2 className="text-3xl font-bold leading-tight text-primary">
-            What Are the Seven Liberal Arts?
-          </h2>
-          <p className="my-4 text-base leading-relaxed text-text">
-            The Seven Liberal Arts include the three arts of language (trivium)
-            and the four arts of mathematics (quadrivium). “Liberal” derives
-            from the Latin word for “free,” as these “arts of freedom” were
-            designed so free people could think about great ideas for the noble
-            service of others. In contrast, the “servile” arts, an education for
-            slaves, prepare for menial labor. The liberal arts enable an
-            individual to live, to study, to think, and to serve others in any
-            vocation.
-          </p>
+          <Button label="Learn More" theme="primary" endIcon={faAngleRight} link="/academics/what-is-classical-education" classes={['self-start']} />
         </div>
       </div>
     </div>

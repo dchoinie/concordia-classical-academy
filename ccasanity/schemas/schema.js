@@ -139,8 +139,35 @@ export default createSchema({
       ],
     },
   {
-      name: 'fees',
-      title: 'Fees',
+      name: 'tuitionFees',
+      title: 'Tuition Fees',
+      type: 'document',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        },
+        {
+          name: 'fee',
+          title: 'Fee',
+          type: 'number',
+        },
+        {
+          name: 'discount',
+          title: 'Discount',
+          type: 'number',
+        },
+        {
+          name: 'order',
+          title: 'Order',
+          type: 'number',
+        },
+      ],
+    },
+    {
+      name: 'adminFees',
+      title: 'Admin Fees',
       type: 'document',
       fields: [
         {
@@ -152,11 +179,6 @@ export default createSchema({
           name: 'fee',
           title: 'Fee',
           type: 'string',
-        },
-        {
-          name: 'order',
-          title: 'Order',
-          type: 'number',
         },
       ],
     },

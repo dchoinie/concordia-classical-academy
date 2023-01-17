@@ -1,0 +1,6 @@
+# Redirects from what the browser requests to what we serve
+/about              /about/mission
+/admissions         /admissions/admission-process
+/academics          /academics/what-is-classical-education
+/faith              /faith/good-shepherd
+

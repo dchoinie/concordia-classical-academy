@@ -197,7 +197,7 @@ const WhatIsClassicalEducation = () => {
           <hr className="my-6 border border-gray-200 w-2/3 mx-auto" />
           <div className="my-24 flex gap-24">
             <div className="flex flex-col w-1/2">
-              <h2 className="text-3xl text-gray-800 mb-6">
+              <h2 className="text-3xl text-gray-800">
                 The Lutheran Doctrine of Vocation
               </h2>
               <hr className="my-6 border border-gray-200 w-2/3" />
@@ -217,7 +217,7 @@ const WhatIsClassicalEducation = () => {
                 works through us, in spite of our weaknesses, to accomplish His
                 good purposes in our children. Again, Dr. Veith:
               </p>
-              <p className="italic text-gray-600 mb-2">
+              <p className="italic text-gray-500 mb-2">
                 God has chosen to work through human beings, who, in their
                 different capacities and according to their different talents,
                 serve each other. . . .The ability to read God&apos;s Word is an

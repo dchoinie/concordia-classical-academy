@@ -1,5 +1,5 @@
 import React from "react";
-import ShortPromo from "../assets/videos/promo_short.mp4";
+import ShortPromo from "../assets/videos/promo_short.mp4"
 import Thumbnail from "../assets/images/promo_thumbnail2.png";
 import Button from "./button/button";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +17,7 @@ const ClassicalEducation = () => {
             className="self-center rounded shadow-lg"
           >
             <source src={ShortPromo} type="video/mp4" />
+            Your browser does not support the video tag.
           </video>
         </div>
         <div className="flex w-1/2 h-full flex-col justify-center">

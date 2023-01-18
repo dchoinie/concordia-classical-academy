@@ -50,7 +50,7 @@ const MissionComponent = () => {
           alt="Mission"
           placeholder="blurred"
           height={400}
-          className="rounded shadow self-center"
+          className="rounded shadow-lg self-center"
         />
       </div>
     </div>

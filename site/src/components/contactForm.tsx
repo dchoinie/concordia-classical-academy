@@ -7,15 +7,11 @@ const ContactForm = (): JSX.Element => {
   return (
     <form
       method="POST"
-      action="https://getform.io/f/886d4216-d38e-4422-81b3-245a5a2fa361"
+      action="https://formspree.io/f/xoqzvlok"
       className="w-full flex flex-col p-6 rounded shadow border border-gray-100"
     >
       <div className="flex justify-between gap-6 mb-6">
-        <input
-          type="hidden"
-          name="_gotcha"
-          style={{ display: "none !important" }}
-        />
+        <input type="text" name="_gotcha" style={{ display: "none" }} />
         <input
           type="text"
           name="first_name"

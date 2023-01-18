@@ -19,7 +19,7 @@ const TuitionFinancialAssistance = ({ data }: any) => {
           <div className="mt-24 mb-48 flex gap-12">
             <div className="flex w-1/2">
               <StaticImage
-                src="../../assets/images/promo_thumbnail.png"
+                src="../../assets/images/chapel.png"
                 alt="Kids_In_Church"
                 className="rounded shadow-lg"
               />

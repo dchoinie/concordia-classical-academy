@@ -66,7 +66,7 @@ const header = (): JSX.Element => {
             <Button
               label="Parent Portal"
               theme="white"
-              endIcon={faRightToBracket}
+              startIcon={faRightToBracket}
               classes={["mr-2"]}
               size="small"
             />

@@ -199,6 +199,63 @@ export default createSchema({
           of: [{type: 'block'}]
         }
       ],
+    },
+    {
+      name: 'resources',
+      title: 'Resources',
+      type: 'document',
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        },
+        {
+          name: 'link',
+          title: 'Link',
+          type: 'string',
+        },
+        {
+          name: 'category',
+          title: 'Category',
+          type: 'string',
+          options: {
+            list: [
+              {
+                title: "Lutheran",
+                value: "lutheran",
+              },
+              {
+                title: "Educational",
+                value: "educational",
+              },
+            ]
+          }
+        },
+      ],
+    },
+    {
+      name: 'handbook',
+      title: 'Handbook',
+      type: 'document',
+      fields: [
+        {
+          name: 'section',
+          title: 'Section',
+          type: 'string',
+        },
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        },
+        {
+          name: 'extraContent',
+          title: 'Extra Content',
+          type: 'array',
+          of: [{type: 'block'}]
+        },
+      ],
     }
   ]),
 });

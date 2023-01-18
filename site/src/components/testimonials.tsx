@@ -47,7 +47,7 @@ const Testimonials = () => {
         {testimonials.map((testimonial: Record<string, string>) => (
           <div className="flex flex-col p-8 bg-gray-50 shadow rounded border border-gray-200">
             <p className="text-text mb-2">{`"${testimonial.text}"`}</p>
-            <p className="text-gray-500 italic">- {testimonial.date}</p>
+            <p className="text-accent italic">- {testimonial.date}</p>
           </div>
         ))}
       </div>

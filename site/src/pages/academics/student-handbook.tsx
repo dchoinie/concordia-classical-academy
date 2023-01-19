@@ -14,7 +14,12 @@ const StudentHandbook = ({ data }: any) => {
           <PageTitle title="Student Handbook" />
           <div className="my-24 grid grid-cols-2 gap-12">
             {data.handbook.edges.map((handbook: any) => (
-                <HandbookCard section={handbook.node.section} description={handbook.node.description} />
+              <HandbookCard
+                key={handbook.node.section}
+                section={handbook.node.section}
+                description={handbook.node.description}
+                extra={handbook.node.extraContent}
+              />
             ))}
           </div>
         </div>
@@ -24,7 +29,7 @@ const StudentHandbook = ({ data }: any) => {
 };
 
 export const query = graphql`
-  query MyQuery {
+  query HandbookQuery {
     handbook: allSanityHandbook(sort: { fields: section, order: ASC }) {
       edges {
         node {

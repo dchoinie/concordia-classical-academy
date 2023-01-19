@@ -127,7 +127,6 @@ const AdpotAStudentComponent = () => {
       </div>
       <div className="grid grid-cols-3 gap-12 mb-6">
         {data.allStripePrice.edges.map((d: any) => {
-          console.log(getBuyButtonUrl(d.node.product.name));
           return (
             <AdoptCard
               name={d.node.product.name}

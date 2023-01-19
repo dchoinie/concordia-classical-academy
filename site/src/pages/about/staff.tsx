@@ -20,7 +20,8 @@ const Staff = ({ data }: any) => {
                 name={staff.node.name}
                 position={staff.node.position}
                 title={staff.node.title}
-                imageUrl={staff.node.headshot.asset.url}
+                phone={staff.node.phone}
+                // imageUrl={staff.node.headshot.asset.url}
               />
             ))}
           </div>
@@ -31,24 +32,19 @@ const Staff = ({ data }: any) => {
 };
 
 export const query = graphql`
-  query MyQuery {
-    staff: allSanityStaffMember(sort: { fields: name, order: ASC }) {
+  query {
+    staff: allSanityStaffMember(sort: {fields: order, order: ASC}) {
       edges {
         node {
-          id
           email
           name
           position
           title
-          headshot {
-            asset {
-              url
-            }
-          }
+          phone
         }
       }
     }
   }
-`;
+`
 
 export default Staff;

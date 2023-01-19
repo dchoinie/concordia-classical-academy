@@ -17,11 +17,6 @@ export default createSchema({
       type: "document",
       fields: [
         {
-          title: "Name",
-          name: "name",
-          type: "string",
-        },
-        {
           title: "Title",
           name: "title",
           type: "string",
@@ -36,6 +31,11 @@ export default createSchema({
           },
         },
         {
+          title: "Name",
+          name: "name",
+          type: "string",
+        },
+        {
           title: "Position",
           name: "position",
           type: "string",
@@ -46,9 +46,19 @@ export default createSchema({
           type: "string",
         },
         {
+          name: 'phone',
+          title: 'Phone',
+          type: 'string',
+        },
+        {
           title: "Headshot",
           name: "headshot",
           type: "image",
+        },
+        {
+          name: 'order',
+          title: 'Order',
+          type: 'number',
         },
       ],
     },
@@ -254,6 +264,18 @@ export default createSchema({
           title: 'Extra Content',
           type: 'array',
           of: [{type: 'block'}]
+        },
+      ],
+    },
+    {
+      name: 'mission',
+      title: 'Mission',
+      type: 'document',
+      fields: [
+        {
+          name: 'missionStatement',
+          title: 'Mission Statement',
+          type: 'text',
         },
       ],
     }

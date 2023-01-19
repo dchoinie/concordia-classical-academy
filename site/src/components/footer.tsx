@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { StaticImage } from "gatsby-plugin-image";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
@@ -12,22 +12,8 @@ import Button from "./button/button";
 interface FooterItem {
   label: string;
   link: string;
+  subLinks?: FooterItem[];
 }
-
-const admissionCol = [
-  {
-    label: "Request Information",
-    link: "/request-information",
-  },
-  {
-    label: "Admission Process",
-    link: "/admissions/admission-process",
-  },
-  {
-    label: "Tuition / Financial Assistance",
-    link: "/tuition-financial-assistance",
-  },
-];
 
 const legalCol = [
   {
@@ -85,13 +71,60 @@ const brandCol = (
   </div>
 );
 
-const footer = () => {
+const footer = (): JSX.Element => {
+  const data = useStaticQuery(graphql`
+    query NavQuery {
+      navItems: allSanityNavItem(sort: { order: ASC, fields: order }) {
+        edges {
+          node {
+            label
+            link
+            subLinks {
+              label
+              link
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const sort = (a: any, b: any) => {
+    if (a.label < b.label) {
+      return -1;
+    }
+    if (a.label > b.label) {
+      return 1;
+    }
+    return 0;
+  };
+
+  const topNavItems = data.navItems.edges.map((navItem: any) => navItem.node);
+  const subNavItems = topNavItems
+    .filter((topNavItem: any) => topNavItem.subLinks.length > 0)
+    .map((topNavItem: any) =>
+      topNavItem.subLinks.flatMap((subItem: any) => subItem)
+    );
+  const subs = subNavItems.flatMap((subItem: any) => subItem);
+  const allNavItemsToDisplay = topNavItems
+    .filter((topNavItem: any) => topNavItem.subLinks.length < 1)
+    .concat(subs).sort(sort);
+
   return (
     <div className="w-full bg-primary">
       <div className="max-w-screen-xl mx-auto pt-12 pb-6">
         <div className="flex w-full justify-between mb-6">
           {brandCol}
-          {footerCol("Admissions", admissionCol)}
+          <div>
+            <p className="text-gray-200 text-center mb-2">Navigation</p>
+            <div className="grid grid-cols-3 gap-x-2 gap-y-1 place-items-center">
+              {allNavItemsToDisplay.map((item: any) => (
+                <Link to={item.link} className="text-gray-400">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
           {footerCol("Legal", legalCol)}
           <div className="flex flex-col">
             <p className="text-gray-200">Parents / Teachers</p>

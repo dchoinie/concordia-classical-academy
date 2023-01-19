@@ -26,7 +26,7 @@ const TuitionFinancialAssistance = ({ data }: any) => {
             </div>
             <div className="flex flex-col w-1/2">
               <p className="mb-4">At Concordia Classical Academy it costs $6,500 to educate a student. We are fortunate to be a mission of Good Shepherd Lutheran Church. Each student receives the Good Shepherd Scholarship. This provides a significant discount to each student.</p>
-              <p className="mb-4">There are additional discounts for families with more than one student in first through eighth grade. Tuition assistance is also available on a needs-based program that works with a sliding scale, base on income. Pay your family&apos;s total tuition by cash or check no later than September 15 and receive a 5% discount of the total tuition due.</p>
+              <p className="mb-4">There are additional discounts for families with 3+ students in first through eighth grade. Tuition assistance is also available on a needs-based program that works with a sliding scale, base on income. Pay your family&apos;s total tuition by cash or check no later than September 15 and receive a 5% discount of the total tuition due.</p>
               <p className="mb-4">
               To apply for tuition assistance, click the button below to download the Tuition Assistance Application form and return to the CCA office.
               Parents are invited to work with the Concordia Classical Academy School Board if the tuition is causing concerns. Contact 507.388.4336 or ccamankato@gmail.com.

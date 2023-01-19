@@ -21,7 +21,7 @@ const ClassicalEducation = () => {
           </video>
         </div>
         <div className="flex w-1/2 h-full flex-col justify-center">
-          <h2 className="text-3xl font-bold text-primary">
+          <h2 className="font-bold text-primary">
             What Is Classical Lutheran Education?
           </h2>
           <p className="my-4 text-base leading-relaxed text-text">

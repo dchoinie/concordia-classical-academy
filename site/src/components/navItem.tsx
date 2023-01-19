@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import cx from "classnames";
 import { Link } from "gatsby";
 import OutsideClickHandler from "react-outside-click-handler";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,7 +24,7 @@ const NavItem = ({ id, label, link, subLinks }: NavItemType) => {
               />
             </div>
             {isOpen && (
-              <div className="absolute mt-2 p-4 pr-8 rounded shadow-md border border-grey-500 z-50 bg-white">
+              <div className={cx('absolute mt-2 p-4 rounded shadow-md border border-grey-500 z-50 bg-white', 'navDropdown')}>
                 <ul className="flex flex-col">
                   {subLinks.map((subItem: SubMenuItem) => (
                     <Link

@@ -10,7 +10,7 @@ const config: GatsbyConfig = {
     siteUrl: `https://www.ccamankato.org`,
     address: `2101 Lor Ray Drive, North Mankato, MN 56003`,
     phone: `507.388.4336`,
-    email: `info@ccamankato.org`,
+    email: `ccamankato@gmail.com`,
     image: `./src/assets/images/logo_no_background.png`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

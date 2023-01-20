@@ -8,6 +8,16 @@ import { SEO } from "../../components/seo";
 import SupplyCard from "../../components/supplyCard";
 import SupplyListPDF from "../../assets/documents/Supply_List.pdf";
 
+interface ContentChildren {
+  text: string;
+}
+
+interface SupplyList {
+  content: ContentChildren;
+  grade: string;
+  id: string;
+}
+
 const SupplyList = ({ data }: any) => {
   return (
     <>
@@ -26,10 +36,11 @@ const SupplyList = ({ data }: any) => {
               />
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {data.supplyList.edges.map((supply: any) => (
+              {data.supplyList.nodes.map((supply: SupplyList) => (
                 <SupplyCard
-                  grade={supply.node.grade}
-                  list={supply.node.content}
+                  key={supply.id}
+                  grade={supply.grade}
+                  list={supply.content}
                 />
               ))}
             </div>
@@ -41,16 +52,14 @@ const SupplyList = ({ data }: any) => {
 };
 
 export const query = graphql`
-  query MyQuery {
+  query SupplyQuery {
     supplyList: allSanitySupplyList(sort: { fields: grade, order: ASC }) {
-      edges {
-        node {
-          id
-          grade
-          content {
-            children {
-              text
-            }
+      nodes {
+        id
+        grade
+        content {
+          children {
+            text
           }
         }
       }

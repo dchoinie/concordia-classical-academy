@@ -3,6 +3,10 @@ import Layout from "../../components/layout";
 import PageTitle from "../../components/pageTitle";
 import { SEO } from "../../components/seo";
 
+interface ChristianEducationItem {
+  text: string;
+}
+
 const bullets = [
   {
     text: "Report more frequent experiences with God in their personal lives.",
@@ -94,7 +98,7 @@ const ChristianEducation = () => {
               </h6>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-              {bullets.map((bullet) => (
+              {bullets.map((bullet: ChristianEducationItem) => (
                 <div className="bg-gray-50 p-6 rounded shadow-lg">
                   <p>{bullet.text}</p>
                 </div>
@@ -131,15 +135,15 @@ const ChristianEducation = () => {
             <div className="flex flex-col lg:flex-row gap-12">
               <div className="flex flex-col w-full lg:w-1/2 gap-6">
                 {lutheranSchoolsParagraphs
-                  .filter((text, i) => i < 5)
-                  .map((text, i: number) => (
+                  .filter((_, i) => i < 5)
+                  .map((text: ChristianEducationItem) => (
                     <p className="text-gray-700">{text.text}</p>
                   ))}
               </div>
               <div className="flex flex-col w-full lg:w-1/2 gap-6">
                 {lutheranSchoolsParagraphs
-                  .filter((text, i) => i > 5)
-                  .map((text, i: number) => (
+                  .filter((_, i) => i > 5)
+                  .map((text: ChristianEducationItem) => (
                     <p className="text-gray-700">{text.text}</p>
                   ))}
               </div>

@@ -4,6 +4,11 @@ import Thumbnail from "../assets/images/promo_thumbnail4.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
+interface WhyItem {
+  title: string;
+  text: string;
+}
+
 const educ = [
   {
     title: "Christ-Centered",
@@ -76,7 +81,7 @@ const WhyCCAComponent = () => {
           Qualities of Lutheran Education:
         </h5>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12 gap-y-6">
-          {educ.map((e: any) => (
+          {educ.map((e: WhyItem) => (
             <div className="flex mb-4">
               <FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" />
               <div className="flex flex-col">

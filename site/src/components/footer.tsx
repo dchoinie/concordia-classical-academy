@@ -9,10 +9,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Button from "./button/button";
 
-interface FooterItem {
+interface SubNavItem {
   label: string;
   link: string;
-  subLinks?: FooterItem[];
+}
+
+interface TopNavItem {
+  label: string;
+  link: string;
+  subLinks?: SubNavItem[];
 }
 
 const legalCol = [
@@ -34,10 +39,10 @@ const legalCol = [
   },
 ];
 
-const footerCol = (title: string, items: FooterItem[]) => (
+const footerCol = (title: string, items: SubNavItem[]) => (
   <div className="flex flex-col items-center lg:items-start mb-6 lg:mb-0">
     <p className="text-gray-200">{title}</p>
-    {items.map((item: FooterItem) => (
+    {items.map((item: SubNavItem) => (
       <Link key={item.label} to={item.link} className="text-gray-400">
         {item.label}
       </Link>
@@ -75,14 +80,12 @@ const footer = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     query NavQuery {
       navItems: allSanityNavItem(sort: { order: ASC, fields: order }) {
-        edges {
-          node {
+        nodes {
+          label
+          link
+          subLinks {
             label
             link
-            subLinks {
-              label
-              link
-            }
           }
         }
       }
@@ -99,16 +102,17 @@ const footer = (): JSX.Element => {
     return 0;
   };
 
-  const topNavItems = data.navItems.edges.map((navItem: any) => navItem.node);
+  const topNavItems = data.navItems.nodes.map((navItem: TopNavItem) => navItem);
   const subNavItems = topNavItems
-    .filter((topNavItem: any) => topNavItem.subLinks.length > 0)
-    .map((topNavItem: any) =>
-      topNavItem.subLinks.flatMap((subItem: any) => subItem)
+    .filter((topNavItem: TopNavItem) => topNavItem.subLinks && topNavItem.subLinks.length > 0)
+    .map((topNavItem: TopNavItem) => topNavItem.subLinks &&
+      topNavItem.subLinks.flatMap((subItem: SubNavItem) => subItem)
     );
-  const subs = subNavItems.flatMap((subItem: any) => subItem);
+  const subs = subNavItems.flatMap((subItem: SubNavItem) => subItem);
   const allNavItemsToDisplay = topNavItems
-    .filter((topNavItem: any) => topNavItem.subLinks.length < 1)
-    .concat(subs).sort(sort);
+    .filter((topNavItem: TopNavItem) => topNavItem.subLinks && topNavItem.subLinks.length < 1)
+    .concat(subs)
+    .sort(sort);
 
   return (
     <div className="w-full bg-primary">

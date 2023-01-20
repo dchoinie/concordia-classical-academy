@@ -6,10 +6,8 @@ const MissionComponent = () => {
   const data = useStaticQuery(graphql`
     query MissionQuery {
       mission: allSanityMission {
-        edges {
-          node {
-            missionStatement
-          }
+        nodes {
+          missionStatement
         }
       }
     }
@@ -22,7 +20,7 @@ const MissionComponent = () => {
           <div className="flex flex-col">
             <h2 className="text-3xl font-bold text-primary">Mission</h2>
             <hr className="my-3 border-border-gray-200 w-2/3" />
-            <h5>{data.mission.edges[0].node.missionStatement}</h5>
+            <h5>{data.mission.nodes[0].missionStatement}</h5>
           </div>
         </div>
         <div className="flex w-full lg:w-1/2 justify-center">

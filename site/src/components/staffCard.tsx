@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./button/button";
 
-interface StaffCard {
+export interface StaffMember {
   email: string;
   imageUrl?: string;
   name: string;
@@ -10,7 +10,7 @@ interface StaffCard {
   title: string;
 }
 
-const StaffCard = ({ name, title, imageUrl, position, email, phone }: StaffCard) => {
+const StaffCard = ({ name, title, imageUrl, position, email, phone }: StaffMember) => {
   return (
     <div className="relative group">
       {/* <div className="overflow-hidden rounded-lg aspect-w-4 aspect-h-3 mb-3">

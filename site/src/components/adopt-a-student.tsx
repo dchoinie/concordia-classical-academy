@@ -2,6 +2,20 @@ import { graphql, useStaticQuery } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import AdoptCard from "./adoptCard";
+import { formatPrice, getBuyButtonUrl } from "../helpers/stripeHelpers";
+
+interface Product {
+  id: string;
+  name: string;
+}
+
+interface AdoptProduct {
+  active: string;
+  currency: string;
+  id: string;
+  product: Product;
+  unit_amount: number;
+}
 
 const buyButtons = [
   {
@@ -32,36 +46,24 @@ const buyButtons = [
 
 const AdpotAStudentComponent = () => {
   const data = useStaticQuery(graphql`
-    query adoptQuery {
+    query AdpotQuery {
       allStripePrice(
-        filter: {
-          active: { eq: true }
-          product: { name: { ne: "General Donation" } }
-        }
-        sort: { fields: product___name }
+        sort: { fields: product___name, order: ASC }
+        filter: { product: { name: { regex: "/([a-zA-Z]+(-[a-zA-Z]+)+)/i" } } }
       ) {
-        edges {
-          node {
+        nodes {
+          active
+          id
+          unit_amount
+          product {
+            name
             id
-            product {
-              name
-              id
-            }
-            unit_amount
-            active
-            currency
           }
+          currency
         }
       }
     }
   `);
-
-  const formatPrice = (price: number) => `$${price / 100}`;
-
-  const getBuyButtonUrl = (name: string): string | undefined => {
-    const found = buyButtons.find((b) => name === b.name);
-    return found?.url;
-  };
 
   return (
     <div className="my-24">
@@ -126,12 +128,12 @@ const AdpotAStudentComponent = () => {
         </h5>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-6">
-        {data.allStripePrice.edges.map((d: any) => {
+        {data.allStripePrice.nodes.map((adoptProduct: AdoptProduct) => {
           return (
             <AdoptCard
-              name={d.node.product.name}
-              price={formatPrice(d.node.unit_amount)}
-              url={getBuyButtonUrl(d.node.product.name)}
+              name={adoptProduct.product.name}
+              price={formatPrice(adoptProduct.unit_amount)}
+              url={getBuyButtonUrl(adoptProduct.product.name, buyButtons)}
             />
           );
         })}

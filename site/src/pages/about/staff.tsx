@@ -3,7 +3,7 @@ import React from "react";
 import Layout from "../../components/layout";
 import PageTitle from "../../components/pageTitle";
 import { SEO } from "../../components/seo";
-import StaffCard from "../../components/staffCard";
+import StaffCard, { StaffMember } from "../../components/staffCard";
 
 const Staff = ({ data }: any) => {
   return (
@@ -13,15 +13,15 @@ const Staff = ({ data }: any) => {
         <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="Staff" />
           <div className="my-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {data.staff.edges.map((staff: any) => (
+            {data.staff.nodes.map((staff: StaffMember) => (
               <StaffCard
-                key={staff.node.name}
-                email={staff.node.email}
-                name={staff.node.name}
-                position={staff.node.position}
-                title={staff.node.title}
-                phone={staff.node.phone}
-                // imageUrl={staff.node.headshot.asset.url}
+                key={staff.name}
+                email={staff.email}
+                name={staff.name}
+                position={staff.position}
+                title={staff.title}
+                phone={staff.phone}
+                // imageUrl={staff.headshot.asset.url}
               />
             ))}
           </div>
@@ -32,19 +32,22 @@ const Staff = ({ data }: any) => {
 };
 
 export const query = graphql`
-  query {
-    staff: allSanityStaffMember(sort: {fields: order, order: ASC}) {
-      edges {
-        node {
-          email
-          name
-          position
-          title
-          phone
+  query StaffQuery {
+    staff: allSanityStaffMember(sort: { fields: order, order: ASC }) {
+      nodes {
+        email
+        name
+        position
+        title
+        phone
+        headshot {
+          asset {
+            url
+          }
         }
       }
     }
   }
-`
+`;
 
 export default Staff;

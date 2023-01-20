@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
+import cx from "classnames";
 import NavItem from "./navItem";
 import { StaticImage } from "gatsby-plugin-image";
 import { NavItemType } from "../types/common";
@@ -11,6 +12,7 @@ import {
   faPhone,
   faEnvelope,
   faBars,
+  faX,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OutsideClickHandler from "react-outside-click-handler";
@@ -47,42 +49,77 @@ const header = (): JSX.Element => {
     <div className="w-full">
       <div className="bg-primary">
         {/* mobile nav */}
-        <div className="flex justify-end py-6 mx-6 lg:hidden">
+        <div className={cx("py-6 mx-6 lg:hidden")}>
           <OutsideClickHandler onOutsideClick={() => setIsOpen(false)}>
-            <FontAwesomeIcon
-              icon={faBars}
-              className="text-white text-2xl relative"
-              onClick={() => setIsOpen(!isOpen)}
-            />
+            <div className="flex w-full justify-between">
+              <div className="flex text-white">
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="self-center mr-2"
+                />
+                <span>{data.site.siteMetadata.email}</span>
+              </div>
+              {isOpen ? (
+                <FontAwesomeIcon
+                  icon={faX}
+                  className="text-white text-2xl relative"
+                  onClick={() => setIsOpen(!isOpen)}
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faBars}
+                  className="text-white text-2xl relative"
+                  onClick={() => setIsOpen(!isOpen)}
+                />
+              )}
+            </div>
             {isOpen && (
-              <div className="absolute w-full bg-white left-0 z-30 mt-6 p-6 text-lg border border-gray-200 shadow-lg">
-                {data.nav.nodes.map((node: NavItemType) => (
-                  <div key={node.label} className="flex flex-col">
-                    <Link
-                      key={node.label}
-                      to={node.link}
-                      className="hover:text-primary hover:underline mb-1"
-                    >
-                      {node.label}
-                    </Link>
-                    {node.subLinks &&
-                      node.subLinks.map((subLink: any) => (
+              <div
+                className={cx(
+                  "w-3/4 bg-white right-0 z-30 mt-6 p-6 absolute text-lg transition-all ease-in-out duration-300 border border-gray-200 shadow-lg",
+                  isOpen ? "translate-x-0" : "translate-x-full"
+                )}
+              >
+                <div className="flex flex-col items-center">
+                  <StaticImage
+                    src="../assets/images/logo_no_background.png"
+                    alt="CCA Logo"
+                    placeholder="blurred"
+                    layout="fixed"
+                    height={150}
+                    className="lg:mr-32 mb-6"
+                  />
+                  <div className="text-center">
+                    {data.nav.nodes.map((node: NavItemType) => (
+                      <div key={node.label} className="flex flex-col mb-4">
                         <Link
-                          key={subLink.label}
-                          to={subLink.link}
-                          className="ml-4 hover:text-primary hover:underline mb-1"
+                          key={node.label}
+                          to={node.link}
+                          className="hover:text-primary hover:underline mb-1 underline"
                         >
-                          {subLink.label}
+                          {node.label}
                         </Link>
-                      ))}
+                        {node.subLinks &&
+                          node.subLinks.map((subLink: any) => (
+                            <Link
+                              key={subLink.label}
+                              to={subLink.link}
+                              className="text-gray-700 hover:text-primary hover:underline mb-1"
+                            >
+                              {subLink.label}
+                            </Link>
+                          ))}
+                      </div>
+                    ))}
                   </div>
-                ))}
-                <div className="flex justify-center gap-12 mt-6">
+                </div>
+                <div className="flex flex-col items-center my-6">
                   <Button
                     label="Parent Portal"
                     theme="primary"
                     startIcon={faRightToBracket}
                     size="small"
+                    classes={['mb-6']}
                   />
                   <Button
                     label="Apply Now"

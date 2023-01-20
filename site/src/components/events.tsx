@@ -8,24 +8,22 @@ import { EventType } from "../types/common";
 
 const Events = () => {
   const data = useStaticQuery(graphql`
-    query eventsQuery {
-      allSanityEvent(sort: { fields: startDate }) {
-        edges {
-          node {
-            endDate
-            id
-            image {
-              asset {
-                url
-              }
+    query EventsQuery {
+      events: allSanityEvent(sort: { fields: startDate }) {
+        nodes {
+          endDate
+          startDate
+          id
+          image {
+            asset {
+              url
             }
-            name
-            slug {
-              current
-            }
-            startDate
-            summary
           }
+          name
+          slug {
+            current
+          }
+          summary
         }
       }
     }
@@ -50,34 +48,32 @@ const Events = () => {
             link="/events"
           />
         </div>
-
-        <div className="w-full grid grid-cols-1 lg:auto-cols-max gap-8 mt-8">
-          {data.allSanityEvent.edges
+        <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-12 mt-8">
+          {data.events.nodes
             .filter(
-              (event: any) => event.node.startDate > new Date().toISOString()
+              (event: any) => event.startDate > new Date().toISOString()
             )
             .slice(0, 3)
-            .map((event: any) => {
-              const e: EventType = event.node;
+            .map((event: EventType) => {
               return (
-                <div key={e.id} className="relative group mt-8">
+                <div key={event.id} className="relative group mt-8">
                   <div className="flex justify-center overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
                     <img
                       className="object-cover h-56 shadow transition-all duration-300 transform group-hover:scale-125"
-                      src={e.image.asset.url}
-                      alt={e.slug.current}
+                      src={event.image.asset.url}
+                      alt={event.slug.current}
                     />
                   </div>
                   <p className="mt-6 text-center text-sm font-normal text-gray-600">
                     <span>
-                      {moment(e.startDate).format("MMM. DD, YYYY | h:mma")}
+                      {moment(event.startDate).format("MMM. DD, YYYY | h:mma")}
                     </span>
-                    <span> - {moment(e.endDate).format("h:mma")}</span>
+                    <span> - {moment(event.endDate).format("h:mma")}</span>
                   </p>
                   <p className="text-xl text-center font-bold text-primary my-1">
-                    {e.name}
+                    {event.name}
                   </p>
-                  <p className="text-center">{e.summary}</p>
+                  <p className="text-center">{event.summary}</p>
                 </div>
               );
             })}

@@ -14,17 +14,17 @@ const TuitionFinancialAssistance = ({ data }: any) => {
     <>
       <SEO title="Tuition & Financial Assistance" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="Tuition & Financial Assistance" />
-          <div className="mt-24 mb-48 flex gap-12">
-            <div className="flex w-1/2">
+          <div className="mt-24 mb-48 flex flex-col lg:flex-row gap-12">
+            <div className="flex w-full lg:w-1/2">
               <StaticImage
                 src="../../assets/images/chapel.png"
                 alt="Kids_In_Church"
                 className="rounded shadow-lg"
               />
             </div>
-            <div className="flex flex-col w-1/2">
+            <div className="flex flex-col w-full lg:w-1/2">
               <p className="mb-4">At Concordia Classical Academy it costs $6,500 to educate a student. We are fortunate to be a mission of Good Shepherd Lutheran Church. Each student receives the Good Shepherd Scholarship. This provides a significant discount to each student.</p>
               <p className="mb-4">There are additional discounts for families with 3+ students in first through eighth grade. Tuition assistance is also available on a needs-based program that works with a sliding scale, base on income. Pay your family&apos;s total tuition by cash or check no later than September 15 and receive a 5% discount of the total tuition due.</p>
               <p className="mb-4">
@@ -34,7 +34,7 @@ const TuitionFinancialAssistance = ({ data }: any) => {
               <Button label="Download Tuition Assistance Application" theme="primary" startIcon={faDownload} href={Tuition_Assistance_Application} download classes={['self-start', 'tracking-wider']} />
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-12 my-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 my-24">
             {data.tuition.edges.map((fee: any) => (
               <FeeCard
                 title={fee.node.title}

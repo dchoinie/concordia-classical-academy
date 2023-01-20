@@ -29,15 +29,15 @@ const WhatIsClassicalEducation = () => {
     <>
       <SEO title="What Is Classical Education?" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="What Is Classical Education?" />
-          <div className="my-24 flex gap-24">
-            <div className="flex w-1/2">
+          <div className="my-24 flex flex-col lg:flex-row gap-24">
+            <div className="flex w-full lg:w-1/2">
               <h2 className="text-3xl self-center text-gray-800">
                 What Are the Seven Liberal Arts?
               </h2>
             </div>
-            <div className="flex w-1/2">
+            <div className="flex w-full lg:w-1/2">
               <p className="text-gray-600">
                 The Seven Liberal Arts include the three arts of language
                 (trivium) and the four arts of mathematics (quadrivium).
@@ -51,7 +51,7 @@ const WhatIsClassicalEducation = () => {
             </div>
           </div>
           <hr className="my-6 border border-gray-200 w-2/3 mx-auto" />
-          <div className="grid grid-cols-2 gap-24 my-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 my-24">
             <div className="flex flex-col">
               <h3 className="text-2xl text-gray-800 mb-6">
                 The Arts of Language: The Trivium (3)
@@ -162,13 +162,13 @@ const WhatIsClassicalEducation = () => {
             </div>
           </div>
           <hr className="my-6 border border-gray-200 w-2/3 mx-auto" />
-          <div className="my-24 flex gap-24">
-            <div className="flex w-1/2">
+          <div className="my-24 flex flex-col lg:flex-row gap-24">
+            <div className="flex w-full lg:w-1/2">
               <h2 className="text-3xl self-center text-gray-800">
                 What Is Catechesis?
               </h2>
             </div>
-            <div className="flex flex-col w-1/2">
+            <div className="flex flex-col w-full lg:w-1/2">
               <p className="text-gray-600 mb-2">
                 ...instruction for children and the simple folk. Therefore, in
                 ancient times it was called in Greek catechism (i.e.,
@@ -187,7 +187,7 @@ const WhatIsClassicalEducation = () => {
               </p>
             </div>
           </div>
-          <div className="my-24 grid grid-cols-3 gap-12">
+          <div className="my-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {smallCatechism.map((text) => (
               <div className="bg-primary p-6 rounded shadow-lg border border-gray-200">
                 <p className="text-white text-center">{text.text}</p>
@@ -195,8 +195,8 @@ const WhatIsClassicalEducation = () => {
             ))}
           </div>
           <hr className="my-6 border border-gray-200 w-2/3 mx-auto" />
-          <div className="my-24 flex gap-24">
-            <div className="flex flex-col w-1/2">
+          <div className="my-24 flex flex-col lg:flex-row gap-24">
+            <div className="flex flex-col w-full lg:w-1/2">
               <h2 className="text-3xl text-gray-800">
                 The Lutheran Doctrine of Vocation
               </h2>
@@ -211,7 +211,7 @@ const WhatIsClassicalEducation = () => {
                 to support us in our task.
               </p>
             </div>
-            <div className="flex flex-col w-1/2">
+            <div className="flex flex-col w-full lg:w-1/2">
               <p className="text-gray-600 mb-2">
                 Parents and teachers can take heart. Remember that God Himself
                 works through us, in spite of our weaknesses, to accomplish His

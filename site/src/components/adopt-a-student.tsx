@@ -65,8 +65,8 @@ const AdpotAStudentComponent = () => {
 
   return (
     <div className="my-24">
-      <div className="flex gap-12 mb-24">
-        <div className="flex w-1/2 self-start">
+      <div className="flex flex-col lg:flex-row gap-12 mb-24">
+        <div className="flex w-full lg:w-1/2 self-start">
           <StaticImage
             src="../assets/images/adoptImage.jpg"
             alt="Adopt-A-Student"
@@ -75,7 +75,7 @@ const AdpotAStudentComponent = () => {
             className="rounded shadow"
           />
         </div>
-        <div className="flex flex-col w-1/2">
+        <div className="flex flex-col w-full lg:w-1/2">
           <p className="mb-6">
             The work of God has given us to do here at Good Shepherd and
             Concordia Classical Academy finds its' foundation and focus on the
@@ -118,14 +118,14 @@ const AdpotAStudentComponent = () => {
       </div>
       <div className="max-w-3xl mx-auto text-text text-center my-12">
         <h5>
-          The cost of education at Concordia Classical Academy is $4500. While
+          The cost of education at Concordia Classical Academy is $6000. While
           most families pay tuition, this only covers a portion of the total
           cost. CCA subsidizes each child's education through the generous gifts
           of Christian men &amp; women who see the value of a classical
           Chrisitan education.
         </h5>
       </div>
-      <div className="grid grid-cols-3 gap-12 mb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-6">
         {data.allStripePrice.edges.map((d: any) => {
           return (
             <AdoptCard

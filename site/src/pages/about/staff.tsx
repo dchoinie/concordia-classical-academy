@@ -10,9 +10,9 @@ const Staff = ({ data }: any) => {
     <>
       <SEO title="Staff" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="Staff" />
-          <div className="my-24 grid grid-cols-4 gap-12">
+          <div className="my-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {data.staff.edges.map((staff: any) => (
               <StaffCard
                 key={staff.node.name}

@@ -29,7 +29,7 @@ const AdmissionProcess = ({ data }: PageProps<MetadataProps>) => {
     <>
       <SEO title="Admissions Process" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle
             title="Admissions Process"
             subTitle="Follow the simple steps below to begin the process of enrolling your child/children at CCA. We look forward to meeting you!"

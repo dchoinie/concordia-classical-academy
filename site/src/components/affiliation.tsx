@@ -3,53 +3,11 @@ import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Button from "./button/button";
 
-const makeADifference = [
-  {
-    text: "Report more frequent experiences with God in their personal lives",
-  },
-  {
-    text: "Exhibit a more consistent belief in the divinity of Jesus",
-  },
-  {
-    text: "Profess a greater clarity on the way of salvation by grace through faith in Jesus Christ alone (show more tendency to reject belief in salvation by works)",
-  },
-  {
-    text: "Display more Biblical knowledge",
-  },
-  {
-    text: "Engage in a much fuller devotional life",
-  },
-  {
-    text: "Do more witnessing to others about Christ",
-  },
-  {
-    text: "Hold a more balanced theology (not liberal, not ultraconservative, but a balanced conservatism)",
-  },
-  {
-    text: "Give a high value to relationships with God and other persons",
-  },
-  {
-    text: "Show a more reasonable respect for authority",
-  },
-  {
-    text: "Live out stronger tendencies to be forgiving and personally forthright with other people",
-  },
-  {
-    text: "Evidence greater avoidance of over-simplistic views. (i.e., views of social issues as mere power struggles.)",
-  },
-  {
-    text: "Reveal less tendency to be anxious about their faith",
-  },
-  {
-    text: "Are less swayed by their peers",
-  },
-];
-
 const AffiliationComponent = () => {
   return (
     <>
-      <div className="flex gap-24 my-24">
-        <div className="flex flex-col w-1/2">
+      <div className="flex flex-col-reverse lg:flex-row gap-24 my-24">
+        <div className="flex flex-col w-full lg:w-1/2">
           <p className="mb-6">
             Concordia Classical is a ministry of Good Shepherd Lutheran Church
             (LCMS) located in North Mankato, MN. The mission of Good Shepherd is{" "}
@@ -98,7 +56,7 @@ const AffiliationComponent = () => {
             classes={["mt-6 self-start"]}
           />
         </div>
-        <div className="flex w-1/2 self-start">
+        <div className="flex w-full lg:w-1/2 self-start">
           <a
             href="http://www.goodshepherdmankato.org/"
             target="_blank"
@@ -114,7 +72,7 @@ const AffiliationComponent = () => {
         </div>
       </div>
       <div className="border-t border-gray-200 w-2/3 mx-auto my-12"></div>
-      <div className="flex gap-24 my-24">
+      <div className="flex flex-col lg:flex-row gap-24 my-24">
         <div className="flex w-1/2 self-center">
           <a
             href="https://www.lcms.org/"
@@ -128,7 +86,7 @@ const AffiliationComponent = () => {
             />
           </a>
         </div>
-        <div className="flex flex-col w-1/2">
+        <div className="flex flex-col w-full lg:w-1/2">
           <p className="mb-6">
             Concordia Classical Academy is affiliated with the Lutheran Church
             Missouri Synod. The Lutheran Church Missouri Synod has a reputation

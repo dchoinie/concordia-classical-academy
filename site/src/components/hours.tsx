@@ -3,7 +3,7 @@ import React from "react";
 const HoursComponent = () => {
   return (
     <div className="my-24">
-      <table className="w-2/3 mx-auto table-fixed border border-primary shadow">
+      <table className="w-full lg:w-2/3 mx-auto table-fixed border border-primary shadow">
         <thead>
           <tr className="py-6 text-white bg-primary">
             <th className="p-6">Program</th>

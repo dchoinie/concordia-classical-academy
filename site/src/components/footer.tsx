@@ -35,7 +35,7 @@ const legalCol = [
 ];
 
 const footerCol = (title: string, items: FooterItem[]) => (
-  <div className="flex flex-col">
+  <div className="flex flex-col items-center lg:items-start mb-6 lg:mb-0">
     <p className="text-gray-200">{title}</p>
     {items.map((item: FooterItem) => (
       <Link key={item.label} to={item.link} className="text-gray-400">
@@ -46,13 +46,13 @@ const footerCol = (title: string, items: FooterItem[]) => (
 );
 
 const brandCol = (
-  <div className="flex flex-col">
+  <div className="flex items-center lg:items-start flex-col mb-6 lg:mb-0">
     <StaticImage
       src="../assets/images/luther-rose.png"
       alt="Luther Rose"
       height={50}
       placeholder="blurred"
-      className="self-start mb-2"
+      className="lg:self-start self-center mb-2"
     />
     <h6 className="text-gray-200 mb-2">Concordia Classical Academy</h6>
     <div className="flex text-gray-200 text-lg">
@@ -112,21 +112,21 @@ const footer = (): JSX.Element => {
 
   return (
     <div className="w-full bg-primary">
-      <div className="max-w-screen-xl mx-auto pt-12 pb-6">
-        <div className="flex w-full justify-between mb-6">
+      <div className="max-w-screen-xl mx-6 lg:mx-auto pt-12 pb-6">
+        <div className="flex flex-col lg:flex-row w-full justify-between mb-6">
           {brandCol}
-          <div>
+          <div className="mb-6 lg:mb-0">
             <p className="text-gray-200 text-center mb-2">Navigation</p>
-            <div className="grid grid-cols-3 gap-x-2 gap-y-1 place-items-center">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-1 place-items-center">
               {allNavItemsToDisplay.map((item: any) => (
-                <Link to={item.link} className="text-gray-400">
+                <Link key={item.label} to={item.link} className="text-gray-400">
                   {item.label}
                 </Link>
               ))}
             </div>
           </div>
           {footerCol("Legal", legalCol)}
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center lg:items-start">
             <p className="text-gray-200">Parents / Teachers</p>
             <a
               href=""
@@ -154,14 +154,14 @@ const footer = (): JSX.Element => {
             </a>
           </div>
         </div>
-        <div className="flex w-full justify-between py-6 border-y border-gray-400 mb-6">
-          <div className="flex flex-col">
+        <div className="flex flex-col lg:flex-row w-full justify-between py-6 border-y border-gray-400 mb-6">
+          <div className="flex flex-col items-center lg:items-start mb-6 lg:mb-0">
             <h6 className="text-gray-200">Subscribe To Our Newsletter</h6>
             <p className="text-gray-400">
               Get the latest news, updates and school info sent to your inbox.
             </p>
           </div>
-          <div className="flex items-center">
+          <div className="flex justify-center lg:justify-start items-center">
             <input
               type="email"
               name="email"

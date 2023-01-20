@@ -13,7 +13,7 @@ const SupplyList = ({ data }: any) => {
     <>
       <SEO title="Supply List" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="Supply List" />
           <div className="my-24">
             <div className="flex justify-center mb-6">
@@ -25,7 +25,7 @@ const SupplyList = ({ data }: any) => {
                 download
               />
             </div>
-            <div className="grid grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {data.supplyList.edges.map((supply: any) => (
                 <SupplyCard
                   grade={supply.node.grade}

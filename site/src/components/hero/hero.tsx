@@ -8,9 +8,9 @@ import * as styles from "./hero.module.scss";
 const hero = () => {
   return (
     <div className={cx(styles.container)}>
-      <div className="flex gap-12 h-full">
-        <div className="flex w-1/2 flex-col justify-center">
-          <h1 className="text-primary mb-4 font-bold">
+      <div className="flex flex-col lg:flex-row lg:gap-12 lg:h-full my-24 lg:my-0 mx-6 lg:mx-0">
+        <div className="flex w-full lg:w-1/2 flex-col justify-center items-center lg:items-start mb-12 lg:mb-0">
+          <h1 className="text-primary mb-4 font-bold text-center lg:text-start">
             Concordia{" "}
             <span className="text-accent underline tracking-wider">
               Classical
@@ -18,7 +18,7 @@ const hero = () => {
             <br />
             Academy
           </h1>
-          <p className="mb-4 text-text">
+          <p className="mb-4 text-text text-center lg:text-left">
             Concorida Classical Academy uses God's Word in a Christ-centered
             education to assist families in training students for Christian
             lives on earth and for eternity.
@@ -39,7 +39,7 @@ const hero = () => {
             />
           </div>
         </div>
-        <div className="flex w-1/2 self-center">
+        <div className="flex w-full lg:w-1/2 self-center">
           <StaticImage
             src="../../assets/images/church_exterior.jpg"
             alt="exterior"

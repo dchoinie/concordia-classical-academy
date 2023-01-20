@@ -17,15 +17,15 @@ const MissionComponent = () => {
 
   return (
     <div className="my-24">
-      <div className="flex gap-12">
-        <div className="flex flex-col w-1/2">
+      <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col w-full lg:w-1/2">
           <div className="flex flex-col">
             <h2 className="text-3xl font-bold text-primary">Mission</h2>
             <hr className="my-3 border-border-gray-200 w-2/3" />
             <h5>{data.mission.edges[0].node.missionStatement}</h5>
           </div>
         </div>
-        <div className="flex w-1/2 justify-center">
+        <div className="flex w-full lg:w-1/2 justify-center">
           <StaticImage
             src="../assets/images/kids_1.jpg"
             alt="Mission"
@@ -35,7 +35,7 @@ const MissionComponent = () => {
           />
         </div>
       </div>
-      <div className="my-24 grid grid-cols-3 gap-24">
+      <div className="my-24 grid grid-cols-1 lg:grid-cols-3 gap-24">
         <div className="flex flex-col">
           <h4>
             <span className="text-accent underline">Body:</span> Washed clean by

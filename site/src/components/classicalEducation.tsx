@@ -6,9 +6,9 @@ import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
 const ClassicalEducation = () => {
   return (
-    <div className="h-screen">
-      <div className="flex h-full gap-12">
-        <div className="flex w-1/2">
+    <div className="lg:h-screen">
+      <div className="flex flex-col-reverse lg:flex-row h-full lg:gap-12 mx-6 lg:mx-0">
+        <div className="flex w-full lg:w-1/2">
           <video
             controls
             width="100%"
@@ -20,7 +20,7 @@ const ClassicalEducation = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-        <div className="flex w-1/2 h-full flex-col justify-center">
+        <div className="flex w-full lg:w-1/2 h-full flex-col justify-center mb-12 lg:mb-0">
           <h2 className="font-bold text-primary">
             What Is Classical Lutheran Education?
           </h2>

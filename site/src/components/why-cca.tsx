@@ -42,8 +42,8 @@ const educ = [
 const WhyCCAComponent = () => {
   return (
     <div className="my-12">
-      <div className="flex w-full gap-12">
-        <div className="flex w-1/2">
+      <div className="flex flex-col lg:flex-row w-full gap-12">
+        <div className="flex w-full lg:w-1/2">
           <div className="flex flex-col">
             <h2 className="font-bold text-primary mb-3">
               Concorida Classical Academy: A Ministry of Good Shepherd Lutheran
@@ -59,7 +59,7 @@ const WhyCCAComponent = () => {
             </h6>
           </div>
         </div>
-        <div className="flex w-1/2">
+        <div className="flex w-full lg:w-1/2">
           <video
             controls
             width="100%"
@@ -71,11 +71,11 @@ const WhyCCAComponent = () => {
           </video>
         </div>
       </div>
-      <div className="my-36">
+      <div className="my-24">
         <h5 className="text-primary mb-6 underline">
           Qualities of Lutheran Education:
         </h5>
-        <div className="grid grid-cols-4 gap-x-12 gap-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12 gap-y-6">
           {educ.map((e: any) => (
             <div className="flex mb-4">
               <FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" />

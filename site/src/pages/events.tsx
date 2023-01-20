@@ -8,7 +8,7 @@ const Events = () => {
     <div>
       <SEO title="Events Calendar" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="Events Calendar" />
           <div className="my-12">
             <iframe

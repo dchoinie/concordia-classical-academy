@@ -9,7 +9,7 @@ const GoodShepherd = () => {
     <>
       <SEO title="Good Shepherd Lutheran Church" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle
             title="Good Shepherd"
             subTitle="Concordia Classial Academy is a ministry of Good Shepherd Lutheran Church"

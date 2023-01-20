@@ -9,7 +9,7 @@ const Affiliation = () => {
     <>
       <SEO title="Affiliation" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle
             title="Affiliation"
             subTitle="Concordia Classial Academy is a ministry of Good Shepherd Lutheran Church"

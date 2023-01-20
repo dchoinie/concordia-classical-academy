@@ -80,7 +80,7 @@ const ChristianEducation = () => {
     <>
       <SEO title="Christian Education" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="Christian Education" />
           <div className="my-24">
             <div className="mb-12">
@@ -93,7 +93,7 @@ const ChristianEducation = () => {
                 Lutheran schools:
               </h6>
             </div>
-            <div className="grid grid-cols-4 gap-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
               {bullets.map((bullet) => (
                 <div className="bg-gray-50 p-6 rounded shadow-lg">
                   <p>{bullet.text}</p>
@@ -128,15 +128,15 @@ const ChristianEducation = () => {
                 the Nation’s Report Card, NAEP)
               </h6>
             </div>
-            <div className="flex gap-12">
-              <div className="flex flex-col w-1/2 gap-6">
+            <div className="flex flex-col lg:flex-row gap-12">
+              <div className="flex flex-col w-full lg:w-1/2 gap-6">
                 {lutheranSchoolsParagraphs
                   .filter((text, i) => i < 5)
                   .map((text, i: number) => (
                     <p className="text-gray-700">{text.text}</p>
                   ))}
               </div>
-              <div className="flex flex-col w-1/2 gap-6">
+              <div className="flex flex-col w-full lg:w-1/2 gap-6">
                 {lutheranSchoolsParagraphs
                   .filter((text, i) => i > 5)
                   .map((text, i: number) => (

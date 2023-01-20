@@ -9,7 +9,7 @@ const RequestInformation = () => {
     <>
       <SEO title="Request Information" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="Request Information" />
           <RequestInformationComponent />
         </div>

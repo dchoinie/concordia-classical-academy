@@ -39,17 +39,17 @@ const Donate = (): JSX.Element => {
     <>
       <SEO title="Donate" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="Donate" />
-          <div className="my-24 flex gap-12">
-            <div className="flex w-1/2">
+          <div className="my-24 flex flex-col lg:flex-row gap-12">
+            <div className="flex w-full lg:w-1/2">
               <StaticImage
                 src="../../assets/images/luther_rose_glass.JPG"
                 alt="Luther Rose Stained Glass"
                 className="rounded shadow-lg"
               />
             </div>
-            <div className="w-1/2">
+            <div className="w-full lg:w-1/2">
               <div className="mb-12">
                 <h4 className="text-gray-700 text-2xl mb-6">
                   Make A Donation To Concordia Classical Academy
@@ -58,7 +58,7 @@ const Donate = (): JSX.Element => {
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi molestiae quis fuga! Maiores consectetur ex eaque neque possimus debitis at recusandae dolorem ipsum voluptatum accusamus quod dignissimos eos, architecto laudantium praesentium officia!
                 </p>
               </div>
-              <div className="grid grid-cols-3 gap-x-6 gap-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6">
                 {donations.map((item: any) => (
                   <DonateCard
                     title={`Donate ${item.amount}`}

@@ -33,7 +33,7 @@ const Events = () => {
 
   return (
     <section className="py-12 bg-white sm:py-16 lg:py-20">
-      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div className="px-6 mx-auto max-w-screen-xl sm:px-6 lg:px-8">
         <div className="max-w-md mx-auto text-center">
           <h2 className="text-3xl font-bold text-primary sm:text-4xl font-pj">
             Upcoming Events
@@ -51,7 +51,7 @@ const Events = () => {
           />
         </div>
 
-        <div className="w-full grid auto-cols-max gap-8 mt-8">
+        <div className="w-full grid grid-cols-1 lg:auto-cols-max gap-8 mt-8">
           {data.allSanityEvent.edges
             .filter(
               (event: any) => event.node.startDate > new Date().toISOString()
@@ -60,8 +60,8 @@ const Events = () => {
             .map((event: any) => {
               const e: EventType = event.node;
               return (
-                <div className="relative group mt-8">
-                  <div className="flex overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
+                <div key={e.id} className="relative group mt-8">
+                  <div className="flex justify-center overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
                     <img
                       className="object-cover h-56 shadow transition-all duration-300 transform group-hover:scale-125"
                       src={e.image.asset.url}

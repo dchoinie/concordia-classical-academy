@@ -10,9 +10,9 @@ const StudentHandbook = ({ data }: any) => {
     <>
       <SEO title="Student Handbook" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="Student Handbook" />
-          <div className="my-24 grid grid-cols-2 gap-12">
+          <div className="my-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
             {data.handbook.edges.map((handbook: any) => (
               <HandbookCard
                 key={handbook.node.section}

@@ -9,7 +9,7 @@ const AdpotAStudent = () => {
     <div>
       <SEO title="Adpot-A-Student" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle
             title="Adopt-A-Student"
             subTitle="The grass withers, the flower fades, but the word of God will stand forever. Isaiah 40:8"

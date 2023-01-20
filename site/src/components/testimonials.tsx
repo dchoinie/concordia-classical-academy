@@ -31,8 +31,8 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="my-24">
-      <div className="max-w-xl mx-auto text-center">
+    <div className="my-24 mx-6 lg:mx-0">
+      <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-primary sm:text-4xl">
           Testimonials
         </h2>
@@ -43,9 +43,9 @@ const Testimonials = () => {
           God-given talents.
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-12 my-12">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 my-12">
         {testimonials.map((testimonial: Record<string, string>) => (
-          <div className="flex flex-col p-8 bg-gray-50 shadow rounded border border-gray-200">
+          <div key={testimonial.text} className="flex flex-col p-8 bg-gray-50 shadow rounded border border-gray-200">
             <p className="text-text mb-2">{`"${testimonial.text}"`}</p>
             <p className="text-accent italic">- {testimonial.date}</p>
           </div>

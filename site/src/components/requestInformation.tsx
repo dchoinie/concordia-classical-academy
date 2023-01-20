@@ -36,8 +36,8 @@ const RequestInformationComponent = () => {
   `);
   return (
     <div className="my-24">
-      <div className="flex gap-12">
-        <div className="flex flex-col w-1/2">
+      <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col w-full lg:w-1/2">
           <h2 className="text-primary font-bold mb-6">
             Want more information?
           </h2>
@@ -68,7 +68,7 @@ const RequestInformationComponent = () => {
             <p>{data.site.siteMetadata.email}</p>
           </div>
         </div>
-        <div className="flex w-1/2">
+        <div className="flex w-full lg:w-1/2">
           <ContactForm />
         </div>
       </div>

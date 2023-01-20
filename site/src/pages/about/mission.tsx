@@ -9,7 +9,7 @@ const Mission = () => {
     <>
       <SEO title="Mission" />
       <Layout>
-        <div className="max-w-screen-xl mx-auto">
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
           <PageTitle title="Mission" />
           <MissionComponent />
         </div>

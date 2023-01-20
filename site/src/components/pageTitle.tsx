@@ -28,8 +28,6 @@ const PageTitle = ({ title, subTitle }: PageTitleProps): JSX.Element => {
             const last = index === pathnames.length - 1;
             const to = `/${pathnames.slice(0, index + 1).join("/")}`;
 
-            const redirects = ["/about", "/admissions", "/academics", "/faith"];
-
             return last ? (
               <p key={to} className="text-primary self-center capitalize">
                 {value}
@@ -53,7 +51,7 @@ const PageTitle = ({ title, subTitle }: PageTitleProps): JSX.Element => {
         </div>
       </div>
       <div className="flex flex-col items-center mt-12">
-        <h2 className="text-5xl font-bold text-primary">{title}</h2>
+        <h2 className="text-5xl font-bold text-primary text-center lg:text-left">{title}</h2>
         <h6 className="max-w-xl mx-auto mt-4 text-base leading-relaxed text-gray-600 text-center">
           {subTitle}
         </h6>

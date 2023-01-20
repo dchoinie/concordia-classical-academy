@@ -49,6 +49,12 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/assets/images/favicon.ico",
+        name: `Concordia Classical Academy`,
+        short_name: `CCA Mankato`,
+        start_url: `/`,
+        background_color: `#4d1f34`,
+        theme_color: `#4d1f34`,
+        display: `standalone`,
       },
     },
     "gatsby-plugin-sharp",

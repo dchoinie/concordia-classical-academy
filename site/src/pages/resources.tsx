@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import PageTitle from '../components/pageTitle'
 import { SEO } from '../components/seo'
 
-const Resources = () => {
+const Resources = (): JSX.Element => {
   return (
     <>
     <SEO title="Resources" />

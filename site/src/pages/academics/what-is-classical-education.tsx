@@ -24,7 +24,7 @@ const smallCatechism = [
   },
 ];
 
-const WhatIsClassicalEducation = () => {
+const WhatIsClassicalEducation = (): JSX.Element => {
   return (
     <>
       <SEO title="What Is Classical Education?" />

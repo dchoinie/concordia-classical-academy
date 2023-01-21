@@ -7,7 +7,7 @@ import Layout from "../components/layout";
 import { SEO } from "../components/seo";
 import Testimonials from "../components/testimonials";
 
-const index = () => {
+const index = (): JSX.Element => {
   return (
     <>
       <SEO title="Concordia Classical Academy" />

@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import PageTitle from "../../components/pageTitle";
 import { SEO } from "../../components/seo";
 
-const Affiliation = () => {
+const Affiliation = (): JSX.Element => {
   return (
     <>
       <SEO title="Affiliation" />

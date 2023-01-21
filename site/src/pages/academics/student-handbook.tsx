@@ -16,7 +16,7 @@ interface HandbookItem {
   extraContent: HandbookChildren;
 }
 
-const StudentHandbook = ({ data }: any) => {
+const StudentHandbook = ({ data }: any): JSX.Element => {
   return (
     <>
       <SEO title="Student Handbook" />
@@ -39,21 +39,19 @@ const StudentHandbook = ({ data }: any) => {
   );
 };
 
-export const query = graphql`
-  query HandbookQuery {
-    handbook: allSanityHandbook(sort: { fields: section, order: ASC }) {
-      nodes {
-        section
-        id
-        description
-        extraContent {
-          children {
-            text
-          }
+export const query = graphql`query HandbookQuery {
+  handbook: allSanityHandbook(sort: {section: ASC}) {
+    nodes {
+      section
+      id
+      description
+      extraContent {
+        children {
+          text
         }
       }
     }
   }
-`;
+}`;
 
 export default StudentHandbook;

@@ -18,30 +18,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OutsideClickHandler from "react-outside-click-handler";
 
 const header = (): JSX.Element => {
-  const data = useStaticQuery(graphql`
-    query HeaderQuery {
-      site {
-        siteMetadata {
-          address
-          phone
-          email
-        }
-      }
-      nav: allSanityNavItem(sort: { fields: order }) {
-        nodes {
-          id
-          label
-          link
-          order
-          subLinks {
-            _key
-            label
-            link
-          }
-        }
+  const data = useStaticQuery(graphql`query HeaderQuery {
+  site {
+    siteMetadata {
+      address
+      phone
+      email
+    }
+  }
+  nav: allSanityNavItem(sort: {order: ASC}) {
+    nodes {
+      id
+      label
+      link
+      order
+      subLinks {
+        _key
+        label
+        link
       }
     }
-  `);
+  }
+}`);
 
   const [isOpen, setIsOpen] = useState(false);
 

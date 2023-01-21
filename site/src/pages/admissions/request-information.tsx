@@ -4,7 +4,7 @@ import PageTitle from "../../components/pageTitle";
 import RequestInformationComponent from "../../components/requestInformation";
 import { SEO } from "../../components/seo";
 
-const RequestInformation = () => {
+const RequestInformation = (): JSX.Element => {
   return (
     <>
       <SEO title="Request Information" />

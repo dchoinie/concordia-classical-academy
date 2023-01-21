@@ -45,25 +45,23 @@ const buyButtons = [
 ];
 
 const AdpotAStudentComponent = () => {
-  const data = useStaticQuery(graphql`
-    query AdpotQuery {
-      allStripePrice(
-        sort: { fields: product___name, order: ASC }
-        filter: { product: { name: { regex: "/([a-zA-Z]+(-[a-zA-Z]+)+)/i" } } }
-      ) {
-        nodes {
-          active
-          id
-          unit_amount
-          product {
-            name
-            id
-          }
-          currency
-        }
+  const data = useStaticQuery(graphql`query AdpotQuery {
+  allStripePrice(
+    sort: {product: {name: ASC}}
+    filter: {product: {name: {regex: "/([a-zA-Z]+(-[a-zA-Z]+)+)/i"}}}
+  ) {
+    nodes {
+      active
+      id
+      unit_amount
+      product {
+        name
+        id
       }
+      currency
     }
-  `);
+  }
+}`);
 
   return (
     <div className="my-24">

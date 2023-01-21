@@ -10,30 +10,28 @@ import React from "react";
 import ContactForm from "./contactForm";
 
 const RequestInformationComponent = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          address
-          phone
-          email
-        }
-      }
-      allSanityNavItem(sort: { fields: order }) {
-        nodes {
-          id
-          label
-          link
-          order
-          subLinks {
-            _key
-            label
-            link
-          }
-        }
+  const data = useStaticQuery(graphql`{
+  site {
+    siteMetadata {
+      address
+      phone
+      email
+    }
+  }
+  allSanityNavItem(sort: {order: ASC}) {
+    nodes {
+      id
+      label
+      link
+      order
+      subLinks {
+        _key
+        label
+        link
       }
     }
-  `);
+  }
+}`);
   return (
     <div className="my-24">
       <div className="flex flex-col lg:flex-row gap-12">

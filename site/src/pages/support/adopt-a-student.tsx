@@ -4,7 +4,7 @@ import Layout from "../../components/layout";
 import PageTitle from "../../components/pageTitle";
 import { SEO } from "../../components/seo";
 
-const AdpotAStudent = () => {
+const AdpotAStudent = (): JSX.Element => {
   return (
     <div>
       <SEO title="Adpot-A-Student" />

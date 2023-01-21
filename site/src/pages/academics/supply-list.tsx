@@ -18,7 +18,7 @@ interface SupplyList {
   id: string;
 }
 
-const SupplyList = ({ data }: any) => {
+const SupplyList = ({ data }: any): JSX.Element => {
   return (
     <>
       <SEO title="Supply List" />
@@ -51,20 +51,18 @@ const SupplyList = ({ data }: any) => {
   );
 };
 
-export const query = graphql`
-  query SupplyQuery {
-    supplyList: allSanitySupplyList(sort: { fields: grade, order: ASC }) {
-      nodes {
-        id
-        grade
-        content {
-          children {
-            text
-          }
+export const query = graphql`query SupplyQuery {
+  supplyList: allSanitySupplyList(sort: {grade: ASC}) {
+    nodes {
+      id
+      grade
+      content {
+        children {
+          text
         }
       }
     }
   }
-`;
+}`;
 
 export default SupplyList;

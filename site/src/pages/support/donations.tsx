@@ -108,37 +108,31 @@ const Donate = ({ data }: any): JSX.Element => {
   );
 };
 
-export const query = graphql`
-  query MyQuery {
-    donationAmounts: allStripePrice(
-      filter: {
-        product: { name: { regex: "/Donation/i", ne: "General Donation" } }
-      }
-      sort: { fields: unit_amount }
-    ) {
-      nodes {
-        active
-        currency
-        unit_amount
-        product {
-          name
-          id
-        }
-      }
-    }
-    generalDonation: stripePrice(
-      product: { name: { eq: "General Donation" } }
-    ) {
+export const query = graphql`query MyQuery {
+  donationAmounts: allStripePrice(
+    filter: {product: {name: {regex: "/Donation/i", ne: "General Donation"}}}
+    sort: {unit_amount: ASC}
+  ) {
+    nodes {
       active
-      id
-      unit_amount
       currency
+      unit_amount
       product {
         name
         id
       }
     }
   }
-`;
+  generalDonation: stripePrice(product: {name: {eq: "General Donation"}}) {
+    active
+    id
+    unit_amount
+    currency
+    product {
+      name
+      id
+    }
+  }
+}`;
 
 export default Donate;

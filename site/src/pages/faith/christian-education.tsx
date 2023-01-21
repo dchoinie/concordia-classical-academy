@@ -79,7 +79,7 @@ const lutheranSchoolsParagraphs = [
   },
 ];
 
-const ChristianEducation = () => {
+const ChristianEducation = (): JSX.Element => {
   return (
     <>
       <SEO title="Christian Education" />

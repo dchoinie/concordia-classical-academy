@@ -77,20 +77,18 @@ const brandCol = (
 );
 
 const footer = (): JSX.Element => {
-  const data = useStaticQuery(graphql`
-    query NavQuery {
-      navItems: allSanityNavItem(sort: { order: ASC, fields: order }) {
-        nodes {
-          label
-          link
-          subLinks {
-            label
-            link
-          }
-        }
+  const data = useStaticQuery(graphql`query NavQuery {
+  navItems: allSanityNavItem(sort: {order: ASC}) {
+    nodes {
+      label
+      link
+      subLinks {
+        label
+        link
       }
     }
-  `);
+  }
+}`);
 
   const sort = (a: any, b: any) => {
     if (a.label < b.label) {

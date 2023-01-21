@@ -4,7 +4,7 @@ import MissionComponent from "../../components/mission";
 import PageTitle from "../../components/pageTitle";
 import { SEO } from "../../components/seo";
 
-const Mission = () => {
+const Mission = (): JSX.Element => {
   return (
     <>
       <SEO title="Mission" />

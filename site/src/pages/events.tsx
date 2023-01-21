@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import PageTitle from "../components/pageTitle";
 import { SEO } from "../components/seo";
 
-const Events = () => {
+const Events = (): JSX.Element => {
   return (
     <div>
       <SEO title="Events Calendar" />

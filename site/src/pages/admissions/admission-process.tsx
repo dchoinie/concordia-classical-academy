@@ -24,7 +24,7 @@ export const query = graphql`
   }
 `;
 
-const AdmissionProcess = ({ data }: PageProps<MetadataProps>) => {
+const AdmissionProcess = ({ data }: PageProps<MetadataProps>): JSX.Element => {
   return (
     <>
       <SEO title="Admissions Process" />

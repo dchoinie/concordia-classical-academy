@@ -57,6 +57,12 @@ const config: GatsbyConfig = {
         display: `standalone`,
       },
     },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/about/*`, `/academics/*`, `/admissions/*`, `/faith/*`, `/support/*`, `/contact/`, `/events/`, `/resources/`],
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {

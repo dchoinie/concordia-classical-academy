@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { now } from "moment";
 import Button from "./button/button";
@@ -6,10 +6,10 @@ import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 import { EventType } from "../types/common";
 
-const Events = () => {
+const Events = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     query EventsQuery {
-      events: allSanityEvent(sort: { fields: startDate }) {
+      events: allSanityEvent(sort: { startDate: ASC }) {
         nodes {
           endDate
           startDate
@@ -50,9 +50,7 @@ const Events = () => {
         </div>
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-12 mt-8">
           {data.events.nodes
-            .filter(
-              (event: any) => event.startDate > new Date().toISOString()
-            )
+            .filter((event: any) => event.startDate > new Date().toISOString())
             .slice(0, 3)
             .map((event: EventType) => {
               return (

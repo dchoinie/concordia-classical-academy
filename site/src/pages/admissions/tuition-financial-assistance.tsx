@@ -22,7 +22,7 @@ interface AdminFee {
   title: string;
 }
 
-const TuitionFinancialAssistance = ({ data }: any) => {
+const TuitionFinancialAssistance = ({ data }: any): JSX.Element => {
   return (
     <>
       <SEO title="Tuition & Financial Assistance" />
@@ -101,24 +101,22 @@ const TuitionFinancialAssistance = ({ data }: any) => {
   );
 };
 
-export const query = graphql`
-  query MyQuery {
-    tuition: allSanityTuitionFees(sort: { fields: order }) {
-      nodes {
-        id
-        title
-        fee
-        discount
-      }
-    }
-    admin: allSanityAdminFees {
-      nodes {
-        id
-        title
-        fee
-      }
+export const query = graphql`query MyQuery {
+  tuition: allSanityTuitionFees(sort: {order: ASC}) {
+    nodes {
+      id
+      title
+      fee
+      discount
     }
   }
-`;
+  admin: allSanityAdminFees {
+    nodes {
+      id
+      title
+      fee
+    }
+  }
+}`;
 
 export default TuitionFinancialAssistance;

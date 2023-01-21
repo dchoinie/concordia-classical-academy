@@ -4,7 +4,7 @@ import PageTitle from "../../components/pageTitle";
 import { SEO } from "../../components/seo";
 import WhyCCAComponent from "../../components/why-cca";
 
-const WhyCCA = () => {
+const WhyCCA = (): JSX.Element => {
   return (
     <>
       <SEO title="Why CCA?" />

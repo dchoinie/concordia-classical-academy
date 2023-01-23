@@ -1,11 +1,21 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import cx from "classnames";
 import { faAngleRight, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import Button from "../button/button";
 import * as styles from "./hero.module.scss";
+import { graphql, useStaticQuery } from "gatsby";
 
 const hero = () => {
+  const data = useStaticQuery(graphql`
+    query HeroQuery {
+      exterior: file(relativePath: { eq: "church_exterior.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(width: 800)
+        }
+      }
+    }
+  `);
   return (
     <div className={cx(styles.container)}>
       <div className="flex flex-col lg:flex-row lg:gap-12 lg:h-full my-24 lg:my-0 mx-6 lg:mx-0">
@@ -40,11 +50,10 @@ const hero = () => {
           </div>
         </div>
         <div className="flex w-full lg:w-1/2 self-center">
-          <StaticImage
-            src="../../assets/images/church_exterior.jpg"
-            alt="exterior"
-            placeholder="blurred"
-            className="rounded shadow-md"
+          <GatsbyImage
+            image={data.exterior.childImageSharp.gatsbyImageData}
+            alt="CCA Building"
+            className="rounded shadow-lg"
           />
         </div>
       </div>
@@ -53,12 +62,3 @@ const hero = () => {
 };
 
 export default hero;
-
-<StaticImage
-  src="../assets/images/logo_no_background.png"
-  alt="CCA Logo"
-  placeholder="blurred"
-  layout="fixed"
-  height={150}
-  className="mr-32"
-/>;

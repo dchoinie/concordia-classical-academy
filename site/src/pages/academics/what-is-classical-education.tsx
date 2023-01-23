@@ -189,7 +189,7 @@ const WhatIsClassicalEducation = (): JSX.Element => {
           </div>
           <div className="my-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {smallCatechism.map((text) => (
-              <div className="bg-primary p-6 rounded shadow-lg border border-gray-200">
+              <div key={text.text} className="bg-primary p-6 rounded shadow-lg border border-gray-200">
                 <p className="text-white text-center">{text.text}</p>
               </div>
             ))}

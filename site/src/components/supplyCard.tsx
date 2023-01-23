@@ -12,7 +12,7 @@ const SupplyCard = ({ grade, list }: SupplyList) => {
         <hr className="my-3 border border-gray-200 w-2/3" />
         {list.map((l: any) => (
             l.children.map((c: any) => (
-                <p className='ml-3'>&#8226; {`${c.text}`}</p>
+                <p key={c.text} className='ml-3'>&#8226; {`${c.text}`}</p>
             ))
         ))}
     </div>

@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Button from "../../components/button/button";
 import FeeCard from "../../components/feeCard";
@@ -31,9 +31,9 @@ const TuitionFinancialAssistance = ({ data }: any): JSX.Element => {
           <PageTitle title="Tuition & Financial Assistance" />
           <div className="mt-24 mb-48 flex flex-col lg:flex-row gap-12">
             <div className="flex w-full lg:w-1/2">
-              <StaticImage
-                src="../../assets/images/chapel.png"
-                alt="Kids_In_Church"
+              <GatsbyImage
+                image={data.chapel.childImageSharp.gatsbyImageData}
+                alt="Chapel"
                 className="rounded shadow-lg"
               />
             </div>
@@ -101,22 +101,29 @@ const TuitionFinancialAssistance = ({ data }: any): JSX.Element => {
   );
 };
 
-export const query = graphql`query MyQuery {
-  tuition: allSanityTuitionFees(sort: {order: ASC}) {
-    nodes {
-      id
-      title
-      fee
-      discount
+export const query = graphql`
+  query MyQuery {
+    tuition: allSanityTuitionFees(sort: { order: ASC }) {
+      nodes {
+        id
+        title
+        fee
+        discount
+      }
+    }
+    admin: allSanityAdminFees {
+      nodes {
+        id
+        title
+        fee
+      }
+    }
+    chapel: file(relativePath: { eq: "chapel.png" }) {
+      childImageSharp {
+        gatsbyImageData(width: 700)
+      }
     }
   }
-  admin: allSanityAdminFees {
-    nodes {
-      id
-      title
-      fee
-    }
-  }
-}`;
+`;
 
 export default TuitionFinancialAssistance;

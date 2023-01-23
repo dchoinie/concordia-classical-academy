@@ -99,7 +99,7 @@ const ChristianEducation = (): JSX.Element => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
               {bullets.map((bullet: ChristianEducationItem) => (
-                <div className="bg-gray-50 p-6 rounded shadow-lg">
+                <div key={bullet.text} className="bg-gray-50 p-6 rounded shadow-lg">
                   <p>{bullet.text}</p>
                 </div>
               ))}
@@ -137,14 +137,14 @@ const ChristianEducation = (): JSX.Element => {
                 {lutheranSchoolsParagraphs
                   .filter((_, i) => i < 5)
                   .map((text: ChristianEducationItem) => (
-                    <p className="text-gray-700">{text.text}</p>
+                    <p key={text.text} className="text-gray-700">{text.text}</p>
                   ))}
               </div>
               <div className="flex flex-col w-full lg:w-1/2 gap-6">
                 {lutheranSchoolsParagraphs
                   .filter((_, i) => i > 5)
                   .map((text: ChristianEducationItem) => (
-                    <p className="text-gray-700">{text.text}</p>
+                    <p key={text.text} className="text-gray-700">{text.text}</p>
                   ))}
               </div>
             </div>

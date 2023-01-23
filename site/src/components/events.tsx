@@ -5,6 +5,7 @@ import Button from "./button/button";
 import { faCalendarDays } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 import { EventType } from "../types/common";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 const Events = (): JSX.Element => {
   const data = useStaticQuery(graphql`
@@ -16,7 +17,7 @@ const Events = (): JSX.Element => {
           id
           image {
             asset {
-              url
+              gatsbyImageData(width: 350)
             }
           }
           name
@@ -56,10 +57,10 @@ const Events = (): JSX.Element => {
               return (
                 <div key={event.id} className="relative group mt-8">
                   <div className="flex justify-center overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
-                    <img
-                      className="object-cover h-56 shadow transition-all duration-300 transform group-hover:scale-125"
-                      src={event.image.asset.url}
-                      alt={event.slug.current}
+                    <GatsbyImage
+                      image={event.image.asset.gatsbyImageData}
+                      alt={event.name}
+                      className="transition-all duration-300 transform group-hover:scale-125"
                     />
                   </div>
                   <p className="mt-6 text-center text-sm font-normal text-gray-600">

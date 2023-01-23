@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
 const MissionComponent = () => {
@@ -8,6 +8,11 @@ const MissionComponent = () => {
       mission: allSanityMission {
         nodes {
           missionStatement
+        }
+      }
+      image: file(relativePath: { eq: "kids_1.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(width: 700)
         }
       }
     }
@@ -24,11 +29,9 @@ const MissionComponent = () => {
           </div>
         </div>
         <div className="flex w-full lg:w-1/2 justify-center">
-          <StaticImage
-            src="../assets/images/kids_1.jpg"
-            alt="Mission"
-            placeholder="blurred"
-            height={400}
+          <GatsbyImage
+            image={data.image.childImageSharp.gatsbyImageData}
+            alt="Kids At School"
             className="rounded shadow-lg self-start"
           />
         </div>

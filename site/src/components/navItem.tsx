@@ -10,7 +10,7 @@ const NavItem = ({ id, label, link, subLinks }: NavItemType) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <OutsideClickHandler onOutsideClick={() => setIsOpen(false)}>
-      <li key={id}>
+      <div key={id}>
         {subLinks && subLinks.length > 0 ? (
           <>
             <div
@@ -24,16 +24,23 @@ const NavItem = ({ id, label, link, subLinks }: NavItemType) => {
               />
             </div>
             {isOpen && (
-              <div className={cx('absolute mt-2 p-4 rounded shadow-md border border-grey-500 z-50 bg-white', 'navDropdown')}>
+              <div
+                className={cx(
+                  "absolute mt-2 p-4 rounded shadow-md border border-grey-500 z-50 bg-white",
+                  "navDropdown"
+                )}
+              >
                 <ul className="flex flex-col">
                   {subLinks.map((subItem: SubMenuItem) => (
-                    <Link
-                      key={subItem._key}
-                      to={subItem.link}
-                      className="mb-2 last:mb-0 whitespace-nowrap text-text hover:text-yellow-500"
-                    >
-                      {subItem.label}
-                    </Link>
+                    <li>
+                      <Link
+                        key={subItem._key}
+                        to={subItem.link}
+                        className="mb-2 last:mb-0 whitespace-nowrap text-text hover:text-yellow-500"
+                      >
+                        {subItem.label}
+                      </Link>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -44,7 +51,7 @@ const NavItem = ({ id, label, link, subLinks }: NavItemType) => {
             {label}
           </Link>
         )}
-      </li>
+      </div>
     </OutsideClickHandler>
   );
 };

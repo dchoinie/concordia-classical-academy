@@ -1,5 +1,5 @@
 import React from "react";
-import ShortPromo from "../assets/videos/promo_short.mp4"
+import ShortPromoMp4 from "../assets/videos/promo_short.mp4";
 import Thumbnail from "../assets/images/promo_thumbnail2.png";
 import Button from "./button/button";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
@@ -15,8 +15,9 @@ const ClassicalEducation = () => {
             autoPlay={false}
             poster={Thumbnail}
             className="self-center rounded shadow-lg"
+            preload="auto"
           >
-            <source src={ShortPromo} type="video/mp4" />
+            <source src={ShortPromoMp4} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -40,9 +41,16 @@ const ClassicalEducation = () => {
             world.
           </p>
           <small className="italic text-gray-500 mb-12">
-            - Cheryl Swope, M.Ed - Author of Simply Classical: A Beautiful Education for Any Child
+            - Cheryl Swope, M.Ed - Author of Simply Classical: A Beautiful
+            Education for Any Child
           </small>
-          <Button label="Learn More" theme="primary" endIcon={faAngleRight} link="/academics/what-is-classical-education" classes={['self-start']} />
+          <Button
+            label="Learn More"
+            theme="primary"
+            endIcon={faAngleRight}
+            link="/academics/what-is-classical-education"
+            classes={["self-start"]}
+          />
         </div>
       </div>
     </div>

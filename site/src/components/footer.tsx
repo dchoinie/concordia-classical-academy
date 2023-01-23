@@ -1,7 +1,11 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { StaticImage } from "gatsby-plugin-image";
+import {
+  GatsbyImage,
+  GatsbyImageProps,
+  StaticImage,
+} from "gatsby-plugin-image";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
@@ -27,21 +31,21 @@ const legalCol = [
   },
   {
     label: "Terms & Conditions",
-    link: "/terms-conditions",
+    link: "/terms-and-conditions",
   },
   {
-    label: "Jobs",
-    link: "/jobs",
+    label: "Careers",
+    link: "/careers",
   },
   {
     label: "Donations",
-    link: "/support",
+    link: "/support/donations",
   },
 ];
 
 const footerCol = (title: string, items: SubNavItem[]) => (
   <div className="flex flex-col items-center lg:items-start mb-6 lg:mb-0">
-    <p className="text-gray-200">{title}</p>
+    <p className="text-gray-200 fontHeader">{title}</p>
     {items.map((item: SubNavItem) => (
       <Link key={item.label} to={item.link} className="text-gray-400">
         {item.label}
@@ -50,45 +54,26 @@ const footerCol = (title: string, items: SubNavItem[]) => (
   </div>
 );
 
-const brandCol = (
-  <div className="flex items-center lg:items-start flex-col mb-6 lg:mb-0">
-    <StaticImage
-      src="../assets/images/luther-rose.png"
-      alt="Luther Rose"
-      height={50}
-      placeholder="blurred"
-      className="lg:self-start self-center mb-2"
-    />
-    <h6 className="text-gray-200 mb-2">Concordia Classical Academy</h6>
-    <div className="flex text-gray-200 text-lg">
-      <a
-        href="https://www.facebook.com/CCAMankato"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mr-2"
-      >
-        <FontAwesomeIcon icon={faFacebook} />
-      </a>
-      <a href="mailto:info@ccamankato.com">
-        <FontAwesomeIcon icon={faEnvelope} />
-      </a>
-    </div>
-  </div>
-);
-
 const footer = (): JSX.Element => {
-  const data = useStaticQuery(graphql`query NavQuery {
-  navItems: allSanityNavItem(sort: {order: ASC}) {
-    nodes {
-      label
-      link
-      subLinks {
-        label
-        link
+  const data = useStaticQuery(graphql`
+    query NavQuery {
+      navItems: allSanityNavItem(sort: { order: ASC }) {
+        nodes {
+          label
+          link
+          subLinks {
+            label
+            link
+          }
+        }
+      }
+      lutherRose: file(relativePath: { eq: "luther-rose.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 75)
+        }
       }
     }
-  }
-}`);
+  `);
 
   const sort = (a: any, b: any) => {
     if (a.label < b.label) {
@@ -102,13 +87,21 @@ const footer = (): JSX.Element => {
 
   const topNavItems = data.navItems.nodes.map((navItem: TopNavItem) => navItem);
   const subNavItems = topNavItems
-    .filter((topNavItem: TopNavItem) => topNavItem.subLinks && topNavItem.subLinks.length > 0)
-    .map((topNavItem: TopNavItem) => topNavItem.subLinks &&
-      topNavItem.subLinks.flatMap((subItem: SubNavItem) => subItem)
+    .filter(
+      (topNavItem: TopNavItem) =>
+        topNavItem.subLinks && topNavItem.subLinks.length > 0
+    )
+    .map(
+      (topNavItem: TopNavItem) =>
+        topNavItem.subLinks &&
+        topNavItem.subLinks.flatMap((subItem: SubNavItem) => subItem)
     );
   const subs = subNavItems.flatMap((subItem: SubNavItem) => subItem);
   const allNavItemsToDisplay = topNavItems
-    .filter((topNavItem: TopNavItem) => topNavItem.subLinks && topNavItem.subLinks.length < 1)
+    .filter(
+      (topNavItem: TopNavItem) =>
+        topNavItem.subLinks && topNavItem.subLinks.length < 1
+    )
     .concat(subs)
     .sort(sort);
 
@@ -116,9 +109,34 @@ const footer = (): JSX.Element => {
     <div className="w-full bg-primary">
       <div className="max-w-screen-xl mx-6 lg:mx-auto pt-12 pb-6">
         <div className="flex flex-col lg:flex-row w-full justify-between mb-6">
-          {brandCol}
+          <div className="flex items-center lg:items-start flex-col mb-6 lg:mb-0">
+            <GatsbyImage
+              image={data.lutherRose.childImageSharp.gatsbyImageData}
+              alt="Luther Rose"
+              className="lg:self-start self-center mb-2"
+            />
+            <p className="text-gray-200 mb-2 fontHeader">
+              Concordia Classical Academy
+            </p>
+            <div className="flex text-gray-200 text-lg">
+              <a
+                href="https://www.facebook.com/CCAMankato"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mr-2"
+                aria-label="CCA Facebook"
+              >
+                <FontAwesomeIcon icon={faFacebook} />
+              </a>
+              <a href="mailto:ccamankato@gmail.com" aria-label="Contact CCA">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </a>
+            </div>
+          </div>
           <div className="mb-6 lg:mb-0">
-            <p className="text-gray-200 text-center mb-2">Navigation</p>
+            <p className="text-gray-200 text-center mb-2 fontHeader">
+              Navigation
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-1 place-items-center">
               {allNavItemsToDisplay.map((item: any) => (
                 <Link key={item.label} to={item.link} className="text-gray-400">
@@ -129,9 +147,9 @@ const footer = (): JSX.Element => {
           </div>
           {footerCol("Legal", legalCol)}
           <div className="flex flex-col items-center lg:items-start">
-            <p className="text-gray-200">Parents / Teachers</p>
+            <p className="text-gray-200 fontHeader">Parents / Teachers</p>
             <a
-              href=""
+              href="/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 flex"
@@ -143,7 +161,7 @@ const footer = (): JSX.Element => {
               <span className="ml-2">Parent Portal</span>
             </a>
             <a
-              href=""
+              href="/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 flex"
@@ -158,7 +176,9 @@ const footer = (): JSX.Element => {
         </div>
         <div className="flex flex-col lg:flex-row w-full justify-between py-6 border-y border-gray-400 mb-6">
           <div className="flex flex-col items-center lg:items-start mb-6 lg:mb-0">
-            <h6 className="text-gray-200">Subscribe To Our Newsletter</h6>
+            <p className="text-gray-200 fontHeader">
+              Subscribe To Our Newsletter
+            </p>
             <p className="text-gray-400">
               Get the latest news, updates and school info sent to your inbox.
             </p>

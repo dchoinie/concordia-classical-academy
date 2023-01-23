@@ -82,7 +82,7 @@ const WhyCCAComponent = () => {
         </h5>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-12 gap-y-6">
           {educ.map((e: WhyItem) => (
-            <div className="flex mb-4">
+            <div key={e.title} className="flex mb-4">
               <FontAwesomeIcon icon={faCheck} className="text-green-500 mr-3" />
               <div className="flex flex-col">
                 <h6 className="text-text font-bold leading-4 mb-2">

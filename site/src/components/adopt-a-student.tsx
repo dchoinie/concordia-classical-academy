@@ -118,7 +118,7 @@ const AdpotAStudentComponent = () => {
       </div>
       <div className="max-w-3xl mx-auto text-text text-center my-12">
         <h5>
-          The cost of education at Concordia Classical Academy is $6000. While
+          The cost of education at Concordia Classical Academy is $6500. While
           most families pay tuition, this only covers a portion of the total
           cost. CCA subsidizes each child's education through the generous gifts
           of Christian men &amp; women who see the value of a classical
@@ -129,6 +129,7 @@ const AdpotAStudentComponent = () => {
         {data.allStripePrice.nodes.map((adoptProduct: AdoptProduct) => {
           return (
             <AdoptCard
+              key={adoptProduct.product.id}
               name={adoptProduct.product.name}
               price={formatPrice(adoptProduct.unit_amount)}
               url={getBuyButtonUrl(adoptProduct.product.name, buyButtons)}

@@ -18,28 +18,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import OutsideClickHandler from "react-outside-click-handler";
 
 const header = (): JSX.Element => {
-  const data = useStaticQuery(graphql`query HeaderQuery {
-  site {
-    siteMetadata {
-      address
-      phone
-      email
-    }
-  }
-  nav: allSanityNavItem(sort: {order: ASC}) {
-    nodes {
-      id
-      label
-      link
-      order
-      subLinks {
-        _key
-        label
-        link
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          address
+          phone
+          email
+        }
+      }
+      nav: allSanityNavItem(sort: { order: ASC }) {
+        nodes {
+          id
+          label
+          link
+          order
+          subLinks {
+            _key
+            label
+            link
+          }
+        }
       }
     }
-  }
-}`);
+  `);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -79,14 +81,16 @@ const header = (): JSX.Element => {
                 )}
               >
                 <div className="flex flex-col items-center">
-                  <StaticImage
-                    src="../assets/images/logo_no_background.png"
-                    alt="CCA Logo"
-                    placeholder="blurred"
-                    layout="fixed"
-                    height={150}
-                    className="lg:mr-32 mb-6"
-                  />
+                  <Link to="/">
+                    <StaticImage
+                      src="../assets/images/logo_no_background.png"
+                      alt="CCA Logo"
+                      placeholder="blurred"
+                      layout="fixed"
+                      height={150}
+                      className="lg:mr-32 mb-6"
+                    />
+                  </Link>
                   <div className="text-center">
                     {data.nav.nodes.map((node: NavItemType) => (
                       <div key={node.label} className="flex flex-col mb-4">
@@ -117,7 +121,7 @@ const header = (): JSX.Element => {
                     theme="primary"
                     startIcon={faRightToBracket}
                     size="small"
-                    classes={['mb-6']}
+                    classes={["mb-6"]}
                   />
                   <Button
                     label="Apply Now"
@@ -170,20 +174,18 @@ const header = (): JSX.Element => {
           </div>
         </div>
       </div>
-      <ul className="lg:block hidden w-full mt-3">
+      <div className="lg:block hidden w-full mt-3">
         <div className="max-w-screen-xl flex mx-auto">
-          <li>
-            <Link to="/">
-              <StaticImage
-                src="../assets/images/logo_no_background.png"
-                alt="CCA Logo"
-                placeholder="blurred"
-                layout="fixed"
-                height={150}
-                className="mr-32"
-              />
-            </Link>
-          </li>
+          <Link to="/">
+            <StaticImage
+              src="../assets/images/logo_no_background.png"
+              alt="CCA Logo"
+              placeholder="blurred"
+              layout="fixed"
+              height={150}
+              className="mr-32"
+            />
+          </Link>
           <div className="flex w-full justify-between self-center">
             {data.nav.nodes.map((navItem: NavItemType) => (
               <NavItem
@@ -196,7 +198,7 @@ const header = (): JSX.Element => {
             ))}
           </div>
         </div>
-      </ul>
+      </div>
     </div>
   );
 };

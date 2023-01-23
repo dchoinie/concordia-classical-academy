@@ -5,10 +5,13 @@ export const useSiteMetadata = () => {
     query {
       site {
         siteMetadata {
-          title
+          address
           description
-          siteUrl
+          email
           image
+          phone
+          siteUrl
+          title
         }
       }
     }

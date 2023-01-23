@@ -6,7 +6,7 @@ require("dotenv").config({
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Concorida Classical Academy`,
-    description: `A LCMS School Serving The Mankato Community`,
+    description: `A Classical LCMS School Serving The Mankato Community`,
     siteUrl: `https://www.ccamankato.org`,
     address: `2101 Lor Ray Drive, North Mankato, MN 56003`,
     phone: `507.388.4336`,
@@ -60,11 +60,22 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/about/*`, `/academics/*`, `/admissions/*`, `/faith/*`, `/support/*`, `/contact/`, `/events/`, `/resources/`],
+        precachePages: [
+          `/about/*`,
+          `/academics/*`,
+          `/admissions/*`,
+          `/faith/*`,
+          `/support/*`,
+          `/contact/`,
+          `/events/`,
+          `/resources/`,
+        ],
       },
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    "gatsby-transformer-ffmpeg",
+    "gatsby-plugin-ffmpeg",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -72,6 +83,14 @@ const config: GatsbyConfig = {
         path: "./src/assets/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "videos",
+        path: "./src/assets/videos/",
+      },
+      __key: "videos",
     },
   ],
 };

@@ -1,9 +1,24 @@
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { StaticImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Button from "./button/button";
 
 const AffiliationComponent = () => {
+  const data = useStaticQuery(graphql`
+    query MissionImageQuery {
+      church: file(relativePath: { eq: "church_exterior.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(width: 700)
+        }
+      }
+      lcms: file(relativePath: { eq: "lcms_logo.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500)
+        }
+      }
+    }
+  `);
   return (
     <>
       <div className="flex flex-col-reverse lg:flex-row gap-24 my-24">
@@ -62,11 +77,10 @@ const AffiliationComponent = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <StaticImage
-              src="../assets/images/church_exterior.jpg"
+            <GatsbyImage
+              image={data.church.childImageSharp.gatsbyImageData}
               alt="Good Shepherd Lutheran Church"
-              height={400}
-              className="rounded shadow"
+              className="rounded shadow-lg"
             />
           </a>
         </div>
@@ -79,10 +93,9 @@ const AffiliationComponent = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <StaticImage
-              src="../assets/images/lcms_logo.jpg"
-              alt="LCMS Logo"
-              height={250}
+            <GatsbyImage
+              image={data.lcms.childImageSharp.gatsbyImageData}
+              alt="Good Shepherd Lutheran Church"
             />
           </a>
         </div>

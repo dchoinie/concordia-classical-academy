@@ -44,7 +44,7 @@ export type MetadataProps = {
 
 export interface ImageAsset {
   asset: {
-    url: string;
+    gatsbyImageData: any;
   }
 }
 

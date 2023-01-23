@@ -82,6 +82,7 @@ const Donate = ({ data }: any): JSX.Element => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-6 mb-12">
                 {data.donationAmounts.nodes.map((item: Donation) => (
                   <DonateCard
+                    key={item.product.id}
                     name={item.product.name}
                     price={item.unit_amount}
                     url={getBuyButtonUrl(item.product.name, donations) || "/"}

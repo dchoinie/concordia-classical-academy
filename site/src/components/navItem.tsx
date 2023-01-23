@@ -3,7 +3,7 @@ import cx from "classnames";
 import { Link } from "gatsby";
 import OutsideClickHandler from "react-outside-click-handler";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { NavItemType, SubMenuItem } from "../types/common";
 
 const NavItem = ({ id, label, link, subLinks }: NavItemType) => {
@@ -19,8 +19,11 @@ const NavItem = ({ id, label, link, subLinks }: NavItemType) => {
             >
               {label}
               <FontAwesomeIcon
-                icon={isOpen ? faAngleUp : faAngleDown}
-                className="ml-2 self-center"
+                icon={faAngleUp}
+                className={cx(
+                  "ml-2 self-center transform transition-all duration-300 ease-in-out",
+                  isOpen ? "rotate-0" : "rotate-180"
+                )}
               />
             </div>
             {isOpen && (

@@ -67,77 +67,75 @@ const header = (): JSX.Element => {
               {isOpen ? (
                 <FontAwesomeIcon
                   icon={faX}
-                  className="text-white text-2xl relative"
+                  className="text-white text-2xl relative hover:cursor-pointer"
                   onClick={() => setIsOpen(!isOpen)}
                 />
               ) : (
                 <FontAwesomeIcon
                   icon={faBars}
-                  className="text-white text-2xl relative"
+                  className="text-white text-2xl relative hover:cursor-pointer"
                   onClick={() => setIsOpen(!isOpen)}
                 />
               )}
             </div>
-            {isOpen && (
-              <div
-                className={cx(
-                  "w-3/4 bg-white right-0 z-30 mt-6 p-6 absolute text-lg transition-all ease-in-out duration-300 border border-gray-200 shadow-lg",
-                  isOpen ? "translate-x-0" : "translate-x-full"
-                )}
-              >
-                <div className="flex flex-col items-center">
-                  <Link to="/">
-                    <GatsbyImage
-                      image={data.logo.childImageSharp.gatsbyImageData}
-                      alt="CCA Logo"
-                      className="lg:mr-32 mb-6 w-32"
-                    />
-                  </Link>
-                  <div className="text-center">
-                    {data.nav.nodes.map((node: NavItemType) => (
-                      <div
+            <div
+              className={cx(
+                "transform ease-in-out transition-all duration-300 w-3/4 bg-white right-0 z-30 mt-6 p-6 absolute text-lg border border-gray-200 shadow-lg",
+                isOpen ? "translate-x-0" : "translate-x-full"
+              )}
+            >
+              <div className="flex flex-col items-center">
+                <Link to="/">
+                  <GatsbyImage
+                    image={data.logo.childImageSharp.gatsbyImageData}
+                    alt="CCA Logo"
+                    className="lg:mr-32 mb-6 w-32"
+                  />
+                </Link>
+                <div className="text-center">
+                  {data.nav.nodes.map((node: NavItemType) => (
+                    <div
+                      key={node.label}
+                      className="flex flex-col mb-4 fontHeader"
+                    >
+                      <Link
                         key={node.label}
-                        className="flex flex-col mb-4 fontHeader"
+                        to={node.link}
+                        className="hover:text-primary hover:underline mb-1 underline"
                       >
-                        <Link
-                          key={node.label}
-                          to={node.link}
-                          className="hover:text-primary hover:underline mb-1 underline"
-                        >
-                          {node.label}
-                        </Link>
-                        {node.subLinks &&
-                          node.subLinks.map((subLink: any) => (
-                            <Link
-                              key={subLink.label}
-                              to={subLink.link}
-                              className="text-gray-700 hover:text-primary hover:underline mb-1"
-                            >
-                              {subLink.label}
-                            </Link>
-                          ))}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="flex flex-col items-center my-6">
-                  <Button
-                    label="Parent Portal"
-                    theme="primary"
-                    startIcon={faRightToBracket}
-                    size="small"
-                    classes={["mb-6"]}
-                  />
-                  <Button
-                    label="Apply Now"
-                    theme="accent"
-                    endIcon={faAngleRight}
-                    size="small"
-                    link="/admissions/admission-process"
-                  />
+                        {node.label}
+                      </Link>
+                      {node.subLinks &&
+                        node.subLinks.map((subLink: any) => (
+                          <Link
+                            key={subLink.label}
+                            to={subLink.link}
+                            className="text-gray-700 hover:text-primary hover:underline mb-1"
+                          >
+                            {subLink.label}
+                          </Link>
+                        ))}
+                    </div>
+                  ))}
                 </div>
               </div>
-            )}
+              <div className="flex flex-col items-center my-6">
+                <Button
+                  label="Parent Portal"
+                  theme="primary"
+                  startIcon={faRightToBracket}
+                  size="small"
+                  classes={["mb-6"]}
+                />
+                <Button
+                  label="Apply Now"
+                  theme="accent"
+                  endIcon={faAngleRight}
+                  size="small"
+                  link="/admissions/admission-process"
+                />
+              </div>
+            </div>
           </OutsideClickHandler>
         </div>
         {/* desktop nav */}

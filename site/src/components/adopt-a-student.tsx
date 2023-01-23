@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import AdoptCard from "./adoptCard";
 import { formatPrice, getBuyButtonUrl } from "../helpers/stripeHelpers";
@@ -45,34 +45,39 @@ const buyButtons = [
 ];
 
 const AdpotAStudentComponent = () => {
-  const data = useStaticQuery(graphql`query AdpotQuery {
-  allStripePrice(
-    sort: {product: {name: ASC}}
-    filter: {product: {name: {regex: "/([a-zA-Z]+(-[a-zA-Z]+)+)/i"}}}
-  ) {
-    nodes {
-      active
-      id
-      unit_amount
-      product {
-        name
-        id
+  const data = useStaticQuery(graphql`
+    query AdpotQuery {
+      allStripePrice(
+        sort: { product: { name: ASC } }
+        filter: { product: { name: { regex: "/([a-zA-Z]+(-[a-zA-Z]+)+)/i" } } }
+      ) {
+        nodes {
+          active
+          id
+          unit_amount
+          product {
+            name
+            id
+          }
+          currency
+        }
       }
-      currency
+      adoptImage: file(relativePath: { eq: "adoptImage.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(width: 700)
+        }
+      }
     }
-  }
-}`);
+  `);
 
   return (
     <div className="my-24">
       <div className="flex flex-col lg:flex-row gap-12 mb-24">
         <div className="flex w-full lg:w-1/2 self-start">
-          <StaticImage
-            src="../assets/images/adoptImage.jpg"
-            alt="Adopt-A-Student"
-            height={350}
-            placeholder="blurred"
-            className="rounded shadow"
+          <GatsbyImage
+            image={data.adoptImage.childImageSharp.gatsbyImageData}
+            alt="Donate Image"
+            className="rounded shadow-lg"
           />
         </div>
         <div className="flex flex-col w-full lg:w-1/2">

@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import Button from "../../components/button/button";
 import FeeCard from "../../components/feeCard";

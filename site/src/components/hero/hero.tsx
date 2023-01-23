@@ -1,5 +1,5 @@
 import React from "react";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import cx from "classnames";
 import { faAngleRight, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import Button from "../button/button";

@@ -1,7 +1,7 @@
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import Button from "./button/button";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 
 const Apply = () => {
@@ -18,7 +18,11 @@ const Apply = () => {
     <div className="bg-primary w-full my-24">
       <div className="lg:max-w-screen-xl py-12 mx-6 lg:mx-auto flex flex-col lg:flex-row justify-between">
         <div className="flex flex-col w-full lg:flex-row">
-          <GatsbyImage image={data.rose.childImageSharp.gatsbyImageData} alt="Luther Rose" className="lg:mr-6 self-center" />
+          <GatsbyImage
+            image={data.rose.childImageSharp.gatsbyImageData}
+            alt="Luther Rose"
+            className="lg:mr-6 self-center"
+          />
           <h2 className="text-3xl font-bold sm:text-4xl self-center text-center lg:text-left">
             <span className="block text-gray-100">Ready To Apply?</span>
             <span className="block text-accent">
@@ -32,7 +36,7 @@ const Apply = () => {
               label="Apply Now"
               endIcon={faAngleRight}
               link="/admissions/admission-process"
-              theme="accent"
+              theme="white"
               size="large"
             />
           </div>

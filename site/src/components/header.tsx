@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import cx from "classnames";
 import NavItem from "./navItem";
-import { StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { NavItemType } from "../types/common";
 import Button from "./button/button";
 import {
@@ -38,6 +38,11 @@ const header = (): JSX.Element => {
             label
             link
           }
+        }
+      }
+      logo: file(relativePath: { eq: "logo_no_background.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 150)
         }
       }
     }
@@ -82,18 +87,18 @@ const header = (): JSX.Element => {
               >
                 <div className="flex flex-col items-center">
                   <Link to="/">
-                    <StaticImage
-                      src="../assets/images/logo_no_background.png"
+                    <GatsbyImage
+                      image={data.logo.childImageSharp.gatsbyImageData}
                       alt="CCA Logo"
-                      placeholder="blurred"
-                      layout="fixed"
-                      height={150}
-                      className="lg:mr-32 mb-6"
+                      className="lg:mr-32 mb-6 w-32"
                     />
                   </Link>
                   <div className="text-center">
                     {data.nav.nodes.map((node: NavItemType) => (
-                      <div key={node.label} className="flex flex-col mb-4">
+                      <div
+                        key={node.label}
+                        className="flex flex-col mb-4 fontHeader"
+                      >
                         <Link
                           key={node.label}
                           to={node.link}
@@ -177,12 +182,9 @@ const header = (): JSX.Element => {
       <div className="lg:block hidden w-full mt-3">
         <div className="max-w-screen-xl flex mx-auto">
           <Link to="/">
-            <StaticImage
-              src="../assets/images/logo_no_background.png"
+            <GatsbyImage
+              image={data.logo.childImageSharp.gatsbyImageData}
               alt="CCA Logo"
-              placeholder="blurred"
-              layout="fixed"
-              height={150}
               className="mr-32"
             />
           </Link>

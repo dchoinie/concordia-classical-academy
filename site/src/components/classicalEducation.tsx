@@ -45,7 +45,7 @@ const ClassicalEducation = () => {
             Education for Any Child
           </small>
           <Button
-            label="Learn More"
+            label="Learn More About Classical Education"
             theme="primary"
             endIcon={faAngleRight}
             link="/academics/what-is-classical-education"

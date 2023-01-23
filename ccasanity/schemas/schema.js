@@ -46,9 +46,9 @@ export default createSchema({
           type: "string",
         },
         {
-          name: 'phone',
-          title: 'Phone',
-          type: 'string',
+          name: "phone",
+          title: "Phone",
+          type: "string",
         },
         {
           title: "Headshot",
@@ -56,9 +56,9 @@ export default createSchema({
           type: "image",
         },
         {
-          name: 'order',
-          title: 'Order',
-          type: 'number',
+          name: "order",
+          title: "Order",
+          type: "number",
         },
       ],
     },
@@ -148,87 +148,87 @@ export default createSchema({
         },
       ],
     },
-  {
-      name: 'tuitionFees',
-      title: 'Tuition Fees',
-      type: 'document',
+    {
+      name: "tuitionFees",
+      title: "Tuition Fees",
+      type: "document",
       fields: [
         {
-          name: 'title',
-          title: 'Title',
-          type: 'string',
+          name: "title",
+          title: "Title",
+          type: "string",
         },
         {
-          name: 'fee',
-          title: 'Fee',
-          type: 'number',
+          name: "fee",
+          title: "Fee",
+          type: "number",
         },
         {
-          name: 'discount',
-          title: 'Discount',
-          type: 'number',
+          name: "discount",
+          title: "Discount",
+          type: "number",
         },
         {
-          name: 'order',
-          title: 'Order',
-          type: 'number',
+          name: "order",
+          title: "Order",
+          type: "number",
         },
       ],
     },
     {
-      name: 'adminFees',
-      title: 'Admin Fees',
-      type: 'document',
+      name: "adminFees",
+      title: "Admin Fees",
+      type: "document",
       fields: [
         {
-          name: 'title',
-          title: 'Title',
-          type: 'string',
+          name: "title",
+          title: "Title",
+          type: "string",
         },
         {
-          name: 'fee',
-          title: 'Fee',
-          type: 'string',
+          name: "fee",
+          title: "Fee",
+          type: "string",
         },
       ],
     },
     {
-      name: 'supplyList',
-      title: 'Supply List',
-      type: 'document',
+      name: "supplyList",
+      title: "Supply List",
+      type: "document",
       fields: [
         {
-          name: 'grade',
-          title: 'Grade',
-          type: 'string',
+          name: "grade",
+          title: "Grade",
+          type: "string",
         },
         {
-          title: 'Content',
-          name: 'content',
-          type: 'array',
-          of: [{type: 'block'}]
-        }
+          title: "Content",
+          name: "content",
+          type: "array",
+          of: [{ type: "block" }],
+        },
       ],
     },
     {
-      name: 'resources',
-      title: 'Resources',
-      type: 'document',
+      name: "resources",
+      title: "Resources",
+      type: "document",
       fields: [
         {
-          name: 'title',
-          title: 'Title',
-          type: 'string',
+          name: "title",
+          title: "Title",
+          type: "string",
         },
         {
-          name: 'link',
-          title: 'Link',
-          type: 'string',
+          name: "link",
+          title: "Link",
+          type: "string",
         },
         {
-          name: 'category',
-          title: 'Category',
-          type: 'string',
+          name: "category",
+          title: "Category",
+          type: "string",
           options: {
             list: [
               {
@@ -239,45 +239,67 @@ export default createSchema({
                 title: "Educational",
                 value: "educational",
               },
-            ]
-          }
+            ],
+          },
+        },
+        {
+          name: "image",
+          title: "Image",
+          type: "image",
         },
       ],
     },
     {
-      name: 'handbook',
-      title: 'Handbook',
-      type: 'document',
+      name: "handbook",
+      title: "Handbook",
+      type: "document",
       fields: [
         {
-          name: 'section',
-          title: 'Section',
-          type: 'string',
+          name: "section",
+          title: "Section",
+          type: "string",
         },
         {
-          name: 'description',
-          title: 'Description',
-          type: 'text',
+          name: "description",
+          title: "Description",
+          type: "text",
         },
         {
-          name: 'extraContent',
-          title: 'Extra Content',
-          type: 'array',
-          of: [{type: 'block'}]
+          name: "extraContent",
+          title: "Extra Content",
+          type: "array",
+          of: [{ type: "block" }],
         },
       ],
     },
     {
-      name: 'mission',
-      title: 'Mission',
-      type: 'document',
+      name: "mission",
+      title: "Mission",
+      type: "document",
       fields: [
         {
-          name: 'missionStatement',
-          title: 'Mission Statement',
-          type: 'text',
+          name: "missionStatement",
+          title: "Mission Statement",
+          type: "text",
         },
       ],
-    }
+    },
+    {
+      name: "jobListing",
+      title: "Job Listing",
+      type: "document",
+      fields: [
+        {
+          name: "position",
+          title: "Position",
+          type: "string",
+        },
+        {
+          name: "postedDate",
+          title: "Posted Date",
+          type: "date",
+        },
+      ],
+    },
   ]),
 });

@@ -15,7 +15,7 @@ const NavItem = ({ id, label, link, subLinks }: NavItemType) => {
           <>
             <div
               onClick={() => setIsOpen(!isOpen)}
-              className="flex cursor-pointer text-primary"
+              className="flex cursor-pointer text-primary fontHeader"
             >
               {label}
               <FontAwesomeIcon
@@ -32,7 +32,10 @@ const NavItem = ({ id, label, link, subLinks }: NavItemType) => {
               >
                 <ul className="flex flex-col">
                   {subLinks.map((subItem: SubMenuItem) => (
-                    <li>
+                    <li
+                      key={subItem._key}
+                      className="mb-2 last:mb-0 fontHeader"
+                    >
                       <Link
                         key={subItem._key}
                         to={subItem.link}
@@ -47,7 +50,7 @@ const NavItem = ({ id, label, link, subLinks }: NavItemType) => {
             )}
           </>
         ) : (
-          <Link to={link} className="text-text">
+          <Link to={link} className="text-text fontHeader">
             {label}
           </Link>
         )}

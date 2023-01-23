@@ -1,11 +1,7 @@
 import React from "react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  GatsbyImage,
-  GatsbyImageProps,
-  StaticImage,
-} from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,

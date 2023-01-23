@@ -51,7 +51,7 @@ const ButtonComponent = ({
           download={download}
         >
           {startIcon && <FontAwesomeIcon icon={startIcon} className="mr-2" />}
-          {label}
+          <span className="fontHeader">{label}</span>
           {endIcon && <FontAwesomeIcon icon={endIcon} className="ml-2" />}
         </a>
       );
@@ -67,7 +67,7 @@ const ButtonComponent = ({
         )}
       >
         {startIcon && <FontAwesomeIcon icon={startIcon} className="mr-2" />}
-        {label}
+        <span className="fontHeader">{label}</span>
         {endIcon && <FontAwesomeIcon icon={endIcon} className="ml-2" />}
       </Link>
     );
@@ -87,7 +87,7 @@ const ButtonComponent = ({
           disabled={disabled || submissionInProgress}
         >
           {startIcon && <FontAwesomeIcon icon={startIcon} className="mr-2" />}
-          {label}
+          <span className="fontHeader">{label}</span>
           {endIcon && <FontAwesomeIcon icon={endIcon} className="ml-2" />}
         </button>
       ) : (

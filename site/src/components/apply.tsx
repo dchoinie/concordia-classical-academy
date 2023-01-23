@@ -30,16 +30,15 @@ const Apply = () => {
             </span>
           </h2>
         </div>
-        <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-          <div className="self-center">
-            <Button
-              label="Apply Now"
-              endIcon={faAngleRight}
-              link="/admissions/admission-process"
-              theme="white"
-              size="large"
-            />
-          </div>
+        <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0 justify-center">
+          <Button
+            label="Apply Now"
+            endIcon={faAngleRight}
+            link="/admissions/admission-process"
+            theme="white"
+            size="large"
+            classes={["lg:self-center"]}
+          />
         </div>
       </div>
     </div>

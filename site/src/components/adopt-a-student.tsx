@@ -62,7 +62,7 @@ const AdpotAStudentComponent = () => {
           currency
         }
       }
-      adoptImage: file(relativePath: { eq: "adoptImage.jpg" }) {
+      adoptImage: file(relativePath: { eq: "adoptImage.JPG" }) {
         childImageSharp {
           gatsbyImageData(width: 700)
         }

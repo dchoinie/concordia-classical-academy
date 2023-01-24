@@ -30,10 +30,6 @@ const legalCol = [
     link: "/terms-and-conditions",
   },
   {
-    label: "Careers",
-    link: "/careers",
-  },
-  {
     label: "Donations",
     link: "/support/donations",
   },
@@ -106,11 +102,13 @@ const footer = (): JSX.Element => {
       <div className="max-w-screen-xl mx-6 lg:mx-auto pt-12 pb-6">
         <div className="flex flex-col lg:flex-row w-full justify-between mb-6">
           <div className="flex items-center lg:items-start flex-col mb-6 lg:mb-0">
-            <GatsbyImage
-              image={data.lutherRose.childImageSharp.gatsbyImageData}
-              alt="Luther Rose"
-              className="lg:self-start self-center mb-2"
-            />
+            <Link to="/">
+              <GatsbyImage
+                image={data.lutherRose.childImageSharp.gatsbyImageData}
+                alt="Luther Rose"
+                className="lg:self-start self-center mb-2"
+              />
+            </Link>
             <p className="text-gray-200 mb-2 fontHeader">
               Concordia Classical Academy
             </p>

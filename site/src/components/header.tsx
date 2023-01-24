@@ -126,6 +126,7 @@ const header = (): JSX.Element => {
                   startIcon={faRightToBracket}
                   size="small"
                   classes={["mb-6"]}
+                  href="https://logins2.renweb.com/logins/ParentsWeb-Login.aspx"
                 />
                 <Button
                   label="Apply Now"
@@ -166,6 +167,7 @@ const header = (): JSX.Element => {
               startIcon={faRightToBracket}
               classes={["mr-2"]}
               size="small"
+              href="https://logins2.renweb.com/logins/ParentsWeb-Login.aspx"
             />
             <Button
               label="Apply Now"

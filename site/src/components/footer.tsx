@@ -39,7 +39,11 @@ const footerCol = (title: string, items: SubNavItem[]) => (
   <div className="flex flex-col items-center lg:items-start mb-6 lg:mb-0">
     <p className="text-gray-200 fontHeader">{title}</p>
     {items.map((item: SubNavItem) => (
-      <Link key={item.label} to={item.link} className="text-gray-400">
+      <Link
+        key={item.label}
+        to={item.link}
+        className="text-gray-400 mb-1 lg:mb-0"
+      >
         {item.label}
       </Link>
     ))}
@@ -117,7 +121,7 @@ const footer = (): JSX.Element => {
                 href="https://www.facebook.com/CCAMankato"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mr-2"
+                className="mr-6 lg:mr-2"
                 aria-label="CCA Facebook"
               >
                 <FontAwesomeIcon icon={faFacebook} />
@@ -133,7 +137,11 @@ const footer = (): JSX.Element => {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-1 place-items-center">
               {allNavItemsToDisplay.map((item: any) => (
-                <Link key={item.label} to={item.link} className="text-gray-400">
+                <Link
+                  key={item.label}
+                  to={item.link}
+                  className="text-gray-400 mb-2 lg:mb-0"
+                >
                   {item.label}
                 </Link>
               ))}
@@ -146,7 +154,7 @@ const footer = (): JSX.Element => {
               href="https://logins2.renweb.com/logins/ParentsWeb-Login.aspx"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 flex"
+              className="text-gray-400 flex mb-2 lg:mb-0"
             >
               <span className="mr-2">Parent Portal</span>
               <FontAwesomeIcon
@@ -158,7 +166,7 @@ const footer = (): JSX.Element => {
               href="https://accounts.renweb.com/Account/Login"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 flex"
+              className="text-gray-400 flex mb-2 lg:mb-0"
             >
               <span className="mr-2">Teacher Login</span>
               <FontAwesomeIcon
@@ -185,11 +193,15 @@ const footer = (): JSX.Element => {
             <p className="text-gray-200 fontHeader">
               Subscribe To Our Newsletter
             </p>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-center lg:text-left">
               Get the latest news, updates and school info sent to your inbox.
             </p>
           </div>
-          <div className="flex justify-center lg:justify-start items-center">
+          <form
+            action="https://formspree.io/f/mjvdkqbp"
+            method="POST"
+            className="flex justify-center lg:justify-start items-center"
+          >
             <input
               type="email"
               name="email"
@@ -198,12 +210,10 @@ const footer = (): JSX.Element => {
               className="px-4 rounded shadow mr-4"
               style={{ height: "40px" }}
             />
-            <Button
-              label="Subscribe"
-              theme="accent"
-              classes={["self-center"]}
-            />
-          </div>
+            <button type="submit" className="btn btnAccent self-center">
+              Subscribe
+            </button>
+          </form>
         </div>
         <div className="flex self-center justify-center">
           <p className="text-gray-400">

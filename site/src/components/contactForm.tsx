@@ -54,6 +54,10 @@ const ContactForm = (): JSX.Element => {
         className="p-4 w-full border border-gray-200 rounded shadow mb-6"
         required
       ></textarea>
+      <fieldset className="flex mb-6">
+        <input type="checkbox" name="_optin" id="_optin" className="mr-4" />
+        <label htmlFor="_optin" className="text-gray-700">Signup For Our Newsletter</label>
+      </fieldset>
       <button type="submit" className="btnPrimary btnMedium btn self-start">
         Submit
         <span>

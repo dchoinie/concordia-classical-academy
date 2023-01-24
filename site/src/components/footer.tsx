@@ -143,28 +143,28 @@ const footer = (): JSX.Element => {
           <div className="flex flex-col items-center lg:items-start">
             <p className="text-gray-200 fontHeader">Parents / Teachers</p>
             <a
-              href="/"
+              href="https://logins2.renweb.com/logins/ParentsWeb-Login.aspx"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 flex"
             >
+              <span className="mr-2">Parent Portal</span>
               <FontAwesomeIcon
                 icon={faRightToBracket}
                 className="self-center"
               />
-              <span className="ml-2">Parent Portal</span>
             </a>
             <a
-              href="/"
+              href="https://accounts.renweb.com/Account/Login"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 flex"
             >
+              <span className="mr-2">Teacher Login</span>
               <FontAwesomeIcon
                 icon={faRightToBracket}
                 className="self-center"
               />
-              <span className="ml-2">Teacher Login</span>
             </a>
           </div>
         </div>

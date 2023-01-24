@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "cca-sanity"
-  },
   "api": {
     "projectId": "bq1nuwtx",
     "dataset": "production"
+  },
+  "project": {
+    "name": "cca-sanity"
   },
   "plugins": [
     "@sanity/base",

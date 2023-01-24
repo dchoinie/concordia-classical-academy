@@ -166,6 +166,18 @@ const footer = (): JSX.Element => {
                 className="self-center"
               />
             </a>
+            <a
+              href="https://concordiaclassicalacademy.sanity.studio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 flex"
+            >
+              <span className="mr-2">Website Login</span>
+              <FontAwesomeIcon
+                icon={faRightToBracket}
+                className="self-center"
+              />
+            </a>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row w-full justify-between py-6 border-y border-gray-400 mb-6">

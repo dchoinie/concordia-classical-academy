@@ -5,7 +5,7 @@ require("dotenv").config({
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Concorida Classical Academy`,
+    title: `Concordia Classical Academy`,
     description: `A Classical LCMS School Serving The Mankato Community`,
     siteUrl: `https://www.ccamankato.org`,
     address: `2101 Lor Ray Drive, North Mankato, MN 56003`,

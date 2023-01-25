@@ -22,7 +22,7 @@ const FeeCard = ({ fee, id, title, discount }: Fee) => {
             </div>
             <div className="text-4xl font-bold self-center">-</div>
             <div className="flex flex-col items-center text-center">
-              <p className="underline">Good Shepherd Scholorship:</p>
+              <p className="underline">Good Shepherd Scholarship:</p>
               <p>${discount}</p>
             </div>
             <div className="text-4xl font-bold self-center">=</div>

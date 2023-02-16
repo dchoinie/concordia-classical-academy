@@ -16,6 +16,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OutsideClickHandler from 'react-outside-click-handler';
+import Constants from '../constants/constants';
 
 const header = (): JSX.Element => {
   const data = useStaticQuery(graphql`
@@ -126,7 +127,7 @@ const header = (): JSX.Element => {
                   startIcon={faRightToBracket}
                   size='small'
                   classes={['mb-6']}
-                  href='https://logins2.renweb.com/logins/ParentsWeb-Login.aspx'
+                  link={Constants.LOGIN}
                 />
                 <Button
                   label='Apply Now'
@@ -177,7 +178,7 @@ const header = (): JSX.Element => {
               startIcon={faRightToBracket}
               classes={['mr-2']}
               size='small'
-              href='https://logins2.renweb.com/logins/ParentsWeb-Login.aspx'
+              link="/login"
             />
             <Button
               label='Apply Now'

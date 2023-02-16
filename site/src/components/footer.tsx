@@ -7,7 +7,7 @@ import {
   faEnvelope,
   faRightToBracket,
 } from '@fortawesome/free-solid-svg-icons';
-import Button from './button/button';
+import Constants from '../constants/constants';
 
 interface SubNavItem {
   label: string;
@@ -157,10 +157,8 @@ const footer = (): JSX.Element => {
           {footerCol('Legal', legalCol)}
           <div className='flex flex-col items-center lg:items-start'>
             <p className='text-gray-200 fontHeader underline'>Parents / Teachers</p>
-            <a
-              href='https://logins2.renweb.com/logins/ParentsWeb-Login.aspx'
-              target='_blank'
-              rel='noopener noreferrer'
+            <Link
+              to='/login'
               className='text-gray-400 flex mb-2 lg:mb-0'
             >
               <span className='mr-2'>Parent Portal</span>
@@ -168,7 +166,7 @@ const footer = (): JSX.Element => {
                 icon={faRightToBracket}
                 className='self-center'
               />
-            </a>
+            </Link>
             <a
               href='https://accounts.renweb.com/Account/Login'
               target='_blank'

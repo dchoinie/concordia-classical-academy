@@ -5,6 +5,7 @@ import { SEO } from "../components/seo";
 import Constants from '../constants/constants';
 
 const Login = (): JSX.Element => {
+    // const iframeResizerOptions = { checkOrigin: false };
     return (
         <div>
           <SEO title="Family Login" />
@@ -15,7 +16,8 @@ const Login = (): JSX.Element => {
                 <iframe
                   src={Constants.LOGIN}
                   width="100%"
-                  height="800"
+                  height="1000"
+                  className='shadow-lg'
                 ></iframe>
               </div>
             </div>

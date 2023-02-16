@@ -55,7 +55,7 @@ const RequestInformationComponent = () => {
           </div>
         </div>
         <div className='flex w-full lg:w-2/3'>
-          <iframe src={Constants.REQUEST_INFO} width="100%" height="2250"></iframe>
+          <iframe src={Constants.REQUEST_INFO} width="100%" height="2250" className='shadow-lg'></iframe>
         </div>
       </div>
     </div>

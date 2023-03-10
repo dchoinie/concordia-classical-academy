@@ -34,10 +34,12 @@ const header = (): JSX.Element => {
           label
           link
           order
+          external
           subLinks {
             _key
             label
             link
+            external
           }
         }
       }
@@ -94,30 +96,102 @@ const header = (): JSX.Element => {
                   />
                 </Link>
                 <div className='text-center'>
-                  {data.nav.nodes.map((node: NavItemType) => (
-                    <div
-                      key={node.label}
-                      className='flex flex-col mb-4 fontHeader'
-                    >
-                      <Link
-                        key={node.label}
-                        to={node.link}
-                        className='hover:text-primary hover:underline mb-1 underline'
-                      >
-                        {node.label}
-                      </Link>
-                      {node.subLinks &&
-                        node.subLinks.map((subLink: any) => (
-                          <Link
-                            key={subLink.label}
-                            to={subLink.link}
-                            className='text-gray-700 hover:text-primary hover:underline mb-1'
+                  {data.nav.nodes.map((node: NavItemType) => {
+                    if (node.external) {
+                      return (
+                        <div
+                          key={node.label}
+                          className='flex flex-col mb-4 fontHeader'
+                        >
+                          <a
+                            key={node.label}
+                            href={node.link}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='hover:text-primary hover:underline mb-1 underline'
                           >
-                            {subLink.label}
+                            {node.label}
+                          </a>
+                          {node.subLinks &&
+                            node.subLinks.map((subLink: any) => {
+                              if (subLink.external) {
+                                return (
+                                  <a
+                                    key={subLink.label}
+                                    href={subLink.link}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='text-gray-700 hover:text-primary hover:underline mb-1'
+                                  >
+                                    {subLink.label}
+                                  </a>
+                                );
+                              }
+                              return (
+                                <Link
+                                  key={subLink.label}
+                                  to={subLink.link}
+                                  className='text-gray-700 hover:text-primary hover:underline mb-1'
+                                >
+                                  {subLink.label}
+                                </Link>
+                              );
+                            })}
+                        </div>
+                      );
+                    }
+                    return (
+                      <div
+                        key={node.label}
+                        className='flex flex-col mb-4 fontHeader'
+                      >
+                        {node.external ? (
+                          <a
+                            key={node.label}
+                            href={node.link}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='hover:text-primary hover:underline mb-1 underline'
+                          >
+                            {node.label}
+                          </a>
+                        ) : (
+                          <Link
+                            key={node.label}
+                            to={node.link}
+                            className='hover:text-primary hover:underline mb-1 underline'
+                          >
+                            {node.label}
                           </Link>
-                        ))}
-                    </div>
-                  ))}
+                        )}
+                        {node.subLinks &&
+                          node.subLinks.map((subLink: any) => {
+                            if (subLink.external) {
+                              return (
+                                <a
+                                  key={subLink.label}
+                                  href={subLink.link}
+                                  target='_blank'
+                                  rel='noopener noreferrer'
+                                  className='text-gray-700 hover:text-primary hover:underline mb-1'
+                                >
+                                  {subLink.label}
+                                </a>
+                              );
+                            }
+                            return (
+                              <Link
+                                key={subLink.label}
+                                to={subLink.link}
+                                className='text-gray-700 hover:text-primary hover:underline mb-1'
+                              >
+                                {subLink.label}
+                              </Link>
+                            );
+                          })}
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
               <div className='flex flex-col items-center my-6'>
@@ -127,7 +201,7 @@ const header = (): JSX.Element => {
                   startIcon={faRightToBracket}
                   size='small'
                   classes={['mb-6']}
-                  link={Constants.LOGIN}
+                  href={Constants.LOGIN}
                 />
                 <Button
                   label='Apply Now'
@@ -178,7 +252,7 @@ const header = (): JSX.Element => {
               startIcon={faRightToBracket}
               classes={['mr-2']}
               size='small'
-              link="/login"
+              href={Constants.LOGIN}
             />
             <Button
               label='Apply Now'
@@ -207,6 +281,7 @@ const header = (): JSX.Element => {
                 label={navItem.label}
                 link={navItem.link}
                 subLinks={navItem.subLinks}
+                external={navItem.external}
               />
             ))}
           </div>

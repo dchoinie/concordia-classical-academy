@@ -1,20 +1,32 @@
+import { PortableText } from '@portabletext/react';
 import React from 'react'
+import type { PortableTextListComponent } from '@portabletext/react';
 
 interface SupplyList {
     grade: string;
-    list: any;
+    content: any;
 }
 
-const SupplyCard = ({ grade, list }: SupplyList) => {
+const components = {
+  list: {
+    // Ex. 1: customizing common list types
+    bullet: ({children}: any) => <ul className="mt-xl">{children}</ul>,
+    number: ({children}: any) => <ol className="mt-lg">{children}</ol>,
+  },
+  listItem: {
+    // Ex. 1: customizing common list types
+    bullet: ({children}: any) => <li style={{listStyleType: 'disclosure-closed'}}>{children}</li>,
+  },
+}
+
+const SupplyCard = ({ grade, content }: SupplyList) => {
+  console.log(content);
+
   return (
     <div className='flex flex-col p-6 rounded shadow-lg border border-gray-200'>
         <h3 className="text-gray-800">{grade}</h3>
         <hr className="my-3 border border-gray-200 w-2/3" />
-        {list.map((l: any) => (
-            l.children.map((c: any) => (
-                <p key={c.text} className='ml-3'>&#8226; {`${c.text}`}</p>
-            ))
-        ))}
+        <PortableText value={content} components={components} />
     </div>
   )
 }

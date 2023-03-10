@@ -20,27 +20,27 @@ interface AdoptProduct {
 const buyButtons = [
   {
     name: "Adopt-A-Student Level 1",
-    url: "https://buy.stripe.com/test_bIYg103Q64vigYo6ou",
+    url: "https://donate.stripe.com/6oE5kqe5J0MoaqI3cc",
   },
   {
     name: "Adopt-A-Student Level 2",
-    url: "https://buy.stripe.com/test_7sIg10fyOf9W4bC8wB",
+    url: "https://donate.stripe.com/4gw7sy7Hlcv67ew6op",
   },
   {
     name: "Adopt-A-Student Level 3",
-    url: "https://buy.stripe.com/test_6oEeWWcmC2naeQg004",
+    url: "https://donate.stripe.com/9AQ006bXBeDefL2dQS",
   },
   {
     name: "Adopt-A-Student Level 4",
-    url: "https://buy.stripe.com/test_dR6aGGbiy4vi0Zq4gj",
+    url: "https://donate.stripe.com/14kbIO6Dh52EaqI147",
   },
   {
     name: "Adopt-A-Student Level 5",
-    url: "https://buy.stripe.com/test_00g1660DU0f29vW9AC",
+    url: "https://donate.stripe.com/5kAcMS9Pt2Uw1Uc004",
   },
   {
     name: "Adopt-A-Student Level 6",
-    url: "https://buy.stripe.com/test_28oaGG2M2bXK6jK5kl",
+    url: "https://donate.stripe.com/bIY3ci7Hl7aM2Yg5kp",
   },
 ];
 

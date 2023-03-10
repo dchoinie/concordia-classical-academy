@@ -23,31 +23,31 @@ interface Donation {
 const donations = [
   {
     amount: "Donation - 10",
-    url: "https://buy.stripe.com/test_28o7uudqGf9WaA07sz",
+    url: "https://donate.stripe.com/eVa3ciaTxdzagP65kr",
   },
   {
     name: "Donation - 20",
-    url: "https://buy.stripe.com/test_eVa4ii2M29PCaA014c",
+    url: "https://donate.stripe.com/dR614a0eT1Qs9mEaEM",
   },
   {
     name: "Donation - 50",
-    url: "https://buy.stripe.com/test_3csbKK9aqd1OcI86ox",
+    url: "https://donate.stripe.com/fZe6ou8Lp66I42k5kt",
   },
   {
     name: "Donation - 100",
-    url: "https://buy.stripe.com/test_5kA4ii3Q66Dq6jK28i",
+    url: "https://donate.stripe.com/3cseV0f9N2UwbuM00a",
   },
   {
     name: "Donation - 250",
-    url: "https://buy.stripe.com/test_cN216672ibXKfUkdR1",
+    url: "https://donate.stripe.com/7sIbIOd1FfHi8iAfZ9",
   },
   {
     name: "Donation - 500",
-    url: "https://buy.stripe.com/test_eVa02272i1j6fUk3co",
+    url: "https://donate.stripe.com/14k9AG8LpeDe56oeV6",
   },
   {
     name: "General Donation",
-    url: "https://donate.stripe.com/test_28o9CCbiy4vi7nOaEE",
+    url: "https://donate.stripe.com/cN214a5zd0Mo42k5kq",
   },
 ];
 

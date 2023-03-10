@@ -27,6 +27,14 @@ const config: GatsbyConfig = {
       },
     },
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/assets/images/",
+      },
+      __key: "images",
+    },
+    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "bq1nuwtx",
@@ -74,16 +82,6 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    "gatsby-transformer-ffmpeg",
-    "gatsby-plugin-ffmpeg",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: "./src/assets/images/",
-      },
-      __key: "images",
-    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

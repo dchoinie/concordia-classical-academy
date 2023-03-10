@@ -57,9 +57,11 @@ const footer = (): JSX.Element => {
         nodes {
           label
           link
+          external
           subLinks {
             label
             link
+            external
           }
         }
       }
@@ -124,9 +126,21 @@ const footer = (): JSX.Element => {
             <h4 className='text-accent mb-2 fontHeader'>
               {data.site.siteMetadata.title}
             </h4>
-            <p className="text-gray-300 mb-1">{data.site.siteMetadata.address}</p>
-            <a href={`tel:+1${data.site.siteMetadata.phone}`} className="text-gray-300 mb-1">{data.site.siteMetadata.phone}</a>
-            <a href={`mailto:${data.site.siteMetadata.email}`} className="text-gray-300 mb-1">{data.site.siteMetadata.email}</a>
+            <p className='text-gray-300 mb-1'>
+              {data.site.siteMetadata.address}
+            </p>
+            <a
+              href={`tel:+1${data.site.siteMetadata.phone}`}
+              className='text-gray-300 mb-1'
+            >
+              {data.site.siteMetadata.phone}
+            </a>
+            <a
+              href={`mailto:${data.site.siteMetadata.email}`}
+              className='text-gray-300 mb-1'
+            >
+              {data.site.siteMetadata.email}
+            </a>
             <div className='flex text-gray-200 text-lg'>
               <a
                 href='https://www.facebook.com/CCAMankato'
@@ -143,22 +157,41 @@ const footer = (): JSX.Element => {
               Navigation
             </p>
             <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-1 place-items-center'>
-              {allNavItemsToDisplay.map((item: any) => (
-                <Link
-                  key={item.label}
-                  to={item.link}
-                  className='text-gray-400 mb-2 lg:mb-0'
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {allNavItemsToDisplay.map((item: any) => {
+                if (item.external) {
+                  return (
+                    <a
+                      key={item.label}
+                      href={item.link}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-gray-400 mb-2 lg:mb-0'
+                    >
+                      {item.label}
+                    </a>
+                  );
+                }
+                return (
+                  <Link
+                    key={item.label}
+                    to={item.link}
+                    className='text-gray-400 mb-2 lg:mb-0'
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
           {footerCol('Legal', legalCol)}
           <div className='flex flex-col items-center lg:items-start'>
-            <p className='text-gray-200 fontHeader underline'>Parents / Teachers</p>
-            <Link
-              to='/login'
+            <p className='text-gray-200 fontHeader underline'>
+              Parents / Teachers
+            </p>
+            <a
+              href={Constants.LOGIN}
+              target='_blank'
+              rel='noopener noreferrer'
               className='text-gray-400 flex mb-2 lg:mb-0'
             >
               <span className='mr-2'>Parent Portal</span>
@@ -166,7 +199,7 @@ const footer = (): JSX.Element => {
                 icon={faRightToBracket}
                 className='self-center'
               />
-            </Link>
+            </a>
             <a
               href='https://accounts.renweb.com/Account/Login'
               target='_blank'
@@ -222,7 +255,9 @@ const footer = (): JSX.Element => {
         </div>
         <div className='flex self-center justify-center'>
           <p className='text-gray-400'>
-            <>&copy; {new Date().getFullYear()} {data.site.siteMetadata.title}</>
+            <>
+              &copy; {new Date().getFullYear()} {data.site.siteMetadata.title}
+            </>
           </p>
         </div>
       </div>

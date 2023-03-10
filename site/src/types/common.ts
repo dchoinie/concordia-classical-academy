@@ -4,12 +4,14 @@ export interface SubMenuItem {
   link: string;
   _key: string;
   label: string;
+  external?: boolean;
 }
 
 export interface NavItemType {
   link: string;
   id: string;
   label: string;
+  external?: boolean;
   subLinks: SubMenuItem[] | Array<any>;
 }
 

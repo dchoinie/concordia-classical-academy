@@ -208,7 +208,7 @@ const header = (): JSX.Element => {
                   theme='accent'
                   endIcon={faAngleRight}
                   size='small'
-                  link='/admissions/admission-process'
+                  href={Constants.ADMISSIONS}
                 />
               </div>
             </div>
@@ -259,7 +259,7 @@ const header = (): JSX.Element => {
               theme='accent'
               endIcon={faAngleRight}
               size='small'
-              link='/admissions/admission-process'
+              href={Constants.ADMISSIONS}
             />
           </div>
         </div>

@@ -61,6 +61,7 @@ const Events = (): JSX.Element => {
                       image={event.image.asset.gatsbyImageData}
                       alt={event.name}
                       className="transition-all duration-300 transform group-hover:scale-125"
+                      style={{ maxHeight: "225px" }}
                     />
                   </div>
                   <p className="mt-6 text-center text-sm font-normal text-gray-600">

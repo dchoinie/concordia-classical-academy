@@ -3,6 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import AdoptCard from "./adoptCard";
 import { formatPrice, getBuyButtonUrl } from "../helpers/stripeHelpers";
+import Constants from "../constants/constants";
 
 interface Product {
   id: string;
@@ -20,27 +21,27 @@ interface AdoptProduct {
 const buyButtons = [
   {
     name: "Adopt-A-Student Level 1",
-    url: "https://donate.stripe.com/6oE5kqe5J0MoaqI3cc",
+    url: Constants.ADOPT1,
   },
   {
     name: "Adopt-A-Student Level 2",
-    url: "https://donate.stripe.com/4gw7sy7Hlcv67ew6op",
+    url: Constants.ADOPT2,
   },
   {
     name: "Adopt-A-Student Level 3",
-    url: "https://donate.stripe.com/9AQ006bXBeDefL2dQS",
+    url: Constants.ADOPT3,
   },
   {
     name: "Adopt-A-Student Level 4",
-    url: "https://donate.stripe.com/14kbIO6Dh52EaqI147",
+    url: Constants.ADOPT4,
   },
   {
     name: "Adopt-A-Student Level 5",
-    url: "https://donate.stripe.com/5kAcMS9Pt2Uw1Uc004",
+    url: Constants.ADOPT5,
   },
   {
     name: "Adopt-A-Student Level 6",
-    url: "https://donate.stripe.com/bIY3ci7Hl7aM2Yg5kp",
+    url: Constants.ADOPT6,
   },
 ];
 

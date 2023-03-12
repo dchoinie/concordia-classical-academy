@@ -15,6 +15,7 @@ const Resources = ({ data }: any): JSX.Element => {
           <div className="my-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
             {data.resources.nodes.map((resource: ResourceProps) => (
               <ResourceCard
+                key={resource.title}
                 title={resource.title}
                 link={resource.link}
                 image={resource.image.asset.gatsbyImageData}

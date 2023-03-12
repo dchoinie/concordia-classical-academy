@@ -1,6 +1,5 @@
 import { PortableText } from '@portabletext/react';
 import React from 'react'
-import type { PortableTextListComponent } from '@portabletext/react';
 
 interface SupplyList {
     grade: string;
@@ -20,8 +19,6 @@ const components = {
 }
 
 const SupplyCard = ({ grade, content }: SupplyList) => {
-  console.log(content);
-
   return (
     <div className='flex flex-col p-6 rounded shadow-lg border border-gray-200'>
         <h3 className="text-gray-800">{grade}</h3>

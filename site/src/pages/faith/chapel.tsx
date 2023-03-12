@@ -22,7 +22,7 @@ const Chapel = ({ data }: any): JSX.Element => {
             </div>
             <div className="flex flex-col w-full lg:w-1/2">
               <p className="text-gray-700">
-                Chapel services are held each Wednesday at 9:15 a.m. giving our
+                Chapel services are held each Wednesday at 8:30 a.m. giving our
                 students and teachers the opportunity to worship together.
                 Students are encouraged to bring a chapel offering each week,
                 which is sent to a Christian mission. We encourage friends,

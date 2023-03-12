@@ -5,6 +5,7 @@ import { faAngleRight, faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import Button from "../button/button";
 import * as styles from "./hero.module.scss";
 import { graphql, useStaticQuery } from "gatsby";
+import Constants from "../../constants/constants";
 
 const hero = () => {
   const data = useStaticQuery(graphql`
@@ -39,7 +40,7 @@ const hero = () => {
               theme="primary"
               endIcon={faAngleRight}
               classes={["mr-4"]}
-              link="/admissions/admission-process"
+              href={Constants.ADMISSIONS}
             />
             <Button
               label="About CCA"

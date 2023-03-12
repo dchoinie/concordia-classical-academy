@@ -3,6 +3,7 @@ import React from "react";
 import Button from "./button/button";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
+import Constants from "../constants/constants";
 
 const Apply = () => {
   const data = useStaticQuery(graphql`
@@ -34,7 +35,7 @@ const Apply = () => {
           <Button
             label="Apply Now"
             endIcon={faAngleRight}
-            link="/admissions/admission-process"
+            href={Constants.ADMISSIONS}
             theme="white"
             size="large"
             classes={["lg:self-center"]}

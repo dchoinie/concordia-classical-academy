@@ -19,8 +19,6 @@ interface SupplyList {
 }
 
 const SupplyList = ({ data }: any): JSX.Element => {
-  // console.log(data);
-
   return (
     <>
       <SEO title='Supply List' />
@@ -40,7 +38,7 @@ const SupplyList = ({ data }: any): JSX.Element => {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
               {data.supplyList.nodes.map((supply: SupplyList) => (
                 <SupplyCard
-                  key={supply.id}
+                  key={supply.grade}
                   grade={supply.grade}
                   content={supply.content}
                 />

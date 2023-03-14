@@ -92,7 +92,7 @@ const AdpotAStudentComponent = () => {
             forever.
           </p>
           <p className="mb-6">
-            Concorida Classical Academy has been greatly blessed by our Lord
+            Concordia Classical Academy has been greatly blessed by our Lord
             Jesus. Through the COVID-19 pandemic, God has led many new families
             to our ministry. So much so that now we are experiencing some
             growing pains.
@@ -145,7 +145,7 @@ const AdpotAStudentComponent = () => {
       </div>
       <p className="max-w-xl mx-auto text-center italic">
         Donations may also be made by cash/check. Please drop off any
-        adopt-a-student donations to the main office at Concorida Classical
+        adopt-a-student donations to the main office at Concordia Classical
         Academy
       </p>
     </div>

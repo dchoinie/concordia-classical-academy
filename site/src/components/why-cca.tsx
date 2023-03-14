@@ -51,7 +51,7 @@ const WhyCCAComponent = () => {
         <div className="flex w-full lg:w-1/2">
           <div className="flex flex-col">
             <h2 className="font-bold text-primary mb-3">
-              Concorida Classical Academy: A Ministry of Good Shepherd Lutheran
+              Concordia Classical Academy: A Ministry of Good Shepherd Lutheran
               Church
             </h2>
             <h6 className="text-gray-600">

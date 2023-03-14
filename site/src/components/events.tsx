@@ -38,7 +38,7 @@ const Events = (): JSX.Element => {
             Upcoming Events
           </h2>
           <p className="mt-5 font-normal text-gray-600 font-pj mb-4">
-            Check out the upcoming events for Concorida Classical Academy. Click
+            Check out the upcoming events for Concordia Classical Academy. Click
             below to view our full calendar of events.
           </p>
           <Button

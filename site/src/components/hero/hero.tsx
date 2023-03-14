@@ -30,7 +30,7 @@ const hero = () => {
             Academy
           </h1>
           <p className="mb-4 text-text text-center lg:text-left">
-            Concorida Classical Academy uses God's Word in a Christ-centered
+            Concordia Classical Academy uses God's Word in a Christ-centered
             education to assist families in training students for Christian
             lives on earth and for eternity.
           </p>

@@ -12,10 +12,8 @@ const config: GatsbyConfig = {
     phone: `507.388.4336`,
     email: `ccamankato@gmail.com`,
     image: `./src/assets/images/logo_no_background.png`,
+    keywords: `school, lutheran, classical, education, minnesota, mankato, learning, elementary, middle, private, academy, concordia, religious, LCMS, missouri synod, good shepherd`,
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
     {

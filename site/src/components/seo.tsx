@@ -6,6 +6,7 @@ interface SEOProps {
   description?: string;
   pathname?: string;
   children?: any;
+  keywords?: any;
 }
 
 export const SEO = ({ title, description, pathname, children }: SEOProps) => {
@@ -14,12 +15,14 @@ export const SEO = ({ title, description, pathname, children }: SEOProps) => {
     description: defaultDescription,
     image,
     siteUrl,
+    keywords,
   } = useSiteMetadata();
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
+    keywords: keywords,
   };
 
   return (
@@ -34,7 +37,7 @@ export const SEO = ({ title, description, pathname, children }: SEOProps) => {
       <meta name="twitter:image" content={seo.image} />
       <meta
         name="keywords"
-        content="concordia, classical, academy, school, education, lutheran, mankato, minnesota, elementary"
+        content={seo.keywords}
       />
       <link
         rel="icon"

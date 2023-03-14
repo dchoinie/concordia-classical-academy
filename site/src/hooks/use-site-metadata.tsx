@@ -12,6 +12,7 @@ export const useSiteMetadata = () => {
           phone
           siteUrl
           title
+          keywords
         }
       }
     }

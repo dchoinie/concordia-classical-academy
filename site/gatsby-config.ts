@@ -1,5 +1,5 @@
-import type { GatsbyConfig } from "gatsby";
-require("dotenv").config({
+import type { GatsbyConfig } from 'gatsby';
+require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
@@ -21,42 +21,42 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-source-stripe`,
       options: {
-        objects: ["Price", "Product"],
+        objects: ['Price', 'Product'],
         secretKey: process.env.STRIPE_SECRET_KEY,
         downloadFiles: false,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/assets/images/",
+        name: 'images',
+        path: './src/assets/images/',
       },
-      __key: "images",
+      __key: 'images',
     },
     {
-      resolve: "gatsby-source-sanity",
+      resolve: 'gatsby-source-sanity',
       options: {
-        projectId: "bq1nuwtx",
-        dataset: "production",
+        projectId: 'bq1nuwtx',
+        dataset: 'production',
       },
     },
-    "gatsby-plugin-postcss",
-    "gatsby-plugin-netlify",
-    "gatsby-plugin-sass",
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-netlify',
+    'gatsby-plugin-sass',
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "G-PVQ21YVER2",
+        trackingId: 'G-PVQ21YVER2',
       },
     },
-    "gatsby-plugin-image",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-image',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/assets/images/favicon.ico",
+        icon: 'src/assets/images/favicon.ico',
         name: `Concordia Classical Academy`,
         short_name: `CCA Mankato`,
         start_url: `/`,
@@ -80,18 +80,18 @@ const config: GatsbyConfig = {
         ],
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "videos",
-        path: "./src/assets/videos/",
+        name: 'videos',
+        path: './src/assets/videos/',
       },
-      __key: "videos",
+      __key: 'videos',
     },
     {
-      resolve: "gatsby-plugin-sitemap",
+      resolve: 'gatsby-plugin-sitemap',
       options: {
         query: `
           {
@@ -107,7 +107,15 @@ const config: GatsbyConfig = {
             }
           }
         `,
-      }
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://ccamankato.org',
+        sitemap: 'https://www.ccamankato.org/sitemap-0.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
     },
   ],
 };

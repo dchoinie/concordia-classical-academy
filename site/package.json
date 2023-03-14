@@ -39,7 +39,7 @@
     "gatsby-plugin-react-helmet": "^6.4.0",
     "gatsby-plugin-sass": "^6.4.0",
     "gatsby-plugin-sharp": "^5.4.0",
-    "gatsby-plugin-sitemap": "^6.4.0",
+    "gatsby-plugin-sitemap": "^6.7.0",
     "gatsby-plugin-utils": "^4.4.0",
     "gatsby-source-filesystem": "^5.4.0",
     "gatsby-source-sanity": "^7.6.2",

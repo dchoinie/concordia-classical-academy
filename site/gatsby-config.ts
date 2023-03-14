@@ -90,6 +90,25 @@ const config: GatsbyConfig = {
       },
       __key: "videos",
     },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+          }
+        `,
+      }
+    },
   ],
 };
 

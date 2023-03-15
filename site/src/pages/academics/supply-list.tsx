@@ -5,20 +5,12 @@ import Button from '../../components/button/button';
 import Layout from '../../components/layout';
 import PageTitle from '../../components/pageTitle';
 import { SEO } from '../../components/seo';
-import SupplyCard from '../../components/supplyCard';
+import SupplyCard, { SupplyList } from '../../components/supplyCard';
 import SupplyListPDF from '../../assets/documents/Supply_List.pdf';
 
-interface ContentChildren {
-  text: string;
-}
+const SupplyListComponent = ({ data }: any): JSX.Element => {
+  console.log(data);
 
-interface SupplyList {
-  content: ContentChildren;
-  grade: string;
-  id: string;
-}
-
-const SupplyList = ({ data }: any): JSX.Element => {
   return (
     <>
       <SEO title='Supply List' />
@@ -38,9 +30,10 @@ const SupplyList = ({ data }: any): JSX.Element => {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-12'>
               {data.supplyList.nodes.map((supply: SupplyList) => (
                 <SupplyCard
-                  key={supply.grade}
+                  _id={supply._id}
+                  key={supply._id}
                   grade={supply.grade}
-                  content={supply.content}
+                  _rawContent={supply._rawContent}
                 />
               ))}
             </div>
@@ -53,21 +46,15 @@ const SupplyList = ({ data }: any): JSX.Element => {
 
 export const query = graphql`
   query SupplyQuery {
-    supplyList: allSanitySupplyList(sort: { grade: ASC }) {
+    supplyList: allSanitySupplyList(sort: { order: ASC }) {
       nodes {
+        _id
+        _type
         grade
-        content {
-          _type
-          children {
-            _key
-            _type
-            text
-            marks
-          }
-        }
+        _rawContent(resolveReferences: { maxDepth: 10 })
       }
     }
   }
 `;
 
-export default SupplyList;
+export default SupplyListComponent;

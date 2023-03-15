@@ -209,10 +209,15 @@ export default createSchema({
           type: 'string',
         },
         {
+          name: 'order',
+          title: 'Order',
+          type: 'number',
+        },
+        {
           title: 'Content',
           name: 'content',
           type: 'array',
-          of: [{ type: 'block' }],
+          of: [{type: 'block'}],
         },
       ],
     },
@@ -323,6 +328,6 @@ export default createSchema({
           type: 'boolean',
         },
       ],
-    }
+    },
   ]),
 });

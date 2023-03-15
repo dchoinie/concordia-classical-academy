@@ -307,5 +307,22 @@ export default createSchema({
         },
       ],
     },
+    {
+      name: 'specialAlert',
+      title: 'Special Alert',
+      type: 'document',
+      fields: [
+        {
+          name: 'message',
+          title: 'Message',
+          type: 'string',
+        },
+        {
+          name: 'active',
+          title: 'Active',
+          type: 'boolean',
+        },
+      ],
+    }
   ]),
 });

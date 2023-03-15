@@ -17,6 +17,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import OutsideClickHandler from 'react-outside-click-handler';
 import Constants from '../constants/constants';
+import SpecialAlert from './specialAlert';
 
 const header = (): JSX.Element => {
   const data = useStaticQuery(graphql`
@@ -55,6 +56,7 @@ const header = (): JSX.Element => {
 
   return (
     <div className='w-full'>
+      <SpecialAlert />
       <div className='bg-primary'>
         {/* mobile nav */}
         <div className={cx('py-6 mx-6 lg:hidden')}>

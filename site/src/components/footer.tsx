@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import {
   faEnvelope,
   faRightToBracket,
@@ -147,8 +147,26 @@ const footer = (): JSX.Element => {
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='CCA Facebook'
+                className='mr-2'
               >
                 <FontAwesomeIcon icon={faFacebook} />
+              </a>
+              <a
+                href='https://www.instagram.com/ccamankato/'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='CCA Instagram'
+                className='mr-2'
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+              </a>
+              <a
+                href='https://www.youtube.com/channel/UCAW67RMamK4u5VOrCktgdqA'
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='CCA YouTube'
+              >
+                <FontAwesomeIcon icon={faYoutube} />
               </a>
             </div>
           </div>

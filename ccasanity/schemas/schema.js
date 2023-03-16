@@ -83,8 +83,8 @@ export default createSchema({
           type: 'datetime',
         },
         {
-          title: 'Event Summary',
-          name: 'summary',
+          name: 'location',
+          title: 'Location',
           type: 'string',
         },
         {
@@ -217,7 +217,7 @@ export default createSchema({
           title: 'Content',
           name: 'content',
           type: 'array',
-          of: [{type: 'block'}],
+          of: [{ type: 'block' }],
         },
       ],
     },
@@ -320,7 +320,33 @@ export default createSchema({
         {
           name: 'message',
           title: 'Message',
-          type: 'string',
+          type: 'array',
+          of: [
+            {
+              type: 'block',
+              marks: {
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'External link',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'URL',
+                      },
+                      {
+                        title: 'Open in new tab',
+                        name: 'blank',
+                        type: 'boolean',
+                      },
+                    ],
+                  },
+                ],
+              },
+            },
+          ],
         },
         {
           name: 'active',

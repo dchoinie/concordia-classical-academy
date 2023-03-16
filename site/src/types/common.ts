@@ -58,8 +58,9 @@ export interface EventType {
   endDate: Date;
   id: string;
   image: ImageAsset;
+  location?: string;
   name: string;
   slug: EventSlug;
   startDate: Date;
-  summary: string;
+  details?: any;
 }

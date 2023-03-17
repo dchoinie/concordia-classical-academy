@@ -18,14 +18,14 @@ const EventTemplate = ({ data }: any): JSX.Element => {
       <Layout>
         <div className='max-w-screen-xl mx-6 lg:mx-auto'>
           <PageTitle title={data.event.name} />
-          <div className='flex gap-12 my-12'>
-            <div className='flex w-1/2'>
+          <div className='flex flex-col lg:flex-row gap-12 my-12'>
+            <div className='flex w-full lg:w-1/2'>
               <GatsbyImage
                 image={data.event.image.asset.gatsbyImageData}
                 alt={data.event.name}
               />
             </div>
-            <div className='flex flex-col w-1/2'>
+            <div className='flex flex-col w-full lg:w-1/2'>
               <div className='flex mb-2'>
                 <span className='underline mr-2'>Start Date:</span>
                 <span>{startDate}</span>

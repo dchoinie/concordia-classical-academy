@@ -48,9 +48,9 @@ const Build = ({ data }: any): JSX.Element => {
         alt='Building Campaign'
         className='h-screen'
       />
-      <div className={cx('absolute top-0 bg-darkOverlay h-screen w-full')}>
-        <div className='flex gap-24 h-full max-w-screen-2xl mx-auto'>
-          <div className='flex flex-col w-1/2 justify-center'>
+      <div className={cx('absolute top-0 bg-darkOverlay lg:h-screen w-full')}>
+        <div className='flex flex-col lg:flex-row gap-24 h-full mx-6 my-6 lg:max-w-screen-2xl lg:mx-auto lg:my-0'>
+          <div className='flex flex-col w-full lg:w-1/2 justify-center'>
             <h1 className='font-bold text-white'>
               Building For The Future Campaign
             </h1>
@@ -64,14 +64,14 @@ const Build = ({ data }: any): JSX.Element => {
               meetings. We are also looking for donors.
             </p>
           </div>
-          <div className='flex flex-col justify-center w-1/2'>
+          <div className='flex flex-col justify-center w-full lg:w-1/2'>
             <div className='flex flex-col bg-lightOverlay rounded shadow-lg p-12'>
               <h3 className='text-primary font-bold text-center mb-6'>
                 Contribute to the{' '}
                 <span className='italic'>Building For The Future Campaign</span>
               </h3>
               <h5 className='my-3 text-text'>Monthly Recurring Donations</h5>
-              <div className='grid grid-cols-3 gap-6 mb-12'>
+              <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
                 {data.buildPrice.nodes.map((node: any) => (
                   <a
                     href={getBuyButtonUrl(node.product.name, buildButtons)}
@@ -101,7 +101,7 @@ const Build = ({ data }: any): JSX.Element => {
         <div className='flex justify-center'>
           <Link
             to='/'
-            className='absolute flex bottom-1 z-30 text-white hover:text-gray-300'
+            className='lg:absolute flex bottom-1 z-30 text-white hover:text-gray-300'
           >
             <span className='mr-2'>Return to ccamankato.org</span>
             <FontAwesomeIcon className='self-center' icon={faAngleRight} />

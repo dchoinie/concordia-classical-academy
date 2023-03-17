@@ -91,7 +91,32 @@ export default createSchema({
           title: 'Event Details',
           name: 'details',
           type: 'array',
-          of: [{ type: 'block' }],
+          of: [
+            {
+              type: 'block',
+              marks: {
+                annotations: [
+                  {
+                    name: 'link',
+                    type: 'object',
+                    title: 'Link',
+                    fields: [
+                      {
+                        name: 'href',
+                        type: 'url',
+                        title: 'URL',
+                      },
+                      {
+                        title: 'Open in new tab',
+                        name: 'blank',
+                        type: 'boolean',
+                      },
+                    ],
+                  },
+                ],
+              },
+            },
+          ],
         },
         {
           title: 'Event Image',
@@ -329,7 +354,7 @@ export default createSchema({
                   {
                     name: 'link',
                     type: 'object',
-                    title: 'External link',
+                    title: 'Link',
                     fields: [
                       {
                         name: 'href',

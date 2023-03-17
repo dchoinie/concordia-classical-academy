@@ -1,5 +1,5 @@
 import { PortableText } from '@portabletext/react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import React from 'react';
 
 interface MarkDef {
@@ -14,6 +14,14 @@ interface Children {
   text: string;
   _key: string;
   _type: string;
+}
+
+interface SpecialAlertValue {
+  children: string[];
+  markKey: string;
+  markType: string;
+  text: string;
+  value: MarkDef;
 }
 
 interface SpecialAlertType {
@@ -34,29 +42,25 @@ const SpecialAlert = (): JSX.Element => {
     }
   }
   `)
-  // console.log(data.alert.nodes[0]._rawMessage);
 
   const components = {
     marks: {
-      link: ({ markDefs, children }: SpecialAlertType) => {
-        // console.log(mark);
-
-        const { blank, href } = markDefs[0]
-        // console.log(blank);
-
-        // return blank ?
-        //   <a href={href} target="_blank" rel="noopener">{children}</a>
-        //   : <a href={href}>{children}</a>
+      link: (props: SpecialAlertValue) => {
+        const { value, text } = props;
+        if (value.blank) {
+          return <a href={value.href} target="_blank" rel='noopener noreferrer' className='hover:underline'>{text}</a>
+        }
+        return <Link to={value.href} className='hover:underline'>{text}</Link>
       }
-    }
-  }
+    },
+  } as any;
 
   if (data.alert.nodes.length >= 1) {
     return (
       <div className='bg-accent py-2'>
         <div className='max-w-screen-xl mx-auto'>
           <div className='text-center text-text'>
-            <PortableText value={data.alert.nodes[0]._rawMessage} /*components={components}*/ />
+            <PortableText value={data.alert.nodes[0]._rawMessage} components={components} />
           </div>
         </div>
       </div>

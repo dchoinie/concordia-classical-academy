@@ -1,54 +1,36 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import { Link } from "gatsby";
+import React from "react";
+import AdpotAStudentComponent from "../components/adopt-a-student";
+import Layout from "../components/layout";
+import PageTitle from "../components/pageTitle";
+import { SEO } from "../components/seo";
 
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-
-// markup
-const NotFoundPage = () => {
+const AdpotAStudent = (): JSX.Element => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
-  )
-}
+    <div>
+      <SEO title="404 Not Found" />
+      <Layout>
+        <div className="max-w-screen-xl mx-6 lg:mx-auto">
+          <PageTitle
+            title="404 Not Found"
+          />
+          <div className="my-24 flex justify-center">
+            <h5 className="text-text">
+              Return to the
+              <span className="mx-1">
+                <Link className="underline hover:text-accent" to="/">Home Page</Link>
+              </span>
+              or
+              <span className="mx-1">
+                <Link className="underline hover:text-accent" to="/contact">Contact Us</Link>
+              </span>
+              if you can't find what you're looking for.
+            </h5>
+          </div>
+        </div>
+      </Layout>
+    </div>
+  );
+};
 
-export default NotFoundPage
+export default AdpotAStudent;

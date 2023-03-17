@@ -32,7 +32,7 @@ const TuitionFinancialAssistance = ({ data }: any): JSX.Element => {
           <div className="mt-24 mb-48 flex flex-col lg:flex-row gap-12">
             <div className="flex w-full lg:w-1/2">
               <GatsbyImage
-                image={data.chapel.childImageSharp.gatsbyImageData}
+                image={data.tuitionImage.childImageSharp.gatsbyImageData}
                 alt="Chapel"
                 className="rounded shadow-lg"
               />
@@ -118,7 +118,7 @@ export const query = graphql`
         fee
       }
     }
-    chapel: file(relativePath: { eq: "chapel.png" }) {
+    tuitionImage: file(relativePath: { eq: "tuition.jpg" }) {
       childImageSharp {
         gatsbyImageData(width: 700)
       }

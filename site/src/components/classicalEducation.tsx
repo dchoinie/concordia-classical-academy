@@ -1,6 +1,6 @@
 import React from "react";
 import ShortPromoMp4 from "../assets/videos/promo_short.mp4";
-import Thumbnail from "../assets/images/promo_thumbnail2.png";
+import Thumbnail from "../assets/images/table.jpg";
 import Button from "./button/button";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 

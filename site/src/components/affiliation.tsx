@@ -7,7 +7,7 @@ import Button from "./button/button";
 const AffiliationComponent = () => {
   const data = useStaticQuery(graphql`
     query MissionImageQuery {
-      church: file(relativePath: { eq: "church_exterior.jpg" }) {
+      church: file(relativePath: { eq: "gs.jpg" }) {
         childImageSharp {
           gatsbyImageData(width: 700)
         }

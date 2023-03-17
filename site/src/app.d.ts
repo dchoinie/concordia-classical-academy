@@ -5,3 +5,4 @@ declare module "*.png";
 declare module "*.jpg";
 declare module "*.ogg";
 declare module "*.webm";
+declare module "*.scss";

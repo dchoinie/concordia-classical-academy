@@ -38,7 +38,7 @@ const Chapel = ({ data }: any): JSX.Element => {
 
 export const query = graphql`
   query ChapelQuery {
-    chapel: file(relativePath: { eq: "promo_thumbnail.png" }) {
+    chapel: file(relativePath: { eq: "chapel.jpg" }) {
       childImageSharp {
         gatsbyImageData
       }

@@ -14,6 +14,20 @@ const DONATE50 = 'https://donate.stripe.com/8wM6pLbUTdvC3HafZ7'
 const DONATE100 = 'https://donate.stripe.com/3cscO9f753V21z200a'
 const DONATE250 = 'https://donate.stripe.com/7sIaG1cYX0IQb9C28j'
 const DONATE500 = 'https://donate.stripe.com/28oaG1bUTezG5Pi4gs'
+const BUILDING_FOR_THE_FUTURE_CONTRIBUTION_ONE_TIME = 'https://donate.stripe.com/3csdSd0cb4Z6dhK8wJ'
+const BUILDING_FOR_THE_FUTURE_LEVEL_1 = "https://buy.stripe.com/3cs4hDf75fDKelO5ky"
+const BUILDING_FOR_THE_FUTURE_LEVEL_2 = "https://buy.stripe.com/bIYg0lf75bnu2D6fZd"
+const BUILDING_FOR_THE_FUTURE_LEVEL_3 = "https://buy.stripe.com/3csdSdgb9ezGa5y14k"
+const BUILDING_FOR_THE_FUTURE_LEVEL_4 = "https://buy.stripe.com/4gw7tP6AzdvC5Pi9AR"
+const BUILDING_FOR_THE_FUTURE_LEVEL_5 = "https://buy.stripe.com/aEUcO95wvgHOa5y8wO"
+const BUILDING_FOR_THE_FUTURE_LEVEL_6 = "https://buy.stripe.com/9AQ4hDbUT2QY5PibJ1"
+const CUSTOMER_PORTAL = "https://billing.stripe.com/p/login/dR62aQ6vU76UfMk8ww"
+const BUILDING_FOR_THE_FUTURE_LEVEL_1_TEST = "https://buy.stripe.com/test_8wM3ee3Q62na0Zq8wJ"
+const BUILDING_FOR_THE_FUTURE_LEVEL_2_TEST = "https://buy.stripe.com/test_bIYaGGdqGd1O7nO14i"
+const BUILDING_FOR_THE_FUTURE_LEVEL_3_TEST = "https://buy.stripe.com/test_dR66qqfyO9PCdMc7sH"
+const BUILDING_FOR_THE_FUTURE_LEVEL_4_TEST = "https://buy.stripe.com/test_fZe4iifyOge08rS5kA"
+const BUILDING_FOR_THE_FUTURE_LEVEL_5_TEST = "https://buy.stripe.com/test_aEU022aeu5zm0ZqdR7"
+const BUILDING_FOR_THE_FUTURE_LEVEL_6_TEST = "https://buy.stripe.com/test_cN2022biy0f29vW00i"
 
 export default {
     LOGIN,
@@ -32,4 +46,18 @@ export default {
     DONATE100,
     DONATE250,
     DONATE500,
+    BUILDING_FOR_THE_FUTURE_CONTRIBUTION_ONE_TIME,
+    BUILDING_FOR_THE_FUTURE_LEVEL_1,
+    BUILDING_FOR_THE_FUTURE_LEVEL_2,
+    BUILDING_FOR_THE_FUTURE_LEVEL_3,
+    BUILDING_FOR_THE_FUTURE_LEVEL_4,
+    BUILDING_FOR_THE_FUTURE_LEVEL_5,
+    BUILDING_FOR_THE_FUTURE_LEVEL_6,
+    CUSTOMER_PORTAL,
+    BUILDING_FOR_THE_FUTURE_LEVEL_1_TEST,
+    BUILDING_FOR_THE_FUTURE_LEVEL_2_TEST,
+    BUILDING_FOR_THE_FUTURE_LEVEL_3_TEST,
+    BUILDING_FOR_THE_FUTURE_LEVEL_4_TEST,
+    BUILDING_FOR_THE_FUTURE_LEVEL_5_TEST,
+    BUILDING_FOR_THE_FUTURE_LEVEL_6_TEST,
 }

@@ -10,7 +10,7 @@ const MissionComponent = () => {
           missionStatement
         }
       }
-      image: file(relativePath: { eq: "kids_1.jpg" }) {
+      image: file(relativePath: { eq: "mission.jpg" }) {
         childImageSharp {
           gatsbyImageData(width: 700)
         }

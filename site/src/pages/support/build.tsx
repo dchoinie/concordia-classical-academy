@@ -15,27 +15,27 @@ import Button from '../../components/button/button';
 const buildButtons = [
   {
     name: 'Building For The Future - Level 1',
-    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_1_TEST,
+    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_1,
   },
   {
     name: 'Building For The Future - Level 2',
-    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_2_TEST,
+    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_2,
   },
   {
     name: 'Building For The Future - Level 3',
-    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_3_TEST,
+    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_3,
   },
   {
     name: 'Building For The Future - Level 4',
-    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_4_TEST,
+    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_4,
   },
   {
     name: 'Building For The Future - Level 5',
-    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_5_TEST,
+    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_5,
   },
   {
     name: 'Building For The Future - Level 6',
-    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_6_TEST,
+    url: Constants.BUILDING_FOR_THE_FUTURE_LEVEL_6,
   },
 ];
 

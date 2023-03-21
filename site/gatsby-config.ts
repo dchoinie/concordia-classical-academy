@@ -17,6 +17,14 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-TKGTMVP',
+        includeInDevelopment: false,
+        enableWebVitalsTracking: true,
+      },
+    },
+    {
       resolve: `gatsby-source-stripe`,
       options: {
         objects: ['Price', 'Product'],

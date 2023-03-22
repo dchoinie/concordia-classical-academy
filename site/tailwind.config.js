@@ -13,6 +13,8 @@ module.exports = {
         text: '#424242',
         darkOverlay: 'rgba(0,0,0,0.6)',
         lightOverlay: 'rgba(255, 255, 255, 0.6)',
+        successBackground: 'rgba(74, 222, 128, 0.3)',
+        accentBackground: 'rgba(240, 194, 70, 0.3)',
       },
     },
   },

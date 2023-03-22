@@ -58,7 +58,7 @@ const SpecialAlert = (): JSX.Element => {
   if (data.alert.nodes.length >= 1) {
     return (
       <div className='bg-accent py-2'>
-        <div className='max-w-screen-xl mx-auto'>
+        <div className='max-w-screen-xl mx-6 lg:mx-auto'>
           <div className='text-center text-text'>
             <PortableText value={data.alert.nodes[0]._rawMessage} components={components} />
           </div>

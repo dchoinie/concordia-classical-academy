@@ -4,7 +4,7 @@ import Thumbnail from "../assets/images/table.jpg";
 import Button from "./button/button";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 
-const ClassicalEducation = () => {
+const ClassicalEducation = (): JSX.Element => {
   return (
     <div className="lg:h-screen">
       <div className="flex flex-col-reverse lg:flex-row h-full lg:gap-12 mx-6 lg:mx-0">
@@ -14,7 +14,7 @@ const ClassicalEducation = () => {
             width="100%"
             autoPlay={false}
             poster={Thumbnail}
-            className="self-center rounded shadow-lg"
+            className="self-center rounded shadow-lg aspect-video"
             preload="auto"
           >
             <source src={ShortPromoMp4} type="video/mp4" />

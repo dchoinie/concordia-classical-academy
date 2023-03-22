@@ -26,7 +26,6 @@ const StaffCard = ({ name, title, imageUrl, position, email, phone }: StaffMembe
             {title}. {name}
           </h3>
           <h5 className="my-1">{position}</h5>
-          <p>{phone}</p>
         </div>
         <Button
           theme="primary"

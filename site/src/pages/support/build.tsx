@@ -13,6 +13,7 @@ import { formatPrice, getBuyButtonUrl } from '../../helpers/stripeHelpers';
 import Button from '../../components/button/button';
 import Layout from '../../components/layout';
 import PageTitle from '../../components/pageTitle';
+import * as styles from "../../styles/video.scss";
 
 const buildButtons = [
   {
@@ -46,9 +47,20 @@ const Build = ({ data }: any): JSX.Element => {
     <>
       <SEO title='Building For The Future Campaign' />
       <Layout>
-        <div className='max-w-screen-xl mx-6 lg:mx-auto my-24'>
+        <div className='max-w-screen-xl mx-6 lg:mx-auto'>
           <PageTitle title='Building For The Future' />
-          <div className='flex flex-col lg:flex-row gap-24'>
+          <div className='mb-24'>
+            <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
+              <iframe
+                src='https://www.youtube.com/embed/06RUpzX4VZU?rel=0'
+                title='YouTube video player'
+                allow='accelerometer; autoplay; clipboard-write; gyroscope; picture-in-picture; web-share'
+                allowFullScreen
+                className='shadow-lg rounded absolute top-0 left-0 w-full h-full border-none'
+              />
+            </div>
+          </div>
+          <div className='flex flex-col lg:flex-row gap-24 my-24'>
             <div className='flex flex-col w-full lg:w-1/2 justify-center'>
               <h1 className='font-bold text-primary'>
                 Building For The Future Campaign
@@ -71,7 +83,9 @@ const Build = ({ data }: any): JSX.Element => {
                     Building For The Future Campaign
                   </span>
                 </h3>
-                <h5 className='my-3 text-gray-200'>Monthly Recurring Donations</h5>
+                <h5 className='my-3 text-gray-200'>
+                  Monthly Recurring Donations
+                </h5>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12'>
                   {data.buildPrice.nodes.map((node: any) => (
                     <a

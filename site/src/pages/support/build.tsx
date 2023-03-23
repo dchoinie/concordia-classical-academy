@@ -74,7 +74,7 @@ const Build = ({ data }: any): JSX.Element => {
                 <h2 className='font-bold text-primary text-4xl'>
                   Building To Serve Campaign
                 </h2>
-                <hr className='my-6 border border-primary w-1/2' />
+                <hr className='my-6 border border-accent w-1/2' />
                 <p className='text-text text-lg mb-6'>
                   In the past 2 years at CCA, we have grown from 20 students to
                   over 80. Families are clearly looking for their children to hear

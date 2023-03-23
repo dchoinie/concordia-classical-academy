@@ -114,7 +114,7 @@ const Build = ({ data }: any): JSX.Element => {
 
 export const query = graphql`
   query BuildQuery {
-    build: file(relativePath: { eq: "build.jpg" }) {
+    build: file(relativePath: { eq: "allSchool.jpg" }) {
       childImageSharp {
         gatsbyImageData
       }

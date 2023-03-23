@@ -15,6 +15,7 @@ module.exports = {
         lightOverlay: 'rgba(255, 255, 255, 0.6)',
         successBackground: 'rgba(74, 222, 128, 0.3)',
         accentBackground: 'rgba(240, 194, 70, 0.3)',
+        primaryOverlay: 'rgba(77, 31, 53, 0.85)',
       },
     },
   },

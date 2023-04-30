@@ -65,7 +65,7 @@ const Build = ({ data }: any): JSX.Element => {
           </div>
         </div>
         {/* content starts */}
-        <div className="relative">
+        <div className="relative my-24">
           <GatsbyImage image={data.allSchool.childImageSharp.gatsbyImageData} alt="CCA Kids" className='hidden lg:block h-screen' />
           <div className="absolute top-0 lg:h-screen bg-darkOverlay w-full" />
           <div className="lg:max-w-screen-xl mx-6 lg:mx-auto left-0 right-0 lg:absolute top-0">

@@ -1,5 +1,5 @@
-import { PortableText } from '@portabletext/react';
-import React from 'react';
+import { PortableText } from "@portabletext/react";
+import React from "react";
 
 export interface RawContentChildren {
   marks: any[];
@@ -16,6 +16,7 @@ export interface RawContent {
   markDefs: any[];
   style: string;
 }
+
 export interface SupplyList {
   grade: string;
   _rawContent: RawContent;
@@ -24,19 +25,23 @@ export interface SupplyList {
 
 const components = {
   list: {
-    bullet: ({children}: any) => <ul className="mt-xl list-disc">{children}</ul>,
-    number: ({children}: any) => <ol className="mt-lg list-decimal">{children}</ol>,
+    bullet: ({ children }: any) => (
+      <ul className="mt-xl list-disc">{children}</ul>
+    ),
+    number: ({ children }: any) => (
+      <ol className="mt-lg list-decimal">{children}</ol>
+    ),
   },
   listItem: {
-    bullet: ({children}: any) => <li className='ml-6'>{children}</li>,
+    bullet: ({ children }: any) => <li className="ml-6">{children}</li>,
   },
-}
+};
 
 const SupplyCard = ({ grade, _rawContent }: SupplyList) => {
   return (
-    <div className='flex flex-col p-6 rounded shadow-lg border border-gray-200 bg-gray-50'>
-      <h3 className='text-gray-800'>{grade}</h3>
-      <hr className='my-3 border border-gray-200 w-2/3' />
+    <div className="flex flex-col p-6 rounded shadow-lg border border-gray-200 bg-gray-50">
+      <h3 className="text-gray-800">{grade}</h3>
+      <hr className="my-3 border border-gray-200 w-2/3" />
       <PortableText value={_rawContent} components={components} />
     </div>
   );

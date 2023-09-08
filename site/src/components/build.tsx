@@ -15,7 +15,7 @@ const Build = (): JSX.Element => {
     }
   `);
   return (
-    <div className="my-24">
+    <div className="my-24 mx-6 lg:mx-0">
       <div className="max-w-screen-2xl mx-auto">
         <h2 className="text-center font-bold text-primary">
           Building For The Future

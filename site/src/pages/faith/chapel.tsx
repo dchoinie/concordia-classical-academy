@@ -20,14 +20,34 @@ const Chapel = ({ data }: any): JSX.Element => {
                 className="rounded shadow-lg"
               />
             </div>
-            <div className="flex flex-col w-full lg:w-1/2">
-              <p className="text-gray-700">
-                Chapel services are held each Wednesday at 8:30 a.m. giving our
-                students and teachers the opportunity to worship together.
-                Students are encouraged to bring a chapel offering each week,
-                which is sent to a Christian mission. We encourage friends,
-                family, and congregational members to join us for chapel.
+            <div className="grid grid-cols-1 w-full lg:w-1/2">
+              <p className="mb-6">
+                Chapel services are worship services. As such, this is an
+                opportunity for everyone in our community to gather around the
+                Word of God, and sing the hymns of faith. In other words, Chapel
+                is not just for the kids, but for everyone. As you have
+                opportunity, please gather with us for chapel.{" "}
               </p>
+              <div className="flex flex-col mb-3">
+                <h3 className="underline">Monday</h3>
+                <p>8:15 - 8:30 AM</p>
+              </div>
+              <div className="flex flex-col mb-3">
+                <h3 className="underline">Tuesday</h3>
+                <p>8:15 - 8:30 AM</p>
+              </div>
+              <div className="flex flex-col mb-3">
+                <h3 className="underline">Wednesday</h3>
+                <p>8:30 - 9:00 AM</p>
+              </div>
+              <div className="flex flex-col mb-3">
+                <h3 className="underline">Thursday</h3>
+                <p>8:15 - 8:30 AM</p>
+              </div>
+              <div className="flex flex-col mb-3">
+                <h3 className="underline">Friday</h3>
+                <p>2:00 - 2:20 PM</p>
+              </div>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ const Staff = ({ data }: any): JSX.Element => {
                 position={staff.position}
                 title={staff.title}
                 phone={staff.phone}
-                // imageUrl={staff.headshot.asset.url}
+                imageUrl={staff?.headshot?.asset?.url}
               />
             ))}
           </div>
@@ -31,21 +31,23 @@ const Staff = ({ data }: any): JSX.Element => {
   );
 };
 
-export const query = graphql`query StaffQuery {
-  staff: allSanityStaffMember(sort: {order: ASC}) {
-    nodes {
-      email
-      name
-      position
-      title
-      phone
-      headshot {
-        asset {
-          url
+export const query = graphql`
+  query StaffQuery {
+    staff: allSanityStaffMember(sort: { order: ASC }) {
+      nodes {
+        email
+        name
+        position
+        title
+        phone
+        headshot {
+          asset {
+            url
+          }
         }
       }
     }
   }
-}`;
+`;
 
 export default Staff;

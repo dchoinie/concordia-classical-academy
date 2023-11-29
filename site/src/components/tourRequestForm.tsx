@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from "react";
 
-const ContactForm = (): JSX.Element => {
+const TourRequestForm = () => {
   return (
     <form
       method="POST"
-      action="https://formspree.io/f/xoqzvlok"
+      action="https://formspree.io/f/xbjvvkez"
       className="w-full flex flex-col p-6 rounded shadow border border-gray-100"
     >
+      <p className="mb-2">Parent / Guardian Info</p>
       <div className="flex justify-between gap-6 mb-6">
         <input type="text" name="_gotcha" style={{ display: "none" }} />
         <input
@@ -45,21 +45,31 @@ const ContactForm = (): JSX.Element => {
         className="p-4 w-full border border-gray-200 rounded shadow mb-6"
         required
       />
-      <textarea
-        name="message"
-        id="message"
-        cols={30}
-        rows={10}
-        placeholder="Message"
+      <p className="mb-2">Student(s) Info</p>
+      <input
+        type="number"
+        name="number_of_children"
+        id="number_of_children"
+        placeholder="Number of Children"
         className="p-4 w-full border border-gray-200 rounded shadow mb-6"
         required
-      ></textarea>
-      <fieldset className="flex mb-6">
-        <input type="checkbox" name="_optin" id="_optin" className="mr-4" />
-        <label htmlFor="_optin" className="text-gray-700">
-          Signup For Our Newsletter
-        </label>
-      </fieldset>
+      />
+      <input
+        type="text"
+        name="student_names"
+        id="student_names"
+        placeholder="Name(s)"
+        className="p-4 w-full border border-gray-200 rounded shadow mb-6"
+        required
+      />
+      <input
+        type="text"
+        name="grades"
+        id="grades"
+        placeholder="Grade(s)"
+        className="p-4 w-full border border-gray-200 rounded shadow mb-6"
+        required
+      />
       <button type="submit" className="btnPrimary btnMedium btn self-start">
         Submit
         <span>
@@ -70,4 +80,4 @@ const ContactForm = (): JSX.Element => {
   );
 };
 
-export default ContactForm;
+export default TourRequestForm;

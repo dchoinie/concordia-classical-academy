@@ -54,46 +54,26 @@ const TuitionFinancialAssistance = ({ data }: any): JSX.Element => {
                 total tuition due.
               </p>
               <p className="mb-4">
-                To apply for tuition assistance, click the button below to
-                download the Tuition Assistance Application form and return to
-                the CCA office. Parents are invited to work with the Concordia
-                Classical Academy School Board if the tuition is causing
-                concerns. Contact 507.388.4336 or ccamankato@gmail.com.
+                Parents are invited to call Concordia Classical Academy at{" "}
+                <a className="underline" href="tel:15073884336">
+                  507.388.4336
+                </a>{" "}
+                or email at{" "}
+                <a className="underline" href="mailto:ccamankato@gmail.com">
+                  ccamankato@gmail.com
+                </a>{" "}
+                to inquire further about tuition cost and setting up an initial
+                meeting with our Head Master Barbra Kozisek. For tuition
+                assistance inquiries please reach out to Mrs. Kozisek at{" "}
+                <a
+                  className="underline"
+                  href="mailto:principal@ccamankato.education"
+                >
+                  principal@ccamankato.education
+                </a>
+                .
               </p>
-              <Button
-                label="Download Tuition Assistance Application"
-                theme="primary"
-                startIcon={faDownload}
-                href={Tuition_Assistance_Application}
-                download
-                classes={["self-start", "tracking-wider"]}
-              />
             </div>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 my-24">
-            {data.tuition.nodes.map((fee: TuitionFee) => (
-              <FeeCard
-                title={fee.title}
-                fee={fee.fee}
-                key={fee.id}
-                id={fee.id}
-                discount={fee.discount}
-              />
-            ))}
-            {data.admin.nodes.map((fee: AdminFee) => (
-              <FeeCard
-                title={fee.title}
-                fee={fee.fee}
-                key={fee.id}
-                id={fee.id}
-              />
-            ))}
-          </div>
-          <div className="my-24">
-            <p className="italic text-center">
-              Monthly payments are made using Thrivent's Simply Giving® Tuition
-              Payment Program
-            </p>
           </div>
         </div>
       </Layout>

@@ -1,30 +1,24 @@
 import React from "react";
 import Button from "./button/button";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 export interface StaffMember {
   email: string;
-  imageUrl?: string;
+  headshot: any;
   name: string;
-  phone: string;
+  phone?: string;
   position: string;
   title: string;
 }
 
-const StaffCard = ({
-  name,
-  title,
-  imageUrl,
-  position,
-  email,
-  phone,
-}: StaffMember) => {
+const StaffCard = ({ name, title, headshot, position, email }: StaffMember) => {
   return (
     <div className="relative group">
       <div className="overflow-hidden rounded-lg aspect-w-4 aspect-h-3 mb-3">
-        <img
-          className="object-cover w-full h-96 shadow transition-all duration-300 transform group-hover:scale-125"
-          src={imageUrl}
+        <GatsbyImage
+          image={headshot.asset.gatsbyImageData}
           alt={name}
+          className="object-cover w-full h-96 shadow transition-all duration-300 transform group-hover:scale-125"
         />
       </div>
       <div className="flex flex-col items-center text-center">

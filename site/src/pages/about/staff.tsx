@@ -21,7 +21,7 @@ const Staff = ({ data }: any): JSX.Element => {
                 position={staff.position}
                 title={staff.title}
                 phone={staff.phone}
-                imageUrl={staff?.headshot?.asset?.url}
+                headshot={staff.headshot}
               />
             ))}
           </div>
@@ -42,7 +42,7 @@ export const query = graphql`
         phone
         headshot {
           asset {
-            url
+            gatsbyImageData
           }
         }
       }

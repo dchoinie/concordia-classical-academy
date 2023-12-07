@@ -1,9 +1,9 @@
 import React from "react";
-import Layout from "../components/layout";
-import PageTitle from "../components/pageTitle";
-import { SEO } from "../components/seo";
+import Layout from "../../components/layout";
+import PageTitle from "../../components/pageTitle";
+import { SEO } from "../../components/seo";
 
-const Events = (): JSX.Element => {
+const Calendar = (): JSX.Element => {
   return (
     <div>
       <SEO title="Events Calendar" />
@@ -23,4 +23,4 @@ const Events = (): JSX.Element => {
   );
 };
 
-export default Events;
+export default Calendar;

@@ -1,13 +1,17 @@
-import React from 'react';
-import { graphql, Link, useStaticQuery } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { faFacebook, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import React from "react";
+import { graphql, Link, useStaticQuery } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { GatsbyImage } from "gatsby-plugin-image";
+import {
+  faFacebook,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import {
   faEnvelope,
   faRightToBracket,
-} from '@fortawesome/free-solid-svg-icons';
-import Constants from '../constants/constants';
+} from "@fortawesome/free-solid-svg-icons";
+import Constants from "../constants/constants";
 
 interface SubNavItem {
   label: string;
@@ -22,27 +26,27 @@ interface TopNavItem {
 
 const legalCol = [
   {
-    label: 'Privacy Policy',
-    link: '/privacy-policy',
+    label: "Privacy Policy",
+    link: "/privacy-policy",
   },
   {
-    label: 'Terms & Conditions',
-    link: '/terms-and-conditions',
+    label: "Terms & Conditions",
+    link: "/terms-and-conditions",
   },
   {
-    label: 'Donations',
-    link: '/support/donations',
+    label: "Donations",
+    link: "/support/donations",
   },
 ];
 
 const footerCol = (title: string, items: SubNavItem[]) => (
-  <div className='flex flex-col items-center lg:items-start mb-6 lg:mb-0'>
-    <p className='text-gray-200 fontHeader underline'>{title}</p>
+  <div className="flex flex-col items-center lg:items-start mb-6 lg:mb-0">
+    <p className="text-gray-200 fontHeader underline">{title}</p>
     {items.map((item: SubNavItem) => (
       <Link
         key={item.label}
         to={item.link}
-        className='text-gray-400 mb-1 lg:mb-0'
+        className="text-gray-400 mb-1 lg:mb-0"
       >
         {item.label}
       </Link>
@@ -112,78 +116,78 @@ const footer = (): JSX.Element => {
     .sort(sort);
 
   return (
-    <div className='w-full bg-primary'>
-      <div className='max-w-screen-xl mx-6 lg:mx-auto pt-12 pb-6'>
-        <div className='flex flex-col lg:flex-row w-full justify-between mb-6'>
-          <div className='flex items-center lg:items-start flex-col mb-6 lg:mb-0'>
-            <Link to='/'>
+    <div className="w-full bg-primary">
+      <div className="max-w-screen-xl mx-6 lg:mx-auto pt-12 pb-6">
+        <div className="flex flex-col lg:flex-row w-full justify-between mb-6">
+          <div className="flex items-center lg:items-start flex-col mb-6 lg:mb-0">
+            <Link to="/">
               <GatsbyImage
                 image={data.lutherRose.childImageSharp.gatsbyImageData}
-                alt='Luther Rose'
-                className='lg:self-start self-center mb-2'
+                alt="Luther Rose"
+                className="lg:self-start self-center mb-2"
               />
             </Link>
-            <h4 className='text-accent mb-2 fontHeader'>
+            <h4 className="text-accent mb-2 fontHeader">
               {data.site.siteMetadata.title}
             </h4>
-            <p className='text-gray-300 mb-1'>
+            <p className="text-gray-300 mb-1">
               {data.site.siteMetadata.address}
             </p>
             <a
               href={`tel:+1${data.site.siteMetadata.phone}`}
-              className='text-gray-300 mb-1'
+              className="text-gray-300 mb-1"
             >
               {data.site.siteMetadata.phone}
             </a>
             <a
               href={`mailto:${data.site.siteMetadata.email}`}
-              className='text-gray-300 mb-1'
+              className="text-gray-300 mb-1"
             >
               {data.site.siteMetadata.email}
             </a>
-            <div className='flex text-gray-200 text-lg'>
+            <div className="flex text-gray-200 text-lg">
               <a
-                href='https://www.facebook.com/CCAMankato'
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='CCA Facebook'
-                className='mr-2'
+                href="https://www.facebook.com/CCAMankato"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="CCA Facebook"
+                className="mr-2"
               >
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
               <a
-                href='https://www.instagram.com/ccamankato/'
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='CCA Instagram'
-                className='mr-2'
+                href="https://www.instagram.com/ccamankato/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="CCA Instagram"
+                className="mr-2"
               >
                 <FontAwesomeIcon icon={faInstagram} />
               </a>
               <a
-                href='https://www.youtube.com/channel/UCAW67RMamK4u5VOrCktgdqA'
-                target='_blank'
-                rel='noopener noreferrer'
-                aria-label='CCA YouTube'
+                href="https://www.youtube.com/channel/UCAW67RMamK4u5VOrCktgdqA"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="CCA YouTube"
               >
                 <FontAwesomeIcon icon={faYoutube} />
               </a>
             </div>
           </div>
-          <div className='mb-6 lg:mb-0'>
-            <p className='text-gray-200 text-center mb-2 fontHeader underline'>
+          <div className="mb-6 lg:mb-0">
+            <p className="text-gray-200 text-center mb-2 fontHeader underline">
               Navigation
             </p>
-            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-1 place-items-center'>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-1 place-items-center">
               {allNavItemsToDisplay.map((item: any) => {
                 if (item.external) {
                   return (
                     <a
                       key={item.label}
                       href={item.link}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='text-gray-400 mb-2 lg:mb-0'
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 mb-2 lg:mb-0"
                     >
                       {item.label}
                     </a>
@@ -193,7 +197,7 @@ const footer = (): JSX.Element => {
                   <Link
                     key={item.label}
                     to={item.link}
-                    className='text-gray-400 mb-2 lg:mb-0'
+                    className="text-gray-400 mb-2 lg:mb-0"
                   >
                     {item.label}
                   </Link>
@@ -201,82 +205,90 @@ const footer = (): JSX.Element => {
               })}
             </div>
           </div>
-          {footerCol('Legal', legalCol)}
-          <div className='flex flex-col items-center lg:items-start'>
-            <p className='text-gray-200 fontHeader underline'>
+          {footerCol("Legal", legalCol)}
+          <div className="flex flex-col items-center lg:items-start">
+            <p className="text-gray-200 fontHeader underline">
               Parents / Teachers
             </p>
             <a
               href={Constants.LOGIN}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-gray-400 flex mb-2 lg:mb-0'
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 flex mb-2 lg:mb-0"
             >
-              <span className='mr-2'>Parent Portal</span>
+              <span className="mr-2">Parent Portal</span>
               <FontAwesomeIcon
                 icon={faRightToBracket}
-                className='self-center'
+                className="self-center"
               />
             </a>
             <a
-              href='https://accounts.renweb.com/Account/Login'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-gray-400 flex mb-2 lg:mb-0'
+              href="https://accounts.renweb.com/Account/Login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 flex mb-2 lg:mb-0"
             >
-              <span className='mr-2'>Teacher Login</span>
+              <span className="mr-2">Teacher Login</span>
               <FontAwesomeIcon
                 icon={faRightToBracket}
-                className='self-center'
+                className="self-center"
               />
             </a>
             <a
-              href='https://concordiaclassicalacademy.sanity.studio/'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='text-gray-400 flex'
+              href="https://concordiaclassicalacademy.sanity.studio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 flex"
             >
-              <span className='mr-2'>Website Login</span>
+              <span className="mr-2">Website Login</span>
               <FontAwesomeIcon
                 icon={faRightToBracket}
-                className='self-center'
+                className="self-center"
               />
             </a>
           </div>
         </div>
-        <div className='flex flex-col lg:flex-row w-full justify-between py-6 border-y border-gray-400 mb-6'>
-          <div className='flex flex-col items-center lg:items-start mb-6 lg:mb-0'>
-            <p className='text-gray-200 fontHeader'>
+        <div className="flex flex-col lg:flex-row w-full justify-between py-6 border-y border-gray-400 mb-6">
+          <div className="flex flex-col items-center lg:items-start mb-6 lg:mb-0">
+            <p className="text-gray-200 fontHeader">
               Subscribe To Our Newsletter
             </p>
-            <p className='text-gray-400 text-center lg:text-left'>
+            <p className="text-gray-400 text-center lg:text-left">
               Get the latest news, updates and school info sent to your inbox.
             </p>
           </div>
           <form
-            action='https://formspree.io/f/mjvdkqbp'
-            method='POST'
-            className='flex justify-center lg:justify-start items-center'
+            action="https://formspree.io/f/mjvdkqbp"
+            method="POST"
+            className="flex justify-center lg:justify-start items-center"
           >
             <input
-              type='email'
-              name='email'
-              id='email'
-              placeholder='Enter your email'
-              className='px-4 rounded shadow mr-4'
-              style={{ height: '40px' }}
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              className="px-4 rounded shadow mr-4"
+              style={{ height: "40px" }}
             />
-            <button type='submit' className='btn btnAccent self-center'>
+            <button type="submit" className="btn btnAccent self-center">
               Subscribe
             </button>
           </form>
         </div>
-        <div className='flex self-center justify-center'>
-          <p className='text-gray-400'>
-            <>
-              &copy; {new Date().getFullYear()} {data.site.siteMetadata.title}
-            </>
+        <div className="flex flex-col self-center items-center text-gray-400">
+          <p className="flex flex-col text-inherit max-w-md text-center mb-6">
+            <span>
+              "Schooling can be about how to make a life, which is quite
+              different from how to make a living"
+            </span>
+            <span>- Neil Postman</span>
           </p>
+          <small className="text-inherit">
+            <>
+              &copy; {new Date().getFullYear()} {data.site.siteMetadata.title},
+              all rights reserved.
+            </>
+          </small>
         </div>
       </div>
     </div>

@@ -70,6 +70,13 @@ const TourRequestForm = () => {
         className="p-4 w-full border border-gray-200 rounded shadow mb-6"
         required
       />
+      <input
+        type="text"
+        name="current_school"
+        id="current_school"
+        className="p-4 w-full border border-gray-200 rounded shadow mb-6"
+        placeholder="Current School"
+      />
       <button type="submit" className="btnPrimary btnMedium btn self-start">
         Submit
         <span>

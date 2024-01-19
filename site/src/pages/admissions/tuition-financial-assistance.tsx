@@ -39,11 +39,12 @@ const TuitionFinancialAssistance = ({ data }: any): JSX.Element => {
             </div>
             <div className="flex flex-col w-full lg:w-1/2">
               <p className="mb-4">
-                At Concordia Classical Academy it costs $6,500 to educate a
-                student. We are fortunate to be a mission of Good Shepherd
-                Lutheran Church. Each student receives the Good Shepherd
-                Scholarship. This provides a significant discount to each
-                student.
+                The cost of educating each child is $6,700. The Lutheran Church
+                of the Good Shepherd will provide a $2,500 scholarship for each
+                child with the expectation they will sing on the designated
+                Sundays during the year and participate in the fundraisers
+                throughout the year. You may choose to opt out of singing and
+                fundraising by paying the $2,500.
               </p>
               <p className="mb-4">
                 There are additional discounts for families with 3+ students in
@@ -73,6 +74,30 @@ const TuitionFinancialAssistance = ({ data }: any): JSX.Element => {
                 </a>
                 .
               </p>
+              <div className="grid grid-cols-2 w-1/2 p-2 text-center mb-4">
+                <p className="p-2 border border-gray-100 underline">
+                  # of Children
+                </p>
+                <p className="p-2 border border-gray-100 underline">Amount</p>
+                <p className="p-2 border border-gray-100">1</p>
+                <p className="p-2 border border-gray-100">$4200</p>
+                <p className="p-2 border border-gray-100">2</p>
+                <p className="p-2 border border-gray-100">$4200</p>
+                <p className="p-2 border border-gray-100">3</p>
+                <p className="p-2 border border-gray-100">$2200</p>
+                <p className="p-2 border border-gray-100">4+</p>
+                <p className="p-2 border border-gray-100">0</p>
+              </div>
+              <div>
+                <p className="mb-2 text-gray-500">
+                  *All new students including kindergarten receive an additional
+                  $1,000 scholarship off the $4,200 tuition.
+                </p>
+                <p className="text-gray-500">
+                  *In the event you withdraw your child early, all discounts
+                  will be null and void.
+                </p>
+              </div>
             </div>
           </div>
         </div>

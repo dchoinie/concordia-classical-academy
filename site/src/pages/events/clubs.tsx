@@ -6,7 +6,6 @@ import { graphql } from "gatsby";
 import ClubCard, { Club } from "../../components/clubCard";
 
 const Clubs = ({ data }: any) => {
-  console.log(data);
   return (
     <div>
       <SEO title="Clubs" />

@@ -422,5 +422,30 @@ export default createSchema({
         },
       ],
     },
+    {
+      name: "lunch",
+      title: "Lunch",
+      type: "document",
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "date",
+          title: "Date",
+          type: "date",
+          options: {
+            dateFormat: "MMM-YYYY",
+          },
+        },
+        {
+          name: "menuImage",
+          title: "Menu Image",
+          type: "file",
+        },
+      ],
+    },
   ]),
 });

@@ -28,13 +28,15 @@ const StaffCard = ({ name, title, headshot, position, email }: StaffMember) => {
           </h3>
           <h5 className="my-1">{position}</h5>
         </div>
-        <Button
-          theme="primary"
-          size="small"
-          label={`Email ${title}. ${name}`}
-          href={`mailto:${email}`}
-          disableTargetBlank
-        />
+        {email && (
+          <Button
+            theme="primary"
+            size="small"
+            label={`Email ${title}. ${name}`}
+            href={`mailto:${email}`}
+            disableTargetBlank
+          />
+        )}
       </div>
     </div>
   );

@@ -20,11 +20,11 @@ const HoursComponent = () => {
           <tr className="text-center bg-gray-100">
             <td className="p-6">School Day</td>
             <td className="p-6">8:10 AM</td>
-            <td className="p-6">2:30 PM</td>
+            <td className="p-6">2:45 PM</td>
           </tr>
           <tr className="text-center">
             <td className="p-6">After Care</td>
-            <td className="p-6">2:30 PM</td>
+            <td className="p-6">2:45 PM</td>
             <td className="p-6">5:00 PM</td>
           </tr>
         </tbody>

@@ -64,13 +64,13 @@ const TuitionFinancialAssistance = ({ data }: any): JSX.Element => {
                   ccamankato@gmail.com
                 </a>{" "}
                 to inquire further about tuition cost and setting up an initial
-                meeting with our Head Master Barbra Kozisek. For tuition
+                meeting with our Headmaster Pastor LaPlant. For tuition
                 assistance inquiries please reach out to Mrs. Kozisek at{" "}
                 <a
                   className="underline"
-                  href="mailto:principal@ccamankato.education"
+                  href="mailto:pastor@ccamankato.education"
                 >
-                  principal@ccamankato.education
+                  pastor@ccamankato.education
                 </a>
                 .
               </p>

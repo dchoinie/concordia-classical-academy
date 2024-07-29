@@ -65,7 +65,7 @@ const TuitionFinancialAssistance = ({ data }: any): JSX.Element => {
                 </a>{" "}
                 to inquire further about tuition cost and setting up an initial
                 meeting with our Headmaster Pastor LaPlant. For tuition
-                assistance inquiries please reach out to Mrs. Kozisek at{" "}
+                assistance inquiries please reach out to Pastor LaPlant at{" "}
                 <a
                   className="underline"
                   href="mailto:pastor@ccamankato.education"

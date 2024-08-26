@@ -5,7 +5,7 @@ import React from "react";
 const Welcome = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     query WelcomeQuery {
-      theme: file(relativePath: { eq: "2024_theme.jpg" }) {
+      theme: file(relativePath: { eq: "24_25_theme.jpg" }) {
         childImageSharp {
           gatsbyImageData(width: 700)
         }
@@ -34,12 +34,16 @@ const Welcome = (): JSX.Element => {
               className="rounded shadow-lg"
             />
           </div>
-          <div className="flex w-full lg:w-1/2">
-            <GatsbyImage
-              image={data.students.childImageSharp.gatsbyImageData}
-              alt="Theme"
-              className="rounded shadow-lg"
-            />
+          <div className="w-full lg:w-1/2">
+            <p className="text-2xl font-bold mb-6 tracking-wider">
+              Hebrews 12:1-3
+            </p>
+            <p className="text-xl">
+              "Therefore, since we are surrounded by so great a cloud of
+              witnesses, let us also lay aside every weight, and sin which
+              clings so closely, and let us run with endurance the race that is
+              set before us."
+            </p>
           </div>
         </div>
       </div>

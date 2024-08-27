@@ -10,7 +10,7 @@ const Welcome = (): JSX.Element => {
           gatsbyImageData(width: 700)
         }
       }
-      students: file(relativePath: { eq: "cca_students_2023.jpg" }) {
+      students: file(relativePath: { eq: "cca_2024_all_school.jpg" }) {
         childImageSharp {
           gatsbyImageData(width: 700)
         }
@@ -35,15 +35,11 @@ const Welcome = (): JSX.Element => {
             />
           </div>
           <div className="w-full lg:w-1/2">
-            <p className="text-2xl font-bold mb-6 tracking-wider">
-              Hebrews 12:1-3
-            </p>
-            <p className="text-xl">
-              "Therefore, since we are surrounded by so great a cloud of
-              witnesses, let us also lay aside every weight, and sin which
-              clings so closely, and let us run with endurance the race that is
-              set before us."
-            </p>
+            <GatsbyImage
+              image={data.students.childImageSharp.gatsbyImageData}
+              alt="Students"
+              className="rounded shadow-lg"
+            />
           </div>
         </div>
       </div>

@@ -56,8 +56,8 @@ const TuitionFinancialAssistance = ({ data }: any): JSX.Element => {
               </p>
               <p className="mb-4">
                 Parents are invited to call Concordia Classical Academy at{" "}
-                <a className="underline" href="tel:15073884336">
-                  507.388.4336
+                <a className="underline" href="tel:15073047430">
+                  507-304-7430
                 </a>{" "}
                 or email at{" "}
                 <a className="underline" href="mailto:ccamankato@gmail.com">

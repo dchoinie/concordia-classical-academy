@@ -4,8 +4,11 @@ import Layout from "../../components/layout";
 import PageTitle from "../../components/pageTitle";
 import { SEO } from "../../components/seo";
 import StaffCard, { StaffMember } from "../../components/staffCard";
+import { log } from "console";
 
 const Staff = ({ data }: any): JSX.Element => {
+  console.log(data);
+
   return (
     <>
       <SEO title="Staff" />
